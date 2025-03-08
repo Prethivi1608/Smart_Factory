@@ -1,0 +1,33 @@
+[0.339s] Invoking command in '/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/src/smart_factory': PYTHONPATH=/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build install --record /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
+[0.461s] running egg_info
+[0.461s] creating ../../build/smart_factory/smart_factory.egg-info
+[0.461s] writing ../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+[0.462s] writing dependency_links to ../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+[0.462s] writing entry points to ../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+[0.462s] writing requirements to ../../build/smart_factory/smart_factory.egg-info/requires.txt
+[0.462s] writing top-level names to ../../build/smart_factory/smart_factory.egg-info/top_level.txt
+[0.462s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.463s] reading manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.463s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.463s] running build
+[0.463s] running build_py
+[0.463s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build
+[0.463s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build/lib
+[0.463s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.463s] copying smart_factory/__init__.py -> /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.463s] running install
+[0.463s] running install_lib
+[0.464s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.464s] copying /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/__init__.py -> /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.464s] byte-compiling /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__init__.py to __init__.cpython-310.pyc
+[0.464s] running install_data
+[0.464s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/share/ament_index
+[0.464s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index
+[0.464s] creating /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages
+[0.464s] copying resource/smart_factory -> /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages
+[0.464s] copying package.xml -> /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/share/smart_factory
+[0.464s] running install_egg_info
+[0.465s] Copying ../../build/smart_factory/smart_factory.egg-info to /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info
+[0.465s] running install_scripts
+[0.476s] writing list of installed files to '/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/install.log'
+[0.488s] Invoked command in '/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/src/smart_factory' returned '0': PYTHONPATH=/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/build install --record /media/prethiviraj/R'kived Lab/Projects/2025/UTS_Robotics/Smart Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data

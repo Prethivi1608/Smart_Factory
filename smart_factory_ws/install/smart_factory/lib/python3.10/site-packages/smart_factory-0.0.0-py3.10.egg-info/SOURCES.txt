@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+../../build/smart_factory/smart_factory.egg-info/SOURCES.txt
+../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+../../build/smart_factory/smart_factory.egg-info/requires.txt
+../../build/smart_factory/smart_factory.egg-info/top_level.txt
+../../build/smart_factory/smart_factory.egg-info/zip-safe
+resource/smart_factory
+smart_factory/__init__.py
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
