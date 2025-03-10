@@ -8,8 +8,15 @@ setup.py
 ../../build/smart_factory/smart_factory.egg-info/requires.txt
 ../../build/smart_factory/smart_factory.egg-info/top_level.txt
 ../../build/smart_factory/smart_factory.egg-info/zip-safe
+launch/robot_state_publisher.launch.py
+launch/simple_world.launch.py
+launch/spawn_turtlebot3.launch.py
+model/model.sdf
+model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
+smart_factory/image_capture.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
+world/simpleworld.world

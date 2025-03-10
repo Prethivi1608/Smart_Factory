@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'smart_factory'
 
@@ -10,6 +12,10 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share',package_name,'launch'),glob('launch/*')),
+        (os.path.join('share',package_name,'model'),glob('model/*')),
+        (os.path.join('share',package_name,'world'),glob('world/*')),
+        
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,6 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'image_capture = smart_factory.image_capture:main',
         ],
     },
 )
