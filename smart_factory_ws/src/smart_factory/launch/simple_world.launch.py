@@ -75,7 +75,14 @@ def generate_launch_description():
         output='screen',
         name='rviz2'
     )
-
+    
+    image_class_node = Node(
+        package='smart_factory',
+        executable='image_classifier',
+        output='screen',
+        name='image_class'
+    )
+    
     ld = LaunchDescription()
 
     # Add the commands to the launch description
@@ -84,5 +91,6 @@ def generate_launch_description():
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
     ld.add_action(rviz_node)
+    ld.add_action(image_class_node)
     
     return ld
