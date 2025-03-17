@@ -29,6 +29,7 @@ setup(
         'console_scripts': [
             'image_capture = smart_factory.image_capture:main',
             'image_classifier = smart_factory.image_classifier:main',
+            'image_publish = smart_factory.image_subscriber:main',
         ],
     },
 )

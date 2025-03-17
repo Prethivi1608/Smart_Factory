@@ -16,7 +16,12 @@ model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
 smart_factory/image_capture.py
+smart_factory/image_classifier.py
+smart_factory/image_subscriber.py
+smart_factory/yolomodel.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 world/simpleworld.world
+world/smartfactory.world
+yolo_model/smart_fact.pt

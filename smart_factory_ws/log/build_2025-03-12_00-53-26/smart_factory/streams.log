@@ -1,0 +1,25 @@
+[0.330s] Invoking command in '/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/src/smart_factory': PYTHONPATH=/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
+[0.452s] running egg_info
+[0.452s] writing ../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+[0.453s] writing dependency_links to ../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+[0.453s] writing entry points to ../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+[0.453s] writing requirements to ../../build/smart_factory/smart_factory.egg-info/requires.txt
+[0.453s] writing top-level names to ../../build/smart_factory/smart_factory.egg-info/top_level.txt
+[0.454s] reading manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.454s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.454s] running build
+[0.454s] running build_py
+[0.454s] copying smart_factory/image_classifier.py -> /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.454s] running install
+[0.455s] running install_lib
+[0.455s] copying /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/image_classifier.py -> /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.455s] byte-compiling /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/image_classifier.py to image_classifier.cpython-310.pyc
+[0.456s] running install_data
+[0.456s] running install_egg_info
+[0.457s] removing '/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info' (and everything under it)
+[0.457s] Copying ../../build/smart_factory/smart_factory.egg-info to /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info
+[0.457s] running install_scripts
+[0.468s] Installing image_capture script to /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[0.468s] Installing image_classifier script to /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[0.468s] writing list of installed files to '/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/install.log'
+[0.481s] Invoked command in '/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/src/smart_factory' returned '0': PYTHONPATH=/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
