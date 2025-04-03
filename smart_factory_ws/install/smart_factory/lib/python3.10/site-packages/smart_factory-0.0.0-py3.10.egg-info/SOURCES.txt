@@ -26,4 +26,5 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 world/simpleworld.world
+yolo_model/rs2_hardware.pt
 yolo_model/smart_fact.pt
