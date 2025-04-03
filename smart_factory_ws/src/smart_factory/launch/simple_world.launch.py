@@ -59,6 +59,22 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
+    robot_1 = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('smart_factory'),
+            'launch', 'spawn_turtlebot3.launch.py'
+        )),
+        launch_arguments={'namespace': 'robot1', 'x_pose': '0', 'y_pose': '0','robot_name':'tb1'}.items()
+    )
+
+    robot_2 = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('smart_factory'),
+            'launch', 'spawn_turtlebot3.launch.py'
+        )),
+        launch_arguments={'namespace': 'robot2', 'x_pose': '5', 'y_pose': '0','robot_name':'tb2'}.items()
+    )
+
     spawn_turtlebot_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
@@ -89,7 +105,9 @@ def generate_launch_description():
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
-    ld.add_action(spawn_turtlebot_cmd)
+    # ld.add_action(spawn_turtlebot_cmd)
+    ld.add_action(robot_1)
+    ld.add_action(robot_2)
     ld.add_action(rviz_node)
     ld.add_action(image_class_node)
     

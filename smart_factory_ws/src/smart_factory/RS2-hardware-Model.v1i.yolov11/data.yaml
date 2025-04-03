@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['adapter']
+
+roboflow:
+  workspace: yolo-model-train
+  project: rs2-hardware-model
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/yolo-model-train/rs2-hardware-model/dataset/1

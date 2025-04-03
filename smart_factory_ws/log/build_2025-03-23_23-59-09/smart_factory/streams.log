@@ -1,0 +1,44 @@
+[0.401s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
+[0.558s] running egg_info
+[0.558s] writing ../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+[0.559s] writing dependency_links to ../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+[0.559s] writing entry points to ../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+[0.559s] writing requirements to ../../build/smart_factory/smart_factory.egg-info/requires.txt
+[0.559s] writing top-level names to ../../build/smart_factory/smart_factory.egg-info/top_level.txt
+[0.560s] reading manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.560s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[0.561s] running build
+[0.561s] running build_py
+[0.561s] copying smart_factory/image_capture.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.561s] copying smart_factory/image_classifier.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.561s] copying smart_factory/__init__.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.561s] copying smart_factory/yolomodel.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[0.561s] running install
+[0.561s] running install_lib
+[0.562s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/image_capture.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.562s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/image_classifier.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.562s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/__init__.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.562s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/yolomodel.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[0.562s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/image_capture.py to image_capture.cpython-310.pyc
+[0.563s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/image_classifier.py to image_classifier.cpython-310.pyc
+[0.563s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__init__.py to __init__.cpython-310.pyc
+[0.563s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/yolomodel.py to yolomodel.cpython-310.pyc
+[0.563s] running install_data
+[0.563s] copying resource/smart_factory -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages
+[0.563s] copying package.xml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory
+[0.564s] copying launch/spawn_turtlebot3.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[0.564s] copying launch/robot_state_publisher.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[0.564s] copying launch/simple_world.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[0.564s] copying model/model.sdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/model
+[0.564s] copying model/tb3_waffle.urdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/model
+[0.564s] copying world/simpleworld.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/world
+[0.564s] creating /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+[0.564s] copying yolo_model/smart_fact.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+[0.568s] running install_egg_info
+[0.569s] removing '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info' (and everything under it)
+[0.570s] Copying ../../build/smart_factory/smart_factory.egg-info to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info
+[0.570s] running install_scripts
+[0.585s] Installing image_capture script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[0.585s] Installing image_classifier script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[0.585s] writing list of installed files to '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log'
+[0.602s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory' returned '0': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
