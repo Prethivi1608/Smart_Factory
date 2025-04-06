@@ -28,6 +28,9 @@ setup(
     entry_points={
         'console_scripts': [
             'robot_move = smart_factory.robot_move:main',
+            'get_position = smart_factory.get_position:main',
+            'go_to_goal = smart_factory.go_to_goal:main',
+            
         ],
     },
 )

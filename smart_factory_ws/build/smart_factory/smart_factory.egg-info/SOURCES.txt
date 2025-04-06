@@ -18,6 +18,8 @@ model/model.sdf
 model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
+smart_factory/get_position.py
+smart_factory/go_to_goal.py
 smart_factory/image_capture.py
 smart_factory/robot_move.py
 smart_factory/webcam_image.py
@@ -26,5 +28,6 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 world/simpleworld.world
+world/smart_factoryworld.world
 yolo_model/rs2_hardware.pt
 yolo_model/smart_fact.pt
