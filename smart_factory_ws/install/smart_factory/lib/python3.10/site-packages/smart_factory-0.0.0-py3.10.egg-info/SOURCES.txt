@@ -8,6 +8,7 @@ setup.py
 ../../build/smart_factory/smart_factory.egg-info/requires.txt
 ../../build/smart_factory/smart_factory.egg-info/top_level.txt
 ../../build/smart_factory/smart_factory.egg-info/zip-safe
+launch/multi_spawn_turtlebot3.launch.py
 launch/multirobot.launch.py
 launch/robot_state_publisher.launch.py
 launch/simple_world.launch.py
@@ -18,7 +19,6 @@ model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
 smart_factory/image_capture.py
-smart_factory/image_classifier.py
 smart_factory/robot_move.py
 smart_factory/webcam_image.py
 smart_factory/yolomodel.py

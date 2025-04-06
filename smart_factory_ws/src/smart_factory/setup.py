@@ -27,10 +27,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_capture = smart_factory.image_capture:main',
-            'image_classifier = smart_factory.image_classifier:main',
             'robot_move = smart_factory.robot_move:main',
-            'webcam_capture = smart_factory.webcam_image:main',
         ],
     },
 )
