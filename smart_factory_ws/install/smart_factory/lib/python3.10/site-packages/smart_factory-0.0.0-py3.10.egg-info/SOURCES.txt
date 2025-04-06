@@ -8,8 +8,11 @@ setup.py
 ../../build/smart_factory/smart_factory.egg-info/requires.txt
 ../../build/smart_factory/smart_factory.egg-info/top_level.txt
 ../../build/smart_factory/smart_factory.egg-info/zip-safe
+config/mapper_params_online_async.yaml
+config/slam_config.rviz
 launch/multi_spawn_turtlebot3.launch.py
 launch/multirobot.launch.py
+launch/online_async_launch.py
 launch/robot_state_publisher.launch.py
 launch/simple_world.launch.py
 launch/spawn_turtlebot3.launch.py
