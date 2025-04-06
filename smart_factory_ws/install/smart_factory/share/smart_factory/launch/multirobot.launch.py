@@ -52,8 +52,8 @@ def generate_launch_description():
 
     world = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
-        'worlds',
-        'turtlebot3_world.world'
+        'world',
+        'simpleworld.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -103,7 +103,7 @@ def generate_launch_description():
         spawn_turtlebot_cmd_list.append(
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(launch_file_dir, 'multirobot.launch.py')
+                    os.path.join(launch_file_dir, 'multi_spawn_turtlebot3.launch.py')
                 ),
                 launch_arguments={
                         'x_pose': str(pose[count][0]),
