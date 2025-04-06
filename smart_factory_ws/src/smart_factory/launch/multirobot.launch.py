@@ -26,8 +26,10 @@ from launch.actions import IncludeLaunchDescription
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnShutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import PushRosNamespace
+from launch_ros.substitutions import FindPackageShare
+from launch_ros.actions import Node
 
 
 def generate_launch_description():
@@ -83,6 +85,14 @@ def generate_launch_description():
                     }.items()
             )
         )
+    
+    slam_launch = IncludeLaunchDescription(PythonLaunchDescriptionSource([
+        PathJoinSubstitution([FindPackageShare('smart_factory'),'launch','online_async_launch.py'])]),
+        launch_arguments={
+            
+            'slam_params_file':PathJoinSubstitution([FindPackageShare('smart_factory'),'config','mapper_params_online_async.yaml']),'use_sim_time':'true'}.items()
+        
+        )
 
     spawn_turtlebot_cmd_list = []
 
@@ -114,9 +124,21 @@ def generate_launch_description():
                 }.items()
             )
         )
+    
+    
+    rviz_Node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d',PathJoinSubstitution([
+            FindPackageShare('smart_factory'), 'config', 'slam_config.rviz'
+        ])]
+        )
 
     ld = LaunchDescription()
     # Add the commands to the launch description
+    ld.add_action(rviz_Node)
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
     ld.add_action(RegisterEventHandler(
@@ -129,5 +151,7 @@ def generate_launch_description():
         ld.add_action(GroupAction([PushRosNamespace(f'{namespace}_{count}'),
                                   robot_state_publisher_cmd_list[count-1],
                                   spawn_turtlebot_cmd]))
+    
+    ld.add_action(slam_launch)
 
     return ld

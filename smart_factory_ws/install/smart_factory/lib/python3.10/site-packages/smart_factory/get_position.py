@@ -29,7 +29,7 @@ class GetPosition(Node):
             if j < 2:
                 print(f'angle:{i},distance:{j}')
         
-        # self.get_logger().info(f'angle_min: {angle_min},angle_max: {angle_max},ranges: {ranges}')
+        self.get_logger().info(f'angle_min: {angle_min},angle_max: {angle_max},ranges: {ranges}')
         
 
 def main():

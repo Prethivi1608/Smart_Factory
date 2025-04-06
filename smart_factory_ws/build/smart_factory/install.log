@@ -19,11 +19,14 @@
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/robot_state_publisher.launch.py
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/spawn_turtlebot3.launch.py
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/simple_world.launch.py
+/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/online_async_launch.py
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/spawn_turtlebot3_1.launch.py
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/model/tb3_waffle.urdf
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/model/model.sdf
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/world/simpleworld.world
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/world/smart_factoryworld.world
+/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config/mapper_params_online_async.yaml
+/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config/slam_config.rviz
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model/smart_fact.pt
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model/rs2_hardware.pt
 /home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info/zip-safe
