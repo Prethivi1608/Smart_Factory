@@ -55,7 +55,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('smart_factory'),
         'world',
-        'smart_factoryworld.world'
+        'simpleworld.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -138,7 +138,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
     # Add the commands to the launch description
-    ld.add_action(rviz_Node)
+    # ld.add_action(rviz_Node)
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
     ld.add_action(RegisterEventHandler(
@@ -152,6 +152,6 @@ def generate_launch_description():
                                   robot_state_publisher_cmd_list[count-1],
                                   spawn_turtlebot_cmd]))
     
-    ld.add_action(slam_launch)
+    # ld.add_action(slam_launch)
 
     return ld
