@@ -24,11 +24,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     # Get the urdf file
     TURTLEBOT3_MODEL = 'waffle'
-    urdf_path = os.path.join(
-        get_package_share_directory('smart_factory'),
-        'model',
-        'tb3_waffle.urdf'
-    )
+    urdf_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/model/model.sdf'
 
     # Launch configuration variables specific to simulation
     x_pose = LaunchConfiguration('x_pose', default='0.0')

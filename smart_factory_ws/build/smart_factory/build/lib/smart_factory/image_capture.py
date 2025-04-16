@@ -16,10 +16,9 @@ class ImageCapture(Node):
         
     def image_callback(self,ImgMessage):    
         self.image = self.bridge.imgmsg_to_cv2(ImgMessage)
-        path = '/home/prethiviraj/ros2/workspaces/Smart_Factory/smart_factory_ws/src/smart_factory/Camera'
-        file_name = f'{path}/image_{self.counter}.jpg'
+        path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/Camera_2/'
+        file_name = f'{path}/image_{self.counter + 600}.jpg'
         cv2.imwrite(file_name,self.image)
-        time.sleep(0.5)
         self.get_logger().info(f'{self.counter} images has been captured.')
         self.counter+=1
         

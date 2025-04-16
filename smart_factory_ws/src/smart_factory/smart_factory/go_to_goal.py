@@ -9,12 +9,12 @@ class Navigation(Node):
     def __init__(self):
         super().__init__('go_to_goal')
         
-        self.pos_topic = '/TB3_2/odom'
-        self.vel_topic = '/TB3_2/cmd_vel'
+        self.pos_topic = '/odom'
+        self.vel_topic = '/cmd_vel'
         self.pos_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
         self.velocity_pub = self.create_publisher(Twist,self.vel_topic,10)
         self.timer = self.create_timer(1.0,self.go_to_goal)
-        self.goal = [5,2]
+        self.goal = [2,2]
         self.position = Point()
         self.orientation = Quaternion()
         
@@ -61,7 +61,7 @@ class Navigation(Node):
         print(distance)
         
         if distance > 0.5:
-            self.velocity_msg.linear.x = 0.5
+            self.velocity_msg.linear.x = 0.2
         else:
             self.velocity_msg.linear.x = 0.0
             

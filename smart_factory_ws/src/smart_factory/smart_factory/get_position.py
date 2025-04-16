@@ -9,11 +9,11 @@ class GetPosition(Node):
     def __init__(self):
         super().__init__('get_position_')
         
-        self.pos_topic = '/TB3_1/odom'
-        self.scan_topic = '/TB3_1/scan'
+        self.pos_topic = '/odom'
+        self.scan_topic = '/scan'
         
-        # self.position_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
-        self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
+        self.position_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
+        #self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
         
     def odom_callback(self,msg):
         position = msg.pose.pose.position

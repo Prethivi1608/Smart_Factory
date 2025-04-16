@@ -28,9 +28,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'robot_move = smart_factory.robot_move:main',
-            'get_position = smart_factory.get_position:main',
-            'go_to_goal = smart_factory.go_to_goal:main',
+            'path_planning = smart_factory.path_planning:main',
+            'inflate_obs = smart_factory.inflate_obstacles:main',
+            'map_publisher= smart_factory.map_publisher:main',
             
         ],
     },
