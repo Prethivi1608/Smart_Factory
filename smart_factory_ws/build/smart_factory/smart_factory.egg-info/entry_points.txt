@@ -1,4 +1,8 @@
 [console_scripts]
+camera_classifier = smart_factory.camera_classifier:main
+camera_distance = smart_factory.camera_distance:main
+camera_publisher = smart_factory.camera_publisher:main
+image_capture = smart_factory.image_capture:main
 inflate_obs = smart_factory.inflate_obstacles:main
 map_publisher = smart_factory.map_publisher:main
 path_planning = smart_factory.path_planning:main

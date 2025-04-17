@@ -13,7 +13,7 @@ class CameraPublisher(Node):
         self.camera_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.timer = self.create_timer(0.1,self.camera_callback)
 
-        self.camera_id = 3
+        self.camera_id = 2
         self.camera = cv2.VideoCapture(self.camera_id)
         self.bridge = CvBridge()
 

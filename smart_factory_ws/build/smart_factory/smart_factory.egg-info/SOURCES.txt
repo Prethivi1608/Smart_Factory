@@ -27,6 +27,7 @@ model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
 smart_factory/camera_classifier.py
+smart_factory/camera_distance.py
 smart_factory/camera_publisher.py
 smart_factory/get_position.py
 smart_factory/go_to_goal.py
@@ -34,7 +35,6 @@ smart_factory/image_capture.py
 smart_factory/map_publisher.py
 smart_factory/path_planning.py
 smart_factory/robot_move.py
-smart_factory/teleop_keyboard.py
 smart_factory/webcam_image.py
 smart_factory/yolomodel.py
 test/test_copyright.py

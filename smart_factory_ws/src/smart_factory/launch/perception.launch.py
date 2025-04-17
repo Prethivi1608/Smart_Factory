@@ -19,6 +19,13 @@ def generate_launch_description():
         output='screen'
     )
 
+    camera_distance_node = Node(
+        package='smart_factory',
+        executable= 'camera_distance',
+        name='camera_dist',
+        output='screen'
+    )
+
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -28,8 +35,9 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(camera_pub_node)
+    #ld.add_action(camera_pub_node)
     ld.add_action(camera_classify_node)
+    ld.add_action(camera_distance_node)
     ld.add_action(rviz_node)
 
     return ld
