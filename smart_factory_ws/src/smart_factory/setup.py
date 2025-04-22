@@ -35,6 +35,7 @@ setup(
             'camera_classifier= smart_factory.camera_classifier:main',
             'camera_distance= smart_factory.camera_distance:main',
             'image_capture= smart_factory.image_capture:main',
+            'nav_to_pose= smart_factory.nav_to_pose:main',
             
         ],
     },

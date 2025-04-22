@@ -5,5 +5,6 @@ camera_publisher = smart_factory.camera_publisher:main
 image_capture = smart_factory.image_capture:main
 inflate_obs = smart_factory.inflate_obstacles:main
 map_publisher = smart_factory.map_publisher:main
+nav_to_pose = smart_factory.nav_to_pose:main
 path_planning = smart_factory.path_planning:main
 

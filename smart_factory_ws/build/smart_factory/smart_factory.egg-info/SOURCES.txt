@@ -33,6 +33,7 @@ smart_factory/get_position.py
 smart_factory/go_to_goal.py
 smart_factory/image_capture.py
 smart_factory/map_publisher.py
+smart_factory/nav_to_pose.py
 smart_factory/path_planning.py
 smart_factory/robot_move.py
 smart_factory/webcam_image.py
@@ -46,3 +47,4 @@ world/smart_factoryworld.world
 world/turtlebot3_house.world
 yolo_model/rs2_hardware.pt
 yolo_model/smart_fact.pt
+yolo_model/tb3_object.pt
