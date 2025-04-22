@@ -8,8 +8,7 @@ class RobotMove(Node):
     def __init__(self):
         super().__init__('robot_move')
 
-        self.tb1_velocity_pub = self.create_publisher(Twist,'/cmd_vel', 10)
-        self.tb2_velocity_pub = self.create_publisher(Twist,'/TB3_2/cmd_vel', 10)
+        self.tb1_velocity_pub = self.create_publisher(Twist,'/TB3_1/cmd_vel', 10)
         self.timer = self.create_timer(0.5,self.velocity_callback)
         self.velocity_msg = None
 

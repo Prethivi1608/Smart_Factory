@@ -35,7 +35,8 @@ smart_factory/image_capture.py
 smart_factory/map_publisher.py
 smart_factory/nav_to_pose.py
 smart_factory/path_planning.py
-smart_factory/robot_move.py
+smart_factory/robot_1_move.py
+smart_factory/robot_2_move.py
 smart_factory/webcam_image.py
 smart_factory/yolomodel.py
 test/test_copyright.py

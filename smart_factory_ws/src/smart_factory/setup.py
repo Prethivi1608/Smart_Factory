@@ -36,6 +36,8 @@ setup(
             'camera_distance= smart_factory.camera_distance:main',
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',
+            'robot_1_move= smart_factory.robot_1_move:main',
+            'robot_2_move= smart_factory.robot_2_move:main'
             
         ],
     },
