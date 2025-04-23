@@ -33,6 +33,8 @@ setup(
             'map_publisher= smart_factory.map_publisher:main',
             'camera_publisher= smart_factory.camera_publisher:main',
             'camera_classifier= smart_factory.camera_classifier:main',
+            'camera_class_gz= smart_factory.camera_class_gz:main',
+            'camera_info= smart_factory.camera_info:main',
             'camera_distance= smart_factory.camera_distance:main',
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',

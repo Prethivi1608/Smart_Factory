@@ -14,10 +14,12 @@ config/nav2_params.yaml
 config/slam_config.rviz
 config/waffle.yaml
 launch/bringup_launch.py
+launch/multi_nav.launch.py
 launch/multi_spawn_turtlebot3.launch.py
 launch/multirobot.launch.py
 launch/online_async_launch.py
 launch/perception.launch.py
+launch/perception_gazebo.launch.py
 launch/robot_state_publisher.launch.py
 launch/simple_world.launch.py
 launch/slam_mapping.launch.py
@@ -26,8 +28,10 @@ model/model.sdf
 model/tb3_waffle.urdf
 resource/smart_factory
 smart_factory/__init__.py
+smart_factory/camera_class_gz.py
 smart_factory/camera_classifier.py
 smart_factory/camera_distance.py
+smart_factory/camera_info.py
 smart_factory/camera_publisher.py
 smart_factory/get_position.py
 smart_factory/go_to_goal.py
