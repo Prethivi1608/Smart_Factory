@@ -13,14 +13,22 @@ class CameraClassfier(Node):
         super().__init__('camera_classifier')
 
 
-        self.camera_centre_x = 0.0
-        self.camera_centre_y = 0.0
+        self.camera_centre_x = 80.0
+        self.camera_centre_y = 60.0
         self.c_x = 0.0
         self.c_y = 0.0
+        self.distance_threshold = 180
+        self.angle_threshold = 20.0
+        self.object_name = 'redpringles'
+        self.linear_velocity = 0.2
+        self.angular_velocity = 0.1
+        self.search_velocity = 0.1
+        self.linear_velocity_stop = 0.0
+        self.angular_velocity_stop = 0.0
 
-        self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
+        #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
         self.camera_topic = '/camera/image_raw'
-        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/smart_fact.pt'
+        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
         self.camera_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         self.cam_pub = self.create_publisher(Image,'/camera/image_classify',10)
         self.velocity_publisher = self.create_publisher(Twist,'/cmd_vel',10)
@@ -47,21 +55,22 @@ class CameraClassfier(Node):
                 print(f'Detected Object:{class_name}')
                 x1,y1,x2,y2 = box.xyxy.tolist()[0]
                 distance = self.distance_to(x1,x2,y1,y2)
+                print(f'distance:{distance}')
                 self.c_x,self.c_y,w,h= box.xywh.tolist()[0]
                 if self.c_x == None:
                     self.get_logger().info('No value')
                 else:  
-                    if class_name == 'bowl':
+                    if class_name == self.object_name:
                         self.velocity_callback(self.c_x,distance)
                     else:
                         self.robot_search()
 
 
     def velocity_callback(self,c_x,distance):
-        if distance < 450:
-            if c_x>self.camera_centre_x+50:
+        if distance < self.distance_threshold:
+            if c_x>(self.camera_centre_x+self.angle_threshold):
                 self.robot_right()
-            elif c_x<self.camera_centre_x-50:
+            elif c_x<(self.camera_centre_x-self.angle_threshold):
                 self.robot_left()
             else:
                 self.robot_forward() 
@@ -71,32 +80,32 @@ class CameraClassfier(Node):
             
     def robot_stop(self):
         vel_msg = Twist()
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 0.0
+        vel_msg.linear.x = self.linear_velocity_stop
+        vel_msg.angular.z = self.angular_velocity_stop
         self.velocity_publisher.publish(vel_msg)
     
     def robot_forward(self):
         vel_msg = Twist()
-        vel_msg.linear.x = 0.5
-        vel_msg.angular.z = 0.0
+        vel_msg.linear.x = self.linear_velocity
+        vel_msg.angular.z = self.angular_velocity_stop
         self.velocity_publisher.publish(vel_msg)
     
     def robot_left(self):
         vel_msg = Twist()
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 0.1
+        vel_msg.linear.x = self.linear_velocity_stop
+        vel_msg.angular.z = self.angular_velocity
         self.velocity_publisher.publish(vel_msg)
     
     def robot_right(self):
         vel_msg = Twist()
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = -0.1
+        vel_msg.linear.x = self.linear_velocity_stop
+        vel_msg.angular.z = -self.angular_velocity
         self.velocity_publisher.publish(vel_msg)
     
     def robot_search(self):
         vel_msg = Twist()
-        vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 0.3
+        vel_msg.linear.x = self.linear_velocity_stop
+        vel_msg.angular.z = self.search_velocity
         self.velocity_publisher.publish(vel_msg)
 
 
@@ -104,9 +113,9 @@ class CameraClassfier(Node):
         return (math.sqrt(((x2-x1)**2)+((y2-y1)**2)))
     
 
-    def camera_info_callback(self,msg):
-        self.camera_centre_x = msg.width/2
-        self.camera_centre_y = msg.height/2
+    # def camera_info_callback(self,msg):
+    #     self.camera_centre_x = msg.width/2
+    #     self.camera_centre_y = msg.height/2
 
 
 def main():

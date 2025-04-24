@@ -13,7 +13,7 @@ class DistanceCalculator(Node):
 
 
         self.camera_topic = '/camera/image_raw'
-        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/runs/detect/train5/weights/best.pt'
+        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
         self.camera_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         self.velocity_pub = self.create_publisher(Twist,'/cmd_vel',10)
         self.bridge = CvBridge()
@@ -28,19 +28,19 @@ class DistanceCalculator(Node):
         bounding_box = self.results[0]
         for box in bounding_box.boxes:
             x1,y1,x2,y2 = box.xyxy.tolist()[0]
-            distance = self.distance_to(x1,x2,y1,y2)
-            print(distance)
+            size_box = self.distance_to(x1,x2,y1,y2)
+            print(size_box)
             #self.velocity_callback(distance)
     
-    def velocity_callback(self,distance):
-        vel_msg = Twist()
-        # if distance>450:
-        #     vel_msg.linear.x = 0.00
-        print(distance)
-        #     self.velocity_pub.publish(vel_msg)
-        # else:
-        #     vel_msg.linear.x = 0.01
-        #     self.velocity_pub.publish(vel_msg)
+    # def velocity_callback(self,distance):
+    #     vel_msg = Twist()
+    #     # if distance>450:
+    #     #     vel_msg.linear.x = 0.00
+    #     print(distance)
+    #     #     self.velocity_pub.publish(vel_msg)
+    #     # else:
+    #     #     vel_msg.linear.x = 0.01
+    #     #     self.velocity_pub.publish(vel_msg)
 
     
     def distance_to(self,x1,x2,y1,y2):

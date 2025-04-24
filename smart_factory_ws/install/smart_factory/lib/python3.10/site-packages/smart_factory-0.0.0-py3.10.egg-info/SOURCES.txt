@@ -20,6 +20,7 @@ launch/multirobot.launch.py
 launch/online_async_launch.py
 launch/perception.launch.py
 launch/perception_gazebo.launch.py
+launch/perception_moverobot.launch.py
 launch/robot_state_publisher.launch.py
 launch/simple_world.launch.py
 launch/slam_mapping.launch.py

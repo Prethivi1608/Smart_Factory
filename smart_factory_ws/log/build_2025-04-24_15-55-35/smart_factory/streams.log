@@ -1,0 +1,35 @@
+[0.790s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data
+[1.069s] running egg_info
+[1.070s] writing ../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+[1.070s] writing dependency_links to ../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+[1.070s] writing entry points to ../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+[1.070s] writing requirements to ../../build/smart_factory/smart_factory.egg-info/requires.txt
+[1.070s] writing top-level names to ../../build/smart_factory/smart_factory.egg-info/top_level.txt
+[1.074s] reading manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[1.076s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[1.076s] running build
+[1.076s] running build_py
+[1.076s] copying smart_factory/camera_class_gz.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[1.077s] running install
+[1.078s] running install_lib
+[1.079s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_class_gz.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.081s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_class_gz.py to camera_class_gz.cpython-310.pyc
+[1.082s] running install_data
+[1.083s] running install_egg_info
+[1.085s] removing '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info' (and everything under it)
+[1.085s] Copying ../../build/smart_factory/smart_factory.egg-info to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info
+[1.086s] running install_scripts
+[1.109s] Installing camera_class_gz script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.109s] Installing camera_classifier script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.109s] Installing camera_distance script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.110s] Installing camera_info script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.110s] Installing camera_publisher script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.110s] Installing image_capture script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.110s] Installing inflate_obs script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.110s] Installing map_publisher script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.111s] Installing nav_to_pose script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.111s] Installing path_planning script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.111s] Installing robot_1_move script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.111s] Installing robot_2_move script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.112s] writing list of installed files to '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log'
+[1.155s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory' returned '0': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data

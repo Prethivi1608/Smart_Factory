@@ -35,6 +35,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/spawn_turtlebot3.launch.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/robot_state_publisher.launch.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/perception_gazebo.launch.py
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/perception_moverobot.launch.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/multirobot.launch.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/multi_spawn_turtlebot3.launch.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/bringup_launch.py
