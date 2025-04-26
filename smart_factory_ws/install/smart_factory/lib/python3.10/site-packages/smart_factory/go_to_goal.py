@@ -14,9 +14,10 @@ class Navigation(Node):
         self.pos_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
         self.velocity_pub = self.create_publisher(Twist,self.vel_topic,10)
         self.timer = self.create_timer(1.0,self.go_to_goal)
-        self.goal = [2,2]
+        self.goal = [-1.7964352369308472,0.6676521897315979]
         self.position = Point()
         self.orientation = Quaternion()
+
         
     def odom_callback(self,msg):
         

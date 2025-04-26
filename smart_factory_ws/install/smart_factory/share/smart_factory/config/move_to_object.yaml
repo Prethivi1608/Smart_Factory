@@ -1,0 +1,19 @@
+move_to_object:
+  ros__parameters:
+    robot_number: 1
+    camera_centre_x: 80.0
+    camera_centre_y: 60.0
+    c_x: 0.0
+    c_y: 0.0
+    distance_threshold: 180
+    angle_threshold: 20.0
+    linear_velocity: 0.2
+    angular_velocity: 0.1
+    search_velocity: 0.1
+    linear_velocity_stop: 0.0
+    angular_velocity_stop: 0.0
+    camera_topic: '/camera/image_raw'
+    model: '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
+    camera_pub_topic: '/camera/image_classify'
+    vel_pub_topic: '/cmd_vel'
+    object_name: 'redpringles'

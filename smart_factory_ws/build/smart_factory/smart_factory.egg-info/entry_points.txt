@@ -1,12 +1,14 @@
 [console_scripts]
-camera_class_gz = smart_factory.camera_class_gz:main
 camera_classifier = smart_factory.camera_classifier:main
 camera_distance = smart_factory.camera_distance:main
 camera_info = smart_factory.camera_info:main
+camera_object = smart_factory.camera_object:main
 camera_publisher = smart_factory.camera_publisher:main
+go_to_goal = smart_factory.go_to_goal:main
 image_capture = smart_factory.image_capture:main
 inflate_obs = smart_factory.inflate_obstacles:main
 map_publisher = smart_factory.map_publisher:main
+move_to_object = smart_factory.move_to_object:main
 nav_to_pose = smart_factory.nav_to_pose:main
 path_planning = smart_factory.path_planning:main
 robot_1_move = smart_factory.robot_1_move:main

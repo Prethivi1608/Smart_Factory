@@ -30,7 +30,7 @@ def generate_launch_description():
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    pose = [-2, -0.5]
+    pose = [-2,-0.5]
 
     world = os.path.join(
         get_package_share_directory('smart_factory'),
@@ -81,6 +81,6 @@ def generate_launch_description():
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
-    # ld.add_action(slam_launch)
+    #ld.add_action(slam_launch)
 
     return ld
