@@ -8,7 +8,7 @@ class RobotMove(Node):
     def __init__(self):
         super().__init__('robot_move')
 
-        self.tb2_velocity_pub = self.create_publisher(Twist,'/TB3_2/cmd_vel', 10)
+        self.tb2_velocity_pub = self.create_publisher(Twist,'/robot_2/cmd_vel', 10)
         self.timer = self.create_timer(0.5,self.velocity_callback)
         self.velocity_msg = None
 
@@ -30,11 +30,11 @@ class RobotMove(Node):
 
     def velocity_callback(self):
         self.robot_move_forward()
-        time.sleep(1)
-        self.robot_left()
-        time.sleep(2)
-        self.robot_stop()
-        time.sleep(1)
+        # time.sleep(1)
+        # self.robot_left()
+        # time.sleep(2)
+        # self.robot_stop()
+        # time.sleep(1)
 
 def main():
     rclpy.init()

@@ -12,43 +12,34 @@ class MovetoObject(Node):
     def __init__(self):
         super().__init__('move_to_object')
 
-        self.declare_parameter('camera_centre_x', 80.0)
-        self.declare_parameter('camera_centre_y', 60.0)
-        self.declare_parameter('distance_threshold', 180)
-        self.declare_parameter('angle_threshold', 20.0)
-        self.declare_parameter('linear_velocity', 0.2)
-        self.declare_parameter('angular_velocity', 0.1)
-        self.declare_parameter('search_velocity', 0.1)
-        self.declare_parameter('linear_velocity_stop', 0.0)
-        self.declare_parameter('angular_velocity_stop', 0.0)
         self.declare_parameter('robot_number',1)
 
-        self.declare_parameter('camera_topic', '/camera/image_raw')
-        self.declare_parameter('model_path', '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt')
-        self.declare_parameter('camera_pub_topic', '/camera/image_classify')
-        self.declare_parameter('vel_pub_topic' '/cmd_vel')
+        self.declare_parameter('object_name','redpringles')
         
         self.robot_name = 'robot'
         self.c_x = 0.0
         self.c_y = 0.0
-        self.robot_number = self.get_parameter('robot_number').get_parameter_value().string_value
-        self.robot = '/' + self.robot_name + '_' + self.robot_number + '/'
-        self.camera_centre_x = self.get_parameter('camera_centre_x').get_parameter_value().double_value
-        self.camera_centre_y = self.get_parameter('camera_centre_y').get_parameter_value().double_value
-        self.distance_threshold = self.get_parameter('distance_threshold').get_parameter_value().double_value
-        self.angle_threshold = self.get_parameter('angle_threshold').get_parameter_value().double_value
+        self.robot_number = self.get_parameter('robot_number').get_parameter_value().integer_value
+        self.robot = '/' + self.robot_name + '_' + str(self.robot_number)
+        self.camera_centre_x= 80.0
+        self.camera_centre_y= 60.0
+        self.c_x= 0.0
+        self.c_y= 0.0
+        self.distance_threshold= 180
+        self.angle_threshold= 20.0
+        self.linear_velocity= 0.25
+        self.angular_velocity= 0.15
+        self.search_velocity= 0.15
+        self.linear_velocity_stop= 0.0
+        self.angular_velocity_stop= 0.0
         self.object_name = self.get_parameter('object_name').get_parameter_value().string_value
-        self.linear_velocity = self.get_parameter('linear_velocity').get_parameter_value().double_value
-        self.angular_velocity = self.get_parameter('angular_velocity').get_parameter_value().double_value
-        self.search_velocity = self.get_parameter('search_velocity').get_parameter_value().double_value
-        self.linear_velocity_stop = self.get_parameter('linear_velocity_stop').get_parameter_value().double_value
-        self.angular_velocity_stop = self.get_parameter('angular_velocity_stop').get_parameter_value().double_value
-        #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
-        self.camera_topic = self.robot + self.get_parameter('camera_topic').get_parameter_value().string_value
-        self.model_path = self.get_parameter('model').get_parameter_value().string_value
-        self.camera_pub_topic = self.robot + self.get_parameter('camera_pub_topic').get_parameter_value().string_value
-        self.vel_pub_topic = self.robot + self.get_parameter('vel_pub_topic').get_parameter_value().string_value
+
         
+        #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
+        self.camera_topic = self.robot + '/camera/image_raw'
+        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
+        self.camera_pub_topic = self.robot + '/camera/image_classify'
+        self.vel_pub_topic = self.robot + '/cmd_vel'
         
         self.camera_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)

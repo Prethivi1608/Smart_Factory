@@ -27,11 +27,11 @@ class CameraObject(Node):
         self.angular_velocity_stop = 0.0
 
         #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
-        self.camera_topic = '/camera/image_raw'
+        self.camera_topic = '/robot_2/camera/image_raw'
         self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
         self.camera_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
-        self.cam_pub = self.create_publisher(Image,'/camera/image_classify',10)
-        self.velocity_publisher = self.create_publisher(Twist,'/cmd_vel',10)
+        self.cam_pub = self.create_publisher(Image,'/robot_2/camera/image_classify',10)
+        self.velocity_publisher = self.create_publisher(Twist,'/robot_1/cmd_vel',10)
         self.bridge = CvBridge()
         self.model = YOLO(self.model_path)
         
