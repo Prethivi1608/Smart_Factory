@@ -45,7 +45,10 @@ smart_factory/nav_to_pose.py
 smart_factory/path_planning.py
 smart_factory/robot_1_move.py
 smart_factory/robot_2_move.py
+smart_factory/task_allocation_client.py
+smart_factory/task_allocator_service.py
 smart_factory/yolomodel.py
+srv/TaskAllocation.srv
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

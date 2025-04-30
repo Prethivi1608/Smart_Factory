@@ -3,6 +3,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_classifier.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/go_to_goal.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/image_capture.py
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/task_allocation_client.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/move_to_object.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_object.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/robot_2_move.py
@@ -14,11 +15,13 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_info.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_distance.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_publisher.py
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/task_allocator_service.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/get_position.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/map_publisher.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_classifier.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/go_to_goal.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/image_capture.cpython-310.pyc
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/task_allocation_client.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/move_to_object.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_object.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/robot_2_move.cpython-310.pyc
@@ -30,6 +33,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_info.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_distance.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_publisher.cpython-310.pyc
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/task_allocator_service.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages/smart_factory
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/package.xml
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/spawn_turtlebot3.launch.py
@@ -61,6 +65,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model/tb3_object.pt
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model/smart_fact.pt
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model/rs2_hardware.pt
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/srv/TaskAllocation.srv
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info/zip-safe
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info/requires.txt
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info/PKG-INFO
@@ -75,10 +80,11 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/camera_publisher
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/go_to_goal
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/image_capture
-/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/inflate_obs
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/map_publisher
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/move_to_object
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/nav_to_pose
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/path_planning
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/robot_1_move
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/robot_2_move
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/task_client
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory/task_service
