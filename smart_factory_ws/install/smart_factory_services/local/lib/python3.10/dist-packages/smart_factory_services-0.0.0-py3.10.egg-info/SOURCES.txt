@@ -1,0 +1,8 @@
+setup.py
+smart_factory_services/__init__.py
+smart_factory_services.egg-info/PKG-INFO
+smart_factory_services.egg-info/SOURCES.txt
+smart_factory_services.egg-info/dependency_links.txt
+smart_factory_services.egg-info/top_level.txt
+smart_factory_services/srv/__init__.py
+smart_factory_services/srv/_task_allocation.py

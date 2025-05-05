@@ -30,7 +30,7 @@ def generate_launch_description():
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    pose = [-2,-0.5]
+    pose = [0,0]
 
     world = os.path.join(
         get_package_share_directory('smart_factory'),

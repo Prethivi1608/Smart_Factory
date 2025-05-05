@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from smart_factory.srv import TaskAllocation
+from smart_factory_services.srv import TaskAllocation
 
 class TaskAllocatorService(Node):
     def __init__(self):
@@ -18,6 +18,8 @@ class TaskAllocatorService(Node):
         else:
             response.success = False
             response.message = 'No message recieved'
+
+        return response
 
 def main():
     rclpy.init()

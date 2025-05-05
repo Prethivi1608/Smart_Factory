@@ -17,7 +17,6 @@ setup(
         (os.path.join('share',package_name,'world'),glob('world/*')),
         (os.path.join('share',package_name,'config'),glob('config/*')),
         (os.path.join('share',package_name,'yolo_model'),glob('yolo_model/*')),
-        (os.path.join('share',package_name,'srv'),glob('srv/*.srv')),
         
     ],
     install_requires=['setuptools'],
@@ -41,15 +40,11 @@ setup(
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',
             'robot_1_move= smart_factory.robot_1_move:main',
-            'robot_2_move= smart_factory.robot_2_move:main',
+            'detect_object= smart_factory.detect_object:main',
             'task_client = smart_factory.task_allocation_client:main',
             'task_service = smart_factory.task_allocator_service:main'
             
         ],
 
-    },
-
-    package_data={
-        'smart_factory': ['srv/TaskAllocation.srv'],
     },
 )

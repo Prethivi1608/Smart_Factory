@@ -1,0 +1,4 @@
+srv/TaskAllocation.idl
+srv/TaskAllocation.srv
+srv/TaskAllocation_Request.msg
+srv/TaskAllocation_Response.msg

@@ -36,6 +36,7 @@ smart_factory/camera_distance.py
 smart_factory/camera_info.py
 smart_factory/camera_object.py
 smart_factory/camera_publisher.py
+smart_factory/detect_object.py
 smart_factory/get_position.py
 smart_factory/go_to_goal.py
 smart_factory/image_capture.py
@@ -44,11 +45,9 @@ smart_factory/move_to_object.py
 smart_factory/nav_to_pose.py
 smart_factory/path_planning.py
 smart_factory/robot_1_move.py
-smart_factory/robot_2_move.py
 smart_factory/task_allocation_client.py
 smart_factory/task_allocator_service.py
 smart_factory/yolomodel.py
-srv/TaskAllocation.srv
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

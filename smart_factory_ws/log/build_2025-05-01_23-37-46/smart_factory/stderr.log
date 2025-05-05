@@ -1,0 +1,5 @@
+  File "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/detect_object.py", line 19
+    print(f'obs_angle: {i]}')
+                            ^
+SyntaxError: f-string: unmatched ']'
+

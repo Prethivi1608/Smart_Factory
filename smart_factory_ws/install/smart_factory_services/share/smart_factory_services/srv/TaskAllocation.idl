@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from smart_factory_services/srv/TaskAllocation.srv
+// generated code does not contain a copyright notice
+
+
+module smart_factory_services {
+  module srv {
+    struct TaskAllocation_Request {
+      int64 robot_number;
+
+      string object_name;
+    };
+    struct TaskAllocation_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

@@ -1,0 +1,6 @@
+{
+  "package_name": "smart_factory_services",
+  "non_idl_tuples": [
+    "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory_services:srv/TaskAllocation.srv"
+  ]
+}
