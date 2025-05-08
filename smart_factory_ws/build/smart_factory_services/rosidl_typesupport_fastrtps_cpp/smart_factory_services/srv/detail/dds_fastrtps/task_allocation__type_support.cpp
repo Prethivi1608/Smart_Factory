@@ -34,8 +34,6 @@ cdr_serialize(
 {
   // Member: robot_number
   cdr << ros_message.robot_number;
-  // Member: object_name
-  cdr << ros_message.object_name;
   return true;
 }
 
@@ -47,9 +45,6 @@ cdr_deserialize(
 {
   // Member: robot_number
   cdr >> ros_message.robot_number;
-
-  // Member: object_name
-  cdr >> ros_message.object_name;
 
   return true;
 }
@@ -73,10 +68,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: object_name
-  current_alignment += padding +
-    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message.object_name.size() + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -110,19 +101,6 @@ max_serialized_size_TaskAllocation_Request(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Member: object_name
-  {
-    size_t array_size = 1;
-
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
-  }
-
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -131,7 +109,7 @@ max_serialized_size_TaskAllocation_Request(
     using DataType = smart_factory_services::srv::TaskAllocation_Request;
     is_plain =
       (
-      offsetof(DataType, object_name) +
+      offsetof(DataType, robot_number) +
       last_member_size
       ) == ret_val;
   }
@@ -269,6 +247,8 @@ cdr_serialize(
 {
   // Member: success
   cdr << (ros_message.success ? true : false);
+  // Member: object_name
+  cdr << ros_message.object_name;
   // Member: message
   cdr << ros_message.message;
   return true;
@@ -286,6 +266,9 @@ cdr_deserialize(
     cdr >> tmp;
     ros_message.success = tmp ? true : false;
   }
+
+  // Member: object_name
+  cdr >> ros_message.object_name;
 
   // Member: message
   cdr >> ros_message.message;
@@ -312,6 +295,10 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: object_name
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.object_name.size() + 1);
   // Member: message
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
@@ -346,6 +333,19 @@ max_serialized_size_TaskAllocation_Response(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: object_name
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
   }
 
   // Member: message

@@ -29,7 +29,8 @@ setup(
     entry_points={
         'console_scripts': [
             'path_planning = smart_factory.path_planning:main',
-            'map_publisher= smart_factory.map_publisher:main',
+            'example_client= smart_factory.map_publisher:main',
+            'example_service= smart_factory.get_position:main',
             'camera_publisher= smart_factory.camera_publisher:main',
             'camera_classifier= smart_factory.camera_classifier:main',
             'camera_object= smart_factory.camera_object:main',
@@ -39,10 +40,11 @@ setup(
             'camera_distance= smart_factory.camera_distance:main',
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',
+            'nav_thro_pose= smart_factory.nav_thro_pose:main',
             'robot_1_move= smart_factory.robot_1_move:main',
             'detect_object= smart_factory.detect_object:main',
-            'task_client = smart_factory.task_allocation_client:main',
-            'task_service = smart_factory.task_allocator_service:main'
+            'goals_assigner = smart_factory.goals_assigner:main',
+            'robot_assigner = smart_factory.robot_assigner:main'
             
         ],
 

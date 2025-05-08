@@ -1,40 +1,34 @@
-import math
-import numpy as np
+import rclpy
+from rclpy.node import Node
+from example_interfaces.srv import Trigger
 
-def angle_calculator(x1,y1,x2,y2,theta):
+class TextClient(Node):
+    def __init__(self):
+        super().__init__('text_client')
+        self.client = self.create_client(Trigger, 'send_text')
 
-    theta = theta
-    cos = math.cos(theta)
-    sin = math.sin(theta)
-    # rotation_matrix = np.matrix([[cos,-sin],[sin,cos]])
-    
-    x1 = x1
-    y1 = y1
-    
-    x2 = x2
-    y2 = y2
+        while not self.client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Service not available, waiting again...')
 
-    # xy_matrix = np.matrix([[x],[y]])
+        self.req = Trigger.Request()
 
-    vect_A = math.hypot((x2-x1),(y2-y1))
+    def send_text(self, text):
+        self.req.data = text
+        future = self.client.call_async(self.req)
+        future.add_done_callback(self.callback)
 
-    dist_origin = vect_A
-    angle_origin = math.degrees(math.atan2((y2-y1),(x2-x1)))
+    def callback(self, future):
+        response = future.result()
+        self.get_logger().info(f'Service Response: {response.message}')
 
-    print(f'distance:{dist_origin}, angle: {angle_origin}')
-    
-    # new_matrix = rotation_matrix * xy_matrix
+def main(args=None):
+    rclpy.init(args=args)
+    text_client = TextClient()
 
-    # print(f"After Rotation: {new_matrix}")
-    
-def main():
-    x1 = -2
-    y1 = -0.5
+    text = "Hello from Client!"
+    text_client.send_text(text)
 
-    x2 = -1
-    y2 = -1.5
-    theta = 0
-    angle_calculator(x1,y1,x2,y2,theta)
+    rclpy.spin_once(text_client)
 
 if __name__ == '__main__':
     main()

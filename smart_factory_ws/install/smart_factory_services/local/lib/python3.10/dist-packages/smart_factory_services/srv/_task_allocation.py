@@ -56,17 +56,14 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
 
     __slots__ = [
         '_robot_number',
-        '_object_name',
     ]
 
     _fields_and_field_types = {
         'robot_number': 'int64',
-        'object_name': 'string',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('int64'),  # noqa: E501
-        rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -74,7 +71,6 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.robot_number = kwargs.get('robot_number', int())
-        self.object_name = kwargs.get('object_name', str())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -107,8 +103,6 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
             return False
         if self.robot_number != other.robot_number:
             return False
-        if self.object_name != other.object_name:
-            return False
         return True
 
     @classmethod
@@ -130,19 +124,6 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
             assert value >= -9223372036854775808 and value < 9223372036854775808, \
                 "The 'robot_number' field must be an integer in [-9223372036854775808, 9223372036854775807]"
         self._robot_number = value
-
-    @builtins.property
-    def object_name(self):
-        """Message field 'object_name'."""
-        return self._object_name
-
-    @object_name.setter
-    def object_name(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, str), \
-                "The 'object_name' field must be of type 'str'"
-        self._object_name = value
 
 
 # Import statements for member types
@@ -200,16 +181,19 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
 
     __slots__ = [
         '_success',
+        '_object_name',
         '_message',
     ]
 
     _fields_and_field_types = {
         'success': 'boolean',
+        'object_name': 'string',
         'message': 'string',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
@@ -218,6 +202,7 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.success = kwargs.get('success', bool())
+        self.object_name = kwargs.get('object_name', str())
         self.message = kwargs.get('message', str())
 
     def __repr__(self):
@@ -251,6 +236,8 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
             return False
         if self.success != other.success:
             return False
+        if self.object_name != other.object_name:
+            return False
         if self.message != other.message:
             return False
         return True
@@ -272,6 +259,19 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
                 isinstance(value, bool), \
                 "The 'success' field must be of type 'bool'"
         self._success = value
+
+    @builtins.property
+    def object_name(self):
+        """Message field 'object_name'."""
+        return self._object_name
+
+    @object_name.setter
+    def object_name(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, str), \
+                "The 'object_name' field must be of type 'str'"
+        self._object_name = value
 
     @builtins.property
     def message(self):

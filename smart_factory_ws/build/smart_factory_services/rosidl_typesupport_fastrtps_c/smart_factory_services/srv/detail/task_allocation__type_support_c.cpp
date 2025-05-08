@@ -34,8 +34,6 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/string.h"  // object_name
-#include "rosidl_runtime_c/string_functions.h"  // object_name
 
 // forward declare type support functions
 
@@ -56,20 +54,6 @@ static bool _TaskAllocation_Request__cdr_serialize(
     cdr << ros_message->robot_number;
   }
 
-  // Field name: object_name
-  {
-    const rosidl_runtime_c__String * str = &ros_message->object_name;
-    if (str->capacity == 0 || str->capacity <= str->size) {
-      fprintf(stderr, "string capacity not greater than size\n");
-      return false;
-    }
-    if (str->data[str->size] != '\0') {
-      fprintf(stderr, "string not null-terminated\n");
-      return false;
-    }
-    cdr << str->data;
-  }
-
   return true;
 }
 
@@ -85,22 +69,6 @@ static bool _TaskAllocation_Request__cdr_deserialize(
   // Field name: robot_number
   {
     cdr >> ros_message->robot_number;
-  }
-
-  // Field name: object_name
-  {
-    std::string tmp;
-    cdr >> tmp;
-    if (!ros_message->object_name.data) {
-      rosidl_runtime_c__String__init(&ros_message->object_name);
-    }
-    bool succeeded = rosidl_runtime_c__String__assign(
-      &ros_message->object_name,
-      tmp.c_str());
-    if (!succeeded) {
-      fprintf(stderr, "failed to assign string into field 'object_name'\n");
-      return false;
-    }
   }
 
   return true;
@@ -126,10 +94,6 @@ size_t get_serialized_size_smart_factory_services__srv__TaskAllocation_Request(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name object_name
-  current_alignment += padding +
-    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message->object_name.size + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -167,18 +131,6 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Request(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: object_name
-  {
-    size_t array_size = 1;
-
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
-  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -188,7 +140,7 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Request(
     using DataType = smart_factory_services__srv__TaskAllocation_Request;
     is_plain =
       (
-      offsetof(DataType, object_name) +
+      offsetof(DataType, robot_number) +
       last_member_size
       ) == ret_val;
   }
@@ -276,10 +228,8 @@ extern "C"
 {
 #endif
 
-// already included above
-// #include "rosidl_runtime_c/string.h"  // message
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"  // message
+#include "rosidl_runtime_c/string.h"  // message, object_name
+#include "rosidl_runtime_c/string_functions.h"  // message, object_name
 
 // forward declare type support functions
 
@@ -298,6 +248,20 @@ static bool _TaskAllocation_Response__cdr_serialize(
   // Field name: success
   {
     cdr << (ros_message->success ? true : false);
+  }
+
+  // Field name: object_name
+  {
+    const rosidl_runtime_c__String * str = &ros_message->object_name;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
   }
 
   // Field name: message
@@ -331,6 +295,22 @@ static bool _TaskAllocation_Response__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->success = tmp ? true : false;
+  }
+
+  // Field name: object_name
+  {
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->object_name.data) {
+      rosidl_runtime_c__String__init(&ros_message->object_name);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->object_name,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'object_name'\n");
+      return false;
+    }
   }
 
   // Field name: message
@@ -372,6 +352,10 @@ size_t get_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name object_name
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->object_name.size + 1);
   // field.name message
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
@@ -411,6 +395,18 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: object_name
+  {
+    size_t array_size = 1;
+
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
   }
   // member: message
   {

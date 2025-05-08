@@ -39,18 +39,16 @@ struct TaskAllocation_Request_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->robot_number = 0ll;
-      this->object_name = "";
     }
   }
 
   explicit TaskAllocation_Request_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : object_name(_alloc)
   {
+    (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->robot_number = 0ll;
-      this->object_name = "";
     }
   }
 
@@ -58,21 +56,12 @@ struct TaskAllocation_Request_
   using _robot_number_type =
     int64_t;
   _robot_number_type robot_number;
-  using _object_name_type =
-    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _object_name_type object_name;
 
   // setters for named parameter idiom
   Type & set__robot_number(
     const int64_t & _arg)
   {
     this->robot_number = _arg;
-    return *this;
-  }
-  Type & set__object_name(
-    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
-  {
-    this->object_name = _arg;
     return *this;
   }
 
@@ -121,9 +110,6 @@ struct TaskAllocation_Request_
     if (this->robot_number != other.robot_number) {
       return false;
     }
-    if (this->object_name != other.object_name) {
-      return false;
-    }
     return true;
   }
   bool operator!=(const TaskAllocation_Request_ & other) const
@@ -167,17 +153,20 @@ struct TaskAllocation_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
+      this->object_name = "";
       this->message = "";
     }
   }
 
   explicit TaskAllocation_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : message(_alloc)
+  : object_name(_alloc),
+    message(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
+      this->object_name = "";
       this->message = "";
     }
   }
@@ -186,6 +175,9 @@ struct TaskAllocation_Response_
   using _success_type =
     bool;
   _success_type success;
+  using _object_name_type =
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+  _object_name_type object_name;
   using _message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _message_type message;
@@ -195,6 +187,12 @@ struct TaskAllocation_Response_
     const bool & _arg)
   {
     this->success = _arg;
+    return *this;
+  }
+  Type & set__object_name(
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+  {
+    this->object_name = _arg;
     return *this;
   }
   Type & set__message(
@@ -247,6 +245,9 @@ struct TaskAllocation_Response_
   bool operator==(const TaskAllocation_Response_ & other) const
   {
     if (this->success != other.success) {
+      return false;
+    }
+    if (this->object_name != other.object_name) {
       return false;
     }
     if (this->message != other.message) {

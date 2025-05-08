@@ -12,10 +12,6 @@
 #include "smart_factory_services/srv/detail/task_allocation__struct.h"
 
 
-// Include directives for member types
-// Member `object_name`
-#include "rosidl_runtime_c/string_functions.h"
-
 #ifdef __cplusplus
 extern "C"
 {
@@ -35,7 +31,7 @@ void smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_int
   smart_factory_services__srv__TaskAllocation_Request__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_introspection_c__TaskAllocation_Request_message_member_array[2] = {
+static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_introspection_c__TaskAllocation_Request_message_member_array[1] = {
   {
     "robot_number",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
@@ -52,30 +48,13 @@ static rosidl_typesupport_introspection_c__MessageMember smart_factory_services_
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
-  },
-  {
-    "object_name",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(smart_factory_services__srv__TaskAllocation_Request, object_name),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_introspection_c__TaskAllocation_Request_message_members = {
   "smart_factory_services__srv",  // message namespace
   "TaskAllocation_Request",  // message name
-  2,  // number of fields
+  1,  // number of fields
   sizeof(smart_factory_services__srv__TaskAllocation_Request),
   smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_introspection_c__TaskAllocation_Request_message_member_array,  // message members
   smart_factory_services__srv__TaskAllocation_Request__rosidl_typesupport_introspection_c__TaskAllocation_Request_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -122,9 +101,9 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
+// Member `object_name`
 // Member `message`
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"
+#include "rosidl_runtime_c/string_functions.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -145,7 +124,7 @@ void smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_in
   smart_factory_services__srv__TaskAllocation_Response__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array[2] = {
+static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array[3] = {
   {
     "success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -155,6 +134,23 @@ static rosidl_typesupport_introspection_c__MessageMember smart_factory_services_
     0,  // array size
     false,  // is upper bound
     offsetof(smart_factory_services__srv__TaskAllocation_Response, success),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "object_name",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(smart_factory_services__srv__TaskAllocation_Response, object_name),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -185,7 +181,7 @@ static rosidl_typesupport_introspection_c__MessageMember smart_factory_services_
 static const rosidl_typesupport_introspection_c__MessageMembers smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_members = {
   "smart_factory_services__srv",  // message namespace
   "TaskAllocation_Response",  // message name
-  2,  // number of fields
+  3,  // number of fields
   sizeof(smart_factory_services__srv__TaskAllocation_Response),
   smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array,  // message members
   smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_init_function,  // function to initialize message memory (memory has to be allocated)

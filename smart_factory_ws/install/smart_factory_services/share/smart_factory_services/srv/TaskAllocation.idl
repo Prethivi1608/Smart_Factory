@@ -7,11 +7,11 @@ module smart_factory_services {
   module srv {
     struct TaskAllocation_Request {
       int64 robot_number;
-
-      string object_name;
     };
     struct TaskAllocation_Response {
       boolean success;
+
+      string object_name;
 
       string message;
     };

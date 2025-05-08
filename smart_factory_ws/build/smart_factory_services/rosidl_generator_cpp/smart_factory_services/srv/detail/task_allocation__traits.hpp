@@ -29,13 +29,6 @@ inline void to_flow_style_yaml(
   {
     out << "robot_number: ";
     rosidl_generator_traits::value_to_yaml(msg.robot_number, out);
-    out << ", ";
-  }
-
-  // member: object_name
-  {
-    out << "object_name: ";
-    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -51,16 +44,6 @@ inline void to_block_style_yaml(
     }
     out << "robot_number: ";
     rosidl_generator_traits::value_to_yaml(msg.robot_number, out);
-    out << "\n";
-  }
-
-  // member: object_name
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "object_name: ";
-    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -111,11 +94,11 @@ inline const char * name<smart_factory_services::srv::TaskAllocation_Request>()
 
 template<>
 struct has_fixed_size<smart_factory_services::srv::TaskAllocation_Request>
-  : std::integral_constant<bool, false> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct has_bounded_size<smart_factory_services::srv::TaskAllocation_Request>
-  : std::integral_constant<bool, false> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct is_message<smart_factory_services::srv::TaskAllocation_Request>
@@ -141,6 +124,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: object_name
+  {
+    out << "object_name: ";
+    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
+    out << ", ";
+  }
+
   // member: message
   {
     out << "message: ";
@@ -160,6 +150,16 @@ inline void to_block_style_yaml(
     }
     out << "success: ";
     rosidl_generator_traits::value_to_yaml(msg.success, out);
+    out << "\n";
+  }
+
+  // member: object_name
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "object_name: ";
+    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
     out << "\n";
   }
 

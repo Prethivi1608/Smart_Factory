@@ -8,22 +8,15 @@ import math
 from sensor_msgs.msg import CameraInfo
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
-from smart_factory.srv import TaskAllocation
 
 class MovetoObject(Node):
     def __init__(self):
         super().__init__('move_to_object')
-
-        # self.declare_parameter('robot_number',1)
-
-        # self.declare_parameter('object_name','redpringles')
-
-        self.task_service = self.create_service(TaskAllocation,'allocate_task',self.task_allocate_callback)
         
         self.robot_name = 'robot'
         self.c_x = 0.0
         self.c_y = 0.0
-        self.robot_number = None
+        self.robot_number = self.get_parameter('robot_number').get_parameter_value().integer_value
         self.robot = '/' + self.robot_name + '_' + str(self.robot_number)
         self.camera_centre_x= 80.0
         self.camera_centre_y= 60.0
@@ -37,17 +30,19 @@ class MovetoObject(Node):
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
         self.robot_status = 'Idle'
-        self.object_name = None
+        self.object_name = self.get_parameter('object_name').get_parameter_value().string_value
 
         
         #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
         self.camera_topic = self.robot + '/camera/image_raw'
-        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/tb3_object.pt'
+        self.model_name = 'tb3_object.pt'
+        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/'+self.model_name
         self.camera_pub_topic = self.robot + '/camera/image_classify'
         self.vel_pub_topic = self.robot + '/cmd_vel'
         self.status_pub_topic = self.robot + '/robot_status'
         
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
+        self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
         self.status_publisher = self.create_publisher(String,self.status_pub_topic,10)
         self.bridge = CvBridge()
@@ -80,19 +75,6 @@ class MovetoObject(Node):
                         self.velocity_callback(self.c_x,distance)
                     else:
                         self.robot_search()
-
-    def task_allocate_callback(self,request,response):
-        self.robot_number = request.robot_number
-        self.object_name = request.object_name
-        self.status_subscriber = self.create_subscription(String,self.status_pub_topic,self.status_callback)
-        
-        if self.robot_status == 'idle':
-            response.success = True
-            response.message = f'Robot {self.robot_number} is moving to {self.object_name}'
-            self.camera_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
-        else:
-            response.success = False
-            response.message = 'Robot is in another task.'
     
     def velocity_callback(self,c_x,distance):
         status_msg = String()
@@ -100,17 +82,17 @@ class MovetoObject(Node):
             if c_x>(self.camera_centre_x+self.angle_threshold):
                 self.robot_right()
                 self.robot_status = 'Moving'
-                status_msg = self.robot_status
+                status_msg.data = self.robot_status
                 self.status_publisher.publish(status_msg)
             elif c_x<(self.camera_centre_x-self.angle_threshold):
                 self.robot_left()
                 self.robot_status = 'Moving'
-                status_msg = self.robot_status
+                status_msg.data = self.robot_status
                 self.status_publisher.publish(status_msg)
             else:
                 self.robot_forward()
                 self.robot_status = 'Moving'
-                status_msg = self.robot_status
+                status_msg.data = self.robot_status
                 self.status_publisher.publish(status_msg) 
         else:
             self.robot_stop()
@@ -159,7 +141,8 @@ class MovetoObject(Node):
     #     self.camera_centre_y = msg.height/2
 
 def main():
-    rclpy.init()
+    if not rclpy.ok():
+        rclpy.init()
     move_to_object = MovetoObject()
     rclpy.spin(move_to_object)
     move_to_object.destroy_node()

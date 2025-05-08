@@ -35,7 +35,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     number_of_robots = 2
-    namespace = 'TB3'
+    namespace = 'robot'
     pose = [[-2, -0.5],[-0.5, 2]]
     urdf_path = os.path.join(
         get_package_share_directory('smart_factory'),

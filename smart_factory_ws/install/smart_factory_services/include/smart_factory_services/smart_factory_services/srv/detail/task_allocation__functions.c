@@ -10,10 +10,6 @@
 
 #include "rcutils/allocator.h"
 
-// Include directives for member types
-// Member `object_name`
-#include "rosidl_runtime_c/string_functions.h"
-
 bool
 smart_factory_services__srv__TaskAllocation_Request__init(smart_factory_services__srv__TaskAllocation_Request * msg)
 {
@@ -21,11 +17,6 @@ smart_factory_services__srv__TaskAllocation_Request__init(smart_factory_services
     return false;
   }
   // robot_number
-  // object_name
-  if (!rosidl_runtime_c__String__init(&msg->object_name)) {
-    smart_factory_services__srv__TaskAllocation_Request__fini(msg);
-    return false;
-  }
   return true;
 }
 
@@ -36,8 +27,6 @@ smart_factory_services__srv__TaskAllocation_Request__fini(smart_factory_services
     return;
   }
   // robot_number
-  // object_name
-  rosidl_runtime_c__String__fini(&msg->object_name);
 }
 
 bool
@@ -48,12 +37,6 @@ smart_factory_services__srv__TaskAllocation_Request__are_equal(const smart_facto
   }
   // robot_number
   if (lhs->robot_number != rhs->robot_number) {
-    return false;
-  }
-  // object_name
-  if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->object_name), &(rhs->object_name)))
-  {
     return false;
   }
   return true;
@@ -69,12 +52,6 @@ smart_factory_services__srv__TaskAllocation_Request__copy(
   }
   // robot_number
   output->robot_number = input->robot_number;
-  // object_name
-  if (!rosidl_runtime_c__String__copy(
-      &(input->object_name), &(output->object_name)))
-  {
-    return false;
-  }
   return true;
 }
 
@@ -259,9 +236,9 @@ smart_factory_services__srv__TaskAllocation_Request__Sequence__copy(
 
 
 // Include directives for member types
+// Member `object_name`
 // Member `message`
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"
+#include "rosidl_runtime_c/string_functions.h"
 
 bool
 smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_services__srv__TaskAllocation_Response * msg)
@@ -270,6 +247,11 @@ smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_service
     return false;
   }
   // success
+  // object_name
+  if (!rosidl_runtime_c__String__init(&msg->object_name)) {
+    smart_factory_services__srv__TaskAllocation_Response__fini(msg);
+    return false;
+  }
   // message
   if (!rosidl_runtime_c__String__init(&msg->message)) {
     smart_factory_services__srv__TaskAllocation_Response__fini(msg);
@@ -285,6 +267,8 @@ smart_factory_services__srv__TaskAllocation_Response__fini(smart_factory_service
     return;
   }
   // success
+  // object_name
+  rosidl_runtime_c__String__fini(&msg->object_name);
   // message
   rosidl_runtime_c__String__fini(&msg->message);
 }
@@ -297,6 +281,12 @@ smart_factory_services__srv__TaskAllocation_Response__are_equal(const smart_fact
   }
   // success
   if (lhs->success != rhs->success) {
+    return false;
+  }
+  // object_name
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->object_name), &(rhs->object_name)))
+  {
     return false;
   }
   // message
@@ -318,6 +308,12 @@ smart_factory_services__srv__TaskAllocation_Response__copy(
   }
   // success
   output->success = input->success;
+  // object_name
+  if (!rosidl_runtime_c__String__copy(
+      &(input->object_name), &(output->object_name)))
+  {
+    return false;
+  }
   // message
   if (!rosidl_runtime_c__String__copy(
       &(input->message), &(output->message)))

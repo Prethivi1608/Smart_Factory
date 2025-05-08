@@ -16,9 +16,6 @@
 #include "smart_factory_services/srv/detail/task_allocation__struct.h"
 #include "smart_factory_services/srv/detail/task_allocation__functions.h"
 
-#include "rosidl_runtime_c/string.h"
-#include "rosidl_runtime_c/string_functions.h"
-
 
 ROSIDL_GENERATOR_C_EXPORT
 bool smart_factory_services__srv__task_allocation__request__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -62,21 +59,6 @@ bool smart_factory_services__srv__task_allocation__request__convert_from_py(PyOb
     ros_message->robot_number = PyLong_AsLongLong(field);
     Py_DECREF(field);
   }
-  {  // object_name
-    PyObject * field = PyObject_GetAttrString(_pymsg, "object_name");
-    if (!field) {
-      return false;
-    }
-    assert(PyUnicode_Check(field));
-    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
-    if (!encoded_field) {
-      Py_DECREF(field);
-      return false;
-    }
-    rosidl_runtime_c__String__assign(&ros_message->object_name, PyBytes_AS_STRING(encoded_field));
-    Py_DECREF(encoded_field);
-    Py_DECREF(field);
-  }
 
   return true;
 }
@@ -110,23 +92,6 @@ PyObject * smart_factory_services__srv__task_allocation__request__convert_to_py(
       }
     }
   }
-  {  // object_name
-    PyObject * field = NULL;
-    field = PyUnicode_DecodeUTF8(
-      ros_message->object_name.data,
-      strlen(ros_message->object_name.data),
-      "replace");
-    if (!field) {
-      return NULL;
-    }
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "object_name", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
 
   // ownership of _pymessage is transferred to the caller
   return _pymessage;
@@ -146,10 +111,8 @@ PyObject * smart_factory_services__srv__task_allocation__request__convert_to_py(
 // already included above
 // #include "smart_factory_services/srv/detail/task_allocation__functions.h"
 
-// already included above
-// #include "rosidl_runtime_c/string.h"
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"
+#include "rosidl_runtime_c/string.h"
+#include "rosidl_runtime_c/string_functions.h"
 
 
 ROSIDL_GENERATOR_C_EXPORT
@@ -194,6 +157,21 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
     ros_message->success = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // object_name
+    PyObject * field = PyObject_GetAttrString(_pymsg, "object_name");
+    if (!field) {
+      return false;
+    }
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    rosidl_runtime_c__String__assign(&ros_message->object_name, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
+    Py_DECREF(field);
+  }
   {  // message
     PyObject * field = PyObject_GetAttrString(_pymsg, "message");
     if (!field) {
@@ -236,6 +214,23 @@ PyObject * smart_factory_services__srv__task_allocation__response__convert_to_py
     field = PyBool_FromLong(ros_message->success ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "success", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // object_name
+    PyObject * field = NULL;
+    field = PyUnicode_DecodeUTF8(
+      ros_message->object_name.data,
+      strlen(ros_message->object_name.data),
+      "replace");
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "object_name", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

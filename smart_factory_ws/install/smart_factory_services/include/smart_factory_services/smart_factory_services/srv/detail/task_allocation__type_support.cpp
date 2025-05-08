@@ -37,7 +37,7 @@ void TaskAllocation_Request_fini_function(void * message_memory)
   typed_message->~TaskAllocation_Request();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Request_message_member_array[2] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Request_message_member_array[1] = {
   {
     "robot_number",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT64,  // type
@@ -54,30 +54,13 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocatio
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
-  },
-  {
-    "object_name",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(smart_factory_services::srv::TaskAllocation_Request, object_name),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers TaskAllocation_Request_message_members = {
   "smart_factory_services::srv",  // message namespace
   "TaskAllocation_Request",  // message name
-  2,  // number of fields
+  1,  // number of fields
   sizeof(smart_factory_services::srv::TaskAllocation_Request),
   TaskAllocation_Request_message_member_array,  // message members
   TaskAllocation_Request_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -173,7 +156,7 @@ void TaskAllocation_Response_fini_function(void * message_memory)
   typed_message->~TaskAllocation_Response();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Response_message_member_array[2] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Response_message_member_array[3] = {
   {
     "success",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -183,6 +166,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocatio
     0,  // array size
     false,  // is upper bound
     offsetof(smart_factory_services::srv::TaskAllocation_Response, success),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "object_name",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(smart_factory_services::srv::TaskAllocation_Response, object_name),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -213,7 +213,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocatio
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers TaskAllocation_Response_message_members = {
   "smart_factory_services::srv",  // message namespace
   "TaskAllocation_Response",  // message name
-  2,  // number of fields
+  3,  // number of fields
   sizeof(smart_factory_services::srv::TaskAllocation_Response),
   TaskAllocation_Response_message_member_array,  // message members
   TaskAllocation_Response_init_function,  // function to initialize message memory (memory has to be allocated)

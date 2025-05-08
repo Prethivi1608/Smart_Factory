@@ -1,0 +1,5 @@
+  File "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/goals_assigner.py", line 13
+    self.robot_position_topic = 
+                                ^
+SyntaxError: invalid syntax
+

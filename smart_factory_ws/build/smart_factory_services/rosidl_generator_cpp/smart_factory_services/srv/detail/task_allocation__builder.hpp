@@ -21,32 +21,16 @@ namespace srv
 namespace builder
 {
 
-class Init_TaskAllocation_Request_object_name
-{
-public:
-  explicit Init_TaskAllocation_Request_object_name(::smart_factory_services::srv::TaskAllocation_Request & msg)
-  : msg_(msg)
-  {}
-  ::smart_factory_services::srv::TaskAllocation_Request object_name(::smart_factory_services::srv::TaskAllocation_Request::_object_name_type arg)
-  {
-    msg_.object_name = std::move(arg);
-    return std::move(msg_);
-  }
-
-private:
-  ::smart_factory_services::srv::TaskAllocation_Request msg_;
-};
-
 class Init_TaskAllocation_Request_robot_number
 {
 public:
   Init_TaskAllocation_Request_robot_number()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_TaskAllocation_Request_object_name robot_number(::smart_factory_services::srv::TaskAllocation_Request::_robot_number_type arg)
+  ::smart_factory_services::srv::TaskAllocation_Request robot_number(::smart_factory_services::srv::TaskAllocation_Request::_robot_number_type arg)
   {
     msg_.robot_number = std::move(arg);
-    return Init_TaskAllocation_Request_object_name(msg_);
+    return std::move(msg_);
   }
 
 private:
@@ -95,16 +79,32 @@ private:
   ::smart_factory_services::srv::TaskAllocation_Response msg_;
 };
 
+class Init_TaskAllocation_Response_object_name
+{
+public:
+  explicit Init_TaskAllocation_Response_object_name(::smart_factory_services::srv::TaskAllocation_Response & msg)
+  : msg_(msg)
+  {}
+  Init_TaskAllocation_Response_message object_name(::smart_factory_services::srv::TaskAllocation_Response::_object_name_type arg)
+  {
+    msg_.object_name = std::move(arg);
+    return Init_TaskAllocation_Response_message(msg_);
+  }
+
+private:
+  ::smart_factory_services::srv::TaskAllocation_Response msg_;
+};
+
 class Init_TaskAllocation_Response_success
 {
 public:
   Init_TaskAllocation_Response_success()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_TaskAllocation_Response_message success(::smart_factory_services::srv::TaskAllocation_Response::_success_type arg)
+  Init_TaskAllocation_Response_object_name success(::smart_factory_services::srv::TaskAllocation_Response::_success_type arg)
   {
     msg_.success = std::move(arg);
-    return Init_TaskAllocation_Response_message(msg_);
+    return Init_TaskAllocation_Response_object_name(msg_);
   }
 
 private:
