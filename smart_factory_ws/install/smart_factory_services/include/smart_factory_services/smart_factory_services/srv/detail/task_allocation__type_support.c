@@ -104,6 +104,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 // Member `object_name`
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
+// Member `goal_points`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -124,7 +126,62 @@ void smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_in
   smart_factory_services__srv__TaskAllocation_Response__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array[3] = {
+size_t smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__size_function__TaskAllocation_Response__goal_points(
+  const void * untyped_member)
+{
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return member->size;
+}
+
+const void * smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_const_function__TaskAllocation_Response__goal_points(
+  const void * untyped_member, size_t index)
+{
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void * smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_function__TaskAllocation_Response__goal_points(
+  void * untyped_member, size_t index)
+{
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__fetch_function__TaskAllocation_Response__goal_points(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const double * item =
+    ((const double *)
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_const_function__TaskAllocation_Response__goal_points(untyped_member, index));
+  double * value =
+    (double *)(untyped_value);
+  *value = *item;
+}
+
+void smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__assign_function__TaskAllocation_Response__goal_points(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  double * item =
+    ((double *)
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_function__TaskAllocation_Response__goal_points(untyped_member, index));
+  const double * value =
+    (const double *)(untyped_value);
+  *item = *value;
+}
+
+bool smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__resize_function__TaskAllocation_Response__goal_points(
+  void * untyped_member, size_t size)
+{
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence__fini(member);
+  return rosidl_runtime_c__double__Sequence__init(member, size);
+}
+
+static rosidl_typesupport_introspection_c__MessageMember smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array[5] = {
   {
     "success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -175,13 +232,47 @@ static rosidl_typesupport_introspection_c__MessageMember smart_factory_services_
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "available_goals",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(smart_factory_services__srv__TaskAllocation_Response, available_goals),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "goal_points",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(smart_factory_services__srv__TaskAllocation_Response, goal_points),  // bytes offset in struct
+    NULL,  // default value
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__size_function__TaskAllocation_Response__goal_points,  // size() function pointer
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_const_function__TaskAllocation_Response__goal_points,  // get_const(index) function pointer
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__get_function__TaskAllocation_Response__goal_points,  // get(index) function pointer
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__fetch_function__TaskAllocation_Response__goal_points,  // fetch(index, &value) function pointer
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__assign_function__TaskAllocation_Response__goal_points,  // assign(index, value) function pointer
+    smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__resize_function__TaskAllocation_Response__goal_points  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_members = {
   "smart_factory_services__srv",  // message namespace
   "TaskAllocation_Response",  // message name
-  3,  // number of fields
+  5,  // number of fields
   sizeof(smart_factory_services__srv__TaskAllocation_Response),
   smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_message_member_array,  // message members
   smart_factory_services__srv__TaskAllocation_Response__rosidl_typesupport_introspection_c__TaskAllocation_Response_init_function,  // function to initialize message memory (memory has to be allocated)

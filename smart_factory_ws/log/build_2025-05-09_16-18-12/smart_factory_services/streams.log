@@ -1,0 +1,231 @@
+[0.010s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services -- -j16 -l16
+[0.057s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.161s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.191s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.194s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.199s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.208s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.219s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.248s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.250s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.350s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.400s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.607s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.851s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.946s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.965s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.984s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.984s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.984s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.994s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.007s] -- Added test 'lint_cmake' to check CMake code style
+[1.009s] -- Added test 'xmllint' to check XML markup files
+[1.011s] -- Configuring done
+[1.049s] -- Generating done
+[1.058s] -- Build files have been written to: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services
+[1.089s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.099s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.112s] [  6%] Built target ament_cmake_python_copy_smart_factory_services
+[1.300s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_generator_c[0m
+[1.307s] [  6%] Built target smart_factory_services__cpp
+[1.316s] [  9%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_generator_c.dir/rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__functions.c.o[0m
+[1.317s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.317s] [ 19%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.317s] [ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.326s] running egg_info
+[1.327s] writing smart_factory_services.egg-info/PKG-INFO
+[1.327s] writing dependency_links to smart_factory_services.egg-info/dependency_links.txt
+[1.327s] writing top-level names to smart_factory_services.egg-info/top_level.txt
+[1.332s] reading manifest file 'smart_factory_services.egg-info/SOURCES.txt'
+[1.333s] writing manifest file 'smart_factory_services.egg-info/SOURCES.txt'
+[1.386s] [ 19%] Built target ament_cmake_python_build_smart_factory_services_egg
+[1.400s] [ 22%] [32m[1mLinking C shared library libsmart_factory_services__rosidl_generator_c.so[0m
+[1.444s] [ 22%] Built target smart_factory_services__rosidl_generator_c
+[1.455s] [ 29%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.455s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.455s] [ 32%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.518s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_cpp[0m
+[1.539s] [ 35%] [32mBuilding CXX object CMakeFiles/smart_factory_services__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/smart_factory_services/srv/task_allocation__type_support.cpp.o[0m
+[1.551s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_introspection_cpp[0m
+[1.567s] [ 38%] [32mBuilding CXX object CMakeFiles/smart_factory_services__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/smart_factory_services/srv/detail/task_allocation__type_support.cpp.o[0m
+[1.567s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_fastrtps_cpp[0m
+[1.585s] [ 41%] [32mBuilding CXX object CMakeFiles/smart_factory_services__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/smart_factory_services/srv/detail/dds_fastrtps/task_allocation__type_support.cpp.o[0m
+[1.676s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_c[0m
+[1.690s] [ 45%] [32mBuilding CXX object CMakeFiles/smart_factory_services__rosidl_typesupport_c.dir/rosidl_typesupport_c/smart_factory_services/srv/task_allocation__type_support.cpp.o[0m
+[1.701s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_introspection_c[0m
+[1.716s] [ 48%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/smart_factory_services/srv/detail/task_allocation__type_support.c.o[0m
+[1.717s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_fastrtps_c[0m
+[1.731s] [ 51%] [32m[1mLinking CXX shared library libsmart_factory_services__rosidl_typesupport_c.so[0m
+[1.734s] [ 54%] [32mBuilding CXX object CMakeFiles/smart_factory_services__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/smart_factory_services/srv/detail/task_allocation__type_support_c.cpp.o[0m
+[1.758s] [ 58%] [32m[1mLinking C shared library libsmart_factory_services__rosidl_typesupport_introspection_c.so[0m
+[1.781s] [ 58%] Built target smart_factory_services__rosidl_typesupport_c
+[1.794s] [ 58%] Built target smart_factory_services__rosidl_typesupport_introspection_c
+[1.827s] [ 61%] [32m[1mLinking CXX shared library libsmart_factory_services__rosidl_typesupport_cpp.so[0m
+[1.873s] [ 61%] Built target smart_factory_services__rosidl_typesupport_cpp
+[1.932s] [ 64%] [32m[1mLinking CXX shared library libsmart_factory_services__rosidl_typesupport_introspection_cpp.so[0m
+[1.960s] [ 67%] [32m[1mLinking CXX shared library libsmart_factory_services__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.003s] [ 67%] Built target smart_factory_services__rosidl_typesupport_introspection_cpp
+[2.046s] [ 67%] Built target smart_factory_services__rosidl_typesupport_fastrtps_cpp
+[2.047s] [ 70%] [32m[1mLinking CXX shared library libsmart_factory_services__rosidl_typesupport_fastrtps_c.so[0m
+[2.113s] [ 70%] Built target smart_factory_services__rosidl_typesupport_fastrtps_c
+[2.136s] [ 70%] Built target smart_factory_services
+[2.159s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.404s] [ 74%] Built target smart_factory_services__py
+[2.415s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_generator_py[0m
+[2.429s] [ 77%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_generator_py.dir/rosidl_generator_py/smart_factory_services/srv/_task_allocation_s.c.o[0m
+[2.522s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/smart_factory_services/libsmart_factory_services__rosidl_generator_py.so[0m
+[2.561s] [ 80%] Built target smart_factory_services__rosidl_generator_py
+[2.571s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_introspection_c__pyext[0m
+[2.571s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_fastrtps_c__pyext[0m
+[2.571s] [35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_c__pyext[0m
+[2.582s] [ 87%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.583s] [ 87%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.583s] [ 90%] [32mBuilding C object CMakeFiles/smart_factory_services__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_c.c.o[0m
+[2.658s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/smart_factory_services/smart_factory_services_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.658s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/smart_factory_services/smart_factory_services_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.658s] [100%] [32m[1mLinking C shared library rosidl_generator_py/smart_factory_services/smart_factory_services_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.690s] [100%] Built target smart_factory_services__rosidl_typesupport_introspection_c__pyext
+[2.690s] [100%] Built target smart_factory_services__rosidl_typesupport_c__pyext
+[2.690s] [100%] Built target smart_factory_services__rosidl_typesupport_fastrtps_c__pyext
+[2.702s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services -- -j16 -l16
+[2.712s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services
+[2.719s] -- Install configuration: ""
+[2.719s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/ament_index/resource_index/rosidl_interfaces/smart_factory_services
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__struct.h
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__functions.c
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__type_support.h
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__functions.h
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/task_allocation.h
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg/rosidl_generator_c__visibility_control.h
+[2.720s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/library_path.sh
+[2.720s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/library_path.dsv
+[2.721s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_generator_c.so
+[2.721s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_generator_c.so" to ""
+[2.721s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.721s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.721s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.721s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__rosidl_typesupport_fastrtps_c.h
+[2.721s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg
+[2.721s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.721s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_fastrtps_c.so
+[2.722s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_fastrtps_c.so" to ""
+[2.722s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.722s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.722s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.722s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__traits.hpp
+[2.722s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__builder.hpp
+[2.722s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__type_support.hpp
+[2.722s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__struct.hpp
+[2.722s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/task_allocation.hpp
+[2.722s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg/rosidl_generator_cpp__visibility_control.hpp
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/dds_fastrtps
+[2.723s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__rosidl_typesupport_fastrtps_cpp.hpp
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.723s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_fastrtps_cpp.so
+[2.723s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_fastrtps_cpp.so" to ""
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.723s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.723s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__type_support.c
+[2.724s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__rosidl_typesupport_introspection_c.h
+[2.724s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg
+[2.724s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.724s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_introspection_c.so
+[2.724s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_introspection_c.so" to ""
+[2.724s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_c.so
+[2.725s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_c.so" to ""
+[2.725s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services
+[2.725s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv
+[2.725s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail
+[2.725s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__rosidl_typesupport_introspection_cpp.hpp
+[2.725s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/include/smart_factory_services/smart_factory_services/srv/detail/task_allocation__type_support.cpp
+[2.725s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_introspection_cpp.so
+[2.726s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_introspection_cpp.so" to ""
+[2.726s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_cpp.so
+[2.726s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_typesupport_cpp.so" to ""
+[2.726s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/pythonpath.sh
+[2.726s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/pythonpath.dsv
+[2.726s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services-0.0.0-py3.10.egg-info
+[2.726s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services-0.0.0-py3.10.egg-info/PKG-INFO
+[2.726s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services-0.0.0-py3.10.egg-info/top_level.txt
+[2.726s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.727s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.727s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv/_task_allocation.py
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv/__init__.py
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv/_task_allocation_s.c
+[2.727s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_introspection_c.c
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/__init__.py
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/_smart_factory_services_s.ep.rosidl_typesupport_c.c
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.728s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/libsmart_factory_services__rosidl_generator_py.so
+[2.756s] Listing '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services'...
+[2.756s] Compiling '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/__init__.py'...
+[2.756s] Listing '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv'...
+[2.756s] Compiling '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv/__init__.py'...
+[2.756s] Compiling '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/srv/_task_allocation.py'...
+[2.759s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.760s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.760s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.760s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.761s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.761s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/local/lib/python3.10/dist-packages/smart_factory_services/smart_factory_services_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.761s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_generator_py.so
+[2.762s] -- Set runtime path of "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib/libsmart_factory_services__rosidl_generator_py.so" to ""
+[2.762s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/srv/TaskAllocation.idl
+[2.762s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/srv/TaskAllocation.srv
+[2.762s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/srv/TaskAllocation_Request.msg
+[2.762s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/srv/TaskAllocation_Response.msg
+[2.762s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/ament_index/resource_index/package_run_dependencies/smart_factory_services
+[2.762s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/ament_index/resource_index/parent_prefix_path/smart_factory_services
+[2.762s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/ament_prefix_path.sh
+[2.762s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/ament_prefix_path.dsv
+[2.763s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/path.sh
+[2.763s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/environment/path.dsv
+[2.763s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/local_setup.bash
+[2.763s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/local_setup.sh
+[2.763s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/local_setup.zsh
+[2.763s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/local_setup.dsv
+[2.764s] -- Installing: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/package.dsv
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/ament_index/resource_index/packages/smart_factory_services
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_generator_cExport.cmake
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_generator_cExport-noconfig.cmake
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_typesupport_fastrtps_cExport.cmake
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.764s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_generator_cppExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_introspection_cExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_cExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_cExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_introspection_cppExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_cppExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_services__rosidl_typesupport_cppExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_generator_pyExport.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/export_smart_factory_services__rosidl_generator_pyExport-noconfig.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/rosidl_cmake-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/ament_cmake_export_libraries-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/ament_cmake_export_targets-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.765s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.766s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_servicesConfig.cmake
+[2.766s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/cmake/smart_factory_servicesConfig-version.cmake
+[2.766s] -- Up-to-date: /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/share/smart_factory_services/package.xml
+[2.768s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services

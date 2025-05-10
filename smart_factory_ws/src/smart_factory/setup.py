@@ -41,10 +41,10 @@ setup(
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',
             'nav_thro_pose= smart_factory.nav_thro_pose:main',
-            'robot_1_move= smart_factory.robot_1_move:main',
             'detect_object= smart_factory.detect_object:main',
             'goals_assigner = smart_factory.goals_assigner:main',
-            'robot_assigner = smart_factory.robot_assigner:main'
+            'robot_1_client = smart_factory.robot_1_client:main',
+            'robot_2_client = smart_factory.robot_2_client:main',
             
         ],
 

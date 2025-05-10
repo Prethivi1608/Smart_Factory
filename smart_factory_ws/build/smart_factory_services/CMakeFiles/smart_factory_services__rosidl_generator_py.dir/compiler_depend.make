@@ -253,7 +253,8 @@ CMakeFiles/smart_factory_services__rosidl_generator_py.dir/rosidl_generator_py/s
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
   rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__functions.h \
   rosidl_generator_c/smart_factory_services/msg/rosidl_generator_c__visibility_control.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h:
@@ -627,6 +628,8 @@ rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__functions.
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 

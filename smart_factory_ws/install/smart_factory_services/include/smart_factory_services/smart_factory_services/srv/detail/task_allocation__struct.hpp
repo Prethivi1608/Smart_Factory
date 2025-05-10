@@ -155,6 +155,7 @@ struct TaskAllocation_Response_
       this->success = false;
       this->object_name = "";
       this->message = "";
+      this->available_goals = 0ll;
     }
   }
 
@@ -168,6 +169,7 @@ struct TaskAllocation_Response_
       this->success = false;
       this->object_name = "";
       this->message = "";
+      this->available_goals = 0ll;
     }
   }
 
@@ -181,6 +183,12 @@ struct TaskAllocation_Response_
   using _message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _message_type message;
+  using _available_goals_type =
+    int64_t;
+  _available_goals_type available_goals;
+  using _goal_points_type =
+    std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
+  _goal_points_type goal_points;
 
   // setters for named parameter idiom
   Type & set__success(
@@ -199,6 +207,18 @@ struct TaskAllocation_Response_
     const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
     this->message = _arg;
+    return *this;
+  }
+  Type & set__available_goals(
+    const int64_t & _arg)
+  {
+    this->available_goals = _arg;
+    return *this;
+  }
+  Type & set__goal_points(
+    const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
+  {
+    this->goal_points = _arg;
     return *this;
   }
 
@@ -251,6 +271,12 @@ struct TaskAllocation_Response_
       return false;
     }
     if (this->message != other.message) {
+      return false;
+    }
+    if (this->available_goals != other.available_goals) {
+      return false;
+    }
+    if (this->goal_points != other.goal_points) {
       return false;
     }
     return true;

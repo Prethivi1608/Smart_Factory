@@ -251,6 +251,12 @@ cdr_serialize(
   cdr << ros_message.object_name;
   // Member: message
   cdr << ros_message.message;
+  // Member: available_goals
+  cdr << ros_message.available_goals;
+  // Member: goal_points
+  {
+    cdr << ros_message.goal_points;
+  }
   return true;
 }
 
@@ -272,6 +278,14 @@ cdr_deserialize(
 
   // Member: message
   cdr >> ros_message.message;
+
+  // Member: available_goals
+  cdr >> ros_message.available_goals;
+
+  // Member: goal_points
+  {
+    cdr >> ros_message.goal_points;
+  }
 
   return true;
 }
@@ -303,6 +317,22 @@ get_serialized_size(
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message.message.size() + 1);
+  // Member: available_goals
+  {
+    size_t item_size = sizeof(ros_message.available_goals);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: goal_points
+  {
+    size_t array_size = ros_message.goal_points.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    size_t item_size = sizeof(ros_message.goal_points[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -361,6 +391,28 @@ max_serialized_size_TaskAllocation_Response(
     }
   }
 
+  // Member: available_goals
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: goal_points
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -369,7 +421,7 @@ max_serialized_size_TaskAllocation_Response(
     using DataType = smart_factory_services::srv::TaskAllocation_Response;
     is_plain =
       (
-      offsetof(DataType, message) +
+      offsetof(DataType, goal_points) +
       last_member_size
       ) == ret_val;
   }

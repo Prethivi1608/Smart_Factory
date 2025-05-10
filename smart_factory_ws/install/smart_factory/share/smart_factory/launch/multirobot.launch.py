@@ -81,7 +81,7 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                     'use_sim_time': use_sim_time,
-                    'frame_prefix': f'{namespace}_{count+1}'
+                    'frame_prefix': f'{namespace}{count+1}'
                     }.items()
             )
         )
@@ -100,11 +100,11 @@ def generate_launch_description():
         tree = ET.parse(urdf_path)
         root = tree.getroot()
         for odom_frame_tag in root.iter('odometry_frame'):
-            odom_frame_tag.text = f'{namespace}_{count+1}/odom'
+            odom_frame_tag.text = f'{namespace}{count+1}/odom'
         for base_frame_tag in root.iter('robot_base_frame'):
-            base_frame_tag.text = f'{namespace}_{count+1}/base_footprint'
+            base_frame_tag.text = f'{namespace}{count+1}/base_footprint'
         for scan_frame_tag in root.iter('frame_name'):
-            scan_frame_tag.text = f'{namespace}_{count+1}/base_scan'
+            scan_frame_tag.text = f'{namespace}{count+1}/base_scan'
         urdf_modified = ET.tostring(tree.getroot(), encoding='unicode')
         urdf_modified = '<?xml version="1.0" ?>\n'+urdf_modified
         with open(f'{save_path}{count+1}.sdf', 'w') as file:
@@ -119,7 +119,7 @@ def generate_launch_description():
                         'x_pose': str(pose[count][0]),
                         'y_pose': str(pose[count][1]),
                         'robot_name': f' tb3_{count+1}',
-                        'namespace': f'{namespace}_{count+1}',
+                        'namespace': f'{namespace}{count+1}',
                         'sdf_path': f'{save_path}{count+1}.sdf'
                 }.items()
             )
@@ -148,7 +148,7 @@ def generate_launch_description():
         )
     ))
     for count, spawn_turtlebot_cmd in enumerate(spawn_turtlebot_cmd_list, start=1):
-        ld.add_action(GroupAction([PushRosNamespace(f'{namespace}_{count}'),
+        ld.add_action(GroupAction([PushRosNamespace(f'{namespace}{count}'),
                                   robot_state_publisher_cmd_list[count-1],
                                   spawn_turtlebot_cmd]))
     

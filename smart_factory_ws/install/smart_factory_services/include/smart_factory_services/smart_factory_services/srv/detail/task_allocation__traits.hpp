@@ -135,6 +135,31 @@ inline void to_flow_style_yaml(
   {
     out << "message: ";
     rosidl_generator_traits::value_to_yaml(msg.message, out);
+    out << ", ";
+  }
+
+  // member: available_goals
+  {
+    out << "available_goals: ";
+    rosidl_generator_traits::value_to_yaml(msg.available_goals, out);
+    out << ", ";
+  }
+
+  // member: goal_points
+  {
+    if (msg.goal_points.size() == 0) {
+      out << "goal_points: []";
+    } else {
+      out << "goal_points: [";
+      size_t pending_items = msg.goal_points.size();
+      for (auto item : msg.goal_points) {
+        rosidl_generator_traits::value_to_yaml(item, out);
+        if (--pending_items > 0) {
+          out << ", ";
+        }
+      }
+      out << "]";
+    }
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -171,6 +196,36 @@ inline void to_block_style_yaml(
     out << "message: ";
     rosidl_generator_traits::value_to_yaml(msg.message, out);
     out << "\n";
+  }
+
+  // member: available_goals
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "available_goals: ";
+    rosidl_generator_traits::value_to_yaml(msg.available_goals, out);
+    out << "\n";
+  }
+
+  // member: goal_points
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    if (msg.goal_points.size() == 0) {
+      out << "goal_points: []\n";
+    } else {
+      out << "goal_points:\n";
+      for (auto item : msg.goal_points) {
+        if (indentation > 0) {
+          out << std::string(indentation, ' ');
+        }
+        out << "- ";
+        rosidl_generator_traits::value_to_yaml(item, out);
+        out << "\n";
+      }
+    }
   }
 }  // NOLINT(readability/fn_size)
 

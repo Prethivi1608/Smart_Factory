@@ -128,8 +128,13 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
 
 # Import statements for member types
 
+# Member 'goal_points'
+import array  # noqa: E402, I100
+
 # already imported above
 # import builtins
+
+import math  # noqa: E402, I100
 
 # already imported above
 # import rosidl_parser.definition
@@ -183,18 +188,24 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         '_success',
         '_object_name',
         '_message',
+        '_available_goals',
+        '_goal_points',
     ]
 
     _fields_and_field_types = {
         'success': 'boolean',
         'object_name': 'string',
         'message': 'string',
+        'available_goals': 'int64',
+        'goal_points': 'sequence<double>',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
+        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -204,6 +215,8 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         self.success = kwargs.get('success', bool())
         self.object_name = kwargs.get('object_name', str())
         self.message = kwargs.get('message', str())
+        self.available_goals = kwargs.get('available_goals', int())
+        self.goal_points = array.array('d', kwargs.get('goal_points', []))
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -239,6 +252,10 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         if self.object_name != other.object_name:
             return False
         if self.message != other.message:
+            return False
+        if self.available_goals != other.available_goals:
+            return False
+        if self.goal_points != other.goal_points:
             return False
         return True
 
@@ -285,6 +302,49 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
                 isinstance(value, str), \
                 "The 'message' field must be of type 'str'"
         self._message = value
+
+    @builtins.property
+    def available_goals(self):
+        """Message field 'available_goals'."""
+        return self._available_goals
+
+    @available_goals.setter
+    def available_goals(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'available_goals' field must be of type 'int'"
+            assert value >= -9223372036854775808 and value < 9223372036854775808, \
+                "The 'available_goals' field must be an integer in [-9223372036854775808, 9223372036854775807]"
+        self._available_goals = value
+
+    @builtins.property
+    def goal_points(self):
+        """Message field 'goal_points'."""
+        return self._goal_points
+
+    @goal_points.setter
+    def goal_points(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'goal_points' array.array() must have the type code of 'd'"
+            self._goal_points = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'goal_points' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._goal_points = array.array('d', value)
 
 
 class Metaclass_TaskAllocation(type):

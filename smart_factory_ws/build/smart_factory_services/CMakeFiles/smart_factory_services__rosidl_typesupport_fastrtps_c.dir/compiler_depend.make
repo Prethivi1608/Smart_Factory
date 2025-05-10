@@ -228,6 +228,7 @@ CMakeFiles/smart_factory_services__rosidl_typesupport_fastrtps_c.dir/rosidl_type
   rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__functions.h \
   /usr/include/c++/11/stdlib.h \
   rosidl_generator_c/smart_factory_services/msg/rosidl_generator_c__visibility_control.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
   /opt/ros/humble/include/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp/service_type_support.h \
   /opt/ros/humble/include/rmw/rmw/types.h \
@@ -286,6 +287,8 @@ rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__type_suppo
 /opt/ros/humble/include/rmw/rmw/domain_id.h:
 
 /opt/ros/humble/include/rmw/rmw/init_options.h:
+
+/opt/ros/humble/include/rmw/rmw/init.h:
 
 /usr/include/stdlib.h:
 
@@ -567,10 +570,6 @@ rosidl_typesupport_fastrtps_c/smart_factory_services/srv/detail/task_allocation_
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/11/bits/stl_iterator.h:
-
 /usr/include/c++/11/new:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
@@ -729,6 +728,12 @@ rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__struct.h:
 
 /usr/include/c++/11/bits/ios_base.h:
 
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/11/bits/stl_iterator.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h:
+
 /usr/include/c++/11/bits/locale_classes.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
@@ -808,5 +813,3 @@ rosidl_generator_c/smart_factory_services/srv/detail/task_allocation__struct.h:
 /opt/ros/humble/include/rmw/rmw/qos_policy_kind.h:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h:
-
-/opt/ros/humble/include/rmw/rmw/init.h:

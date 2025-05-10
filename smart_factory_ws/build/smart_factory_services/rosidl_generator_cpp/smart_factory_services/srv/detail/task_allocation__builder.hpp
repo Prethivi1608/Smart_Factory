@@ -63,16 +63,48 @@ namespace srv
 namespace builder
 {
 
+class Init_TaskAllocation_Response_goal_points
+{
+public:
+  explicit Init_TaskAllocation_Response_goal_points(::smart_factory_services::srv::TaskAllocation_Response & msg)
+  : msg_(msg)
+  {}
+  ::smart_factory_services::srv::TaskAllocation_Response goal_points(::smart_factory_services::srv::TaskAllocation_Response::_goal_points_type arg)
+  {
+    msg_.goal_points = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::smart_factory_services::srv::TaskAllocation_Response msg_;
+};
+
+class Init_TaskAllocation_Response_available_goals
+{
+public:
+  explicit Init_TaskAllocation_Response_available_goals(::smart_factory_services::srv::TaskAllocation_Response & msg)
+  : msg_(msg)
+  {}
+  Init_TaskAllocation_Response_goal_points available_goals(::smart_factory_services::srv::TaskAllocation_Response::_available_goals_type arg)
+  {
+    msg_.available_goals = std::move(arg);
+    return Init_TaskAllocation_Response_goal_points(msg_);
+  }
+
+private:
+  ::smart_factory_services::srv::TaskAllocation_Response msg_;
+};
+
 class Init_TaskAllocation_Response_message
 {
 public:
   explicit Init_TaskAllocation_Response_message(::smart_factory_services::srv::TaskAllocation_Response & msg)
   : msg_(msg)
   {}
-  ::smart_factory_services::srv::TaskAllocation_Response message(::smart_factory_services::srv::TaskAllocation_Response::_message_type arg)
+  Init_TaskAllocation_Response_available_goals message(::smart_factory_services::srv::TaskAllocation_Response::_message_type arg)
   {
     msg_.message = std::move(arg);
-    return std::move(msg_);
+    return Init_TaskAllocation_Response_available_goals(msg_);
   }
 
 private:

@@ -14,6 +14,10 @@ module smart_factory_services {
       string object_name;
 
       string message;
+
+      int64 available_goals;
+
+      sequence<double> goal_points;
     };
   };
 };

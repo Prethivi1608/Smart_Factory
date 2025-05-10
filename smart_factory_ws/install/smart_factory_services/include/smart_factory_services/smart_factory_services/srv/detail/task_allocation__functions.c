@@ -239,6 +239,8 @@ smart_factory_services__srv__TaskAllocation_Request__Sequence__copy(
 // Member `object_name`
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
+// Member `goal_points`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
 smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_services__srv__TaskAllocation_Response * msg)
@@ -257,6 +259,12 @@ smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_service
     smart_factory_services__srv__TaskAllocation_Response__fini(msg);
     return false;
   }
+  // available_goals
+  // goal_points
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->goal_points, 0)) {
+    smart_factory_services__srv__TaskAllocation_Response__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -271,6 +279,9 @@ smart_factory_services__srv__TaskAllocation_Response__fini(smart_factory_service
   rosidl_runtime_c__String__fini(&msg->object_name);
   // message
   rosidl_runtime_c__String__fini(&msg->message);
+  // available_goals
+  // goal_points
+  rosidl_runtime_c__double__Sequence__fini(&msg->goal_points);
 }
 
 bool
@@ -292,6 +303,16 @@ smart_factory_services__srv__TaskAllocation_Response__are_equal(const smart_fact
   // message
   if (!rosidl_runtime_c__String__are_equal(
       &(lhs->message), &(rhs->message)))
+  {
+    return false;
+  }
+  // available_goals
+  if (lhs->available_goals != rhs->available_goals) {
+    return false;
+  }
+  // goal_points
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->goal_points), &(rhs->goal_points)))
   {
     return false;
   }
@@ -317,6 +338,14 @@ smart_factory_services__srv__TaskAllocation_Response__copy(
   // message
   if (!rosidl_runtime_c__String__copy(
       &(input->message), &(output->message)))
+  {
+    return false;
+  }
+  // available_goals
+  output->available_goals = input->available_goals;
+  // goal_points
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->goal_points), &(output->goal_points)))
   {
     return false;
   }

@@ -14,6 +14,6 @@ move_to_object = smart_factory.move_to_object:main
 nav_thro_pose = smart_factory.nav_thro_pose:main
 nav_to_pose = smart_factory.nav_to_pose:main
 path_planning = smart_factory.path_planning:main
-robot_1_move = smart_factory.robot_1_move:main
-robot_assigner = smart_factory.robot_assigner:main
+robot_1_client = smart_factory.robot_1_client:main
+robot_2_client = smart_factory.robot_2_client:main
 

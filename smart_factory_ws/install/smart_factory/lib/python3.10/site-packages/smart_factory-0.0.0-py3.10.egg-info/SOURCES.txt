@@ -16,6 +16,7 @@ config/slam_config.rviz
 config/waffle.yaml
 launch/bringup_launch.py
 launch/multi_nav.launch.py
+launch/multi_robot_navigation.launch.py
 launch/multi_spawn_turtlebot3.launch.py
 launch/multirobot.launch.py
 launch/online_async_launch.py
@@ -46,8 +47,8 @@ smart_factory/move_to_object.py
 smart_factory/nav_thro_pose.py
 smart_factory/nav_to_pose.py
 smart_factory/path_planning.py
-smart_factory/robot_1_move.py
-smart_factory/robot_assigner.py
+smart_factory/robot_1_client.py
+smart_factory/robot_2_client.py
 smart_factory/yolomodel.py
 test/test_copyright.py
 test/test_flake8.py
