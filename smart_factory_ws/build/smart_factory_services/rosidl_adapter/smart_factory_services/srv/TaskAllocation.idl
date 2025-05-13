@@ -11,13 +11,15 @@ module smart_factory_services {
     struct TaskAllocation_Response {
       boolean success;
 
-      string object_name;
+      string object_goal;
 
       string message;
 
       int64 available_goals;
 
-      sequence<double> goal_points;
+      sequence<double> pick_goal;
+
+      sequence<double> drop_goal;
     };
   };
 };

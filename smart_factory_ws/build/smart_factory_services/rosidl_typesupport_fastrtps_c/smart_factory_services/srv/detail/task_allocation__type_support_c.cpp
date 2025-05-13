@@ -228,10 +228,10 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/primitives_sequence.h"  // goal_points
-#include "rosidl_runtime_c/primitives_sequence_functions.h"  // goal_points
-#include "rosidl_runtime_c/string.h"  // message, object_name
-#include "rosidl_runtime_c/string_functions.h"  // message, object_name
+#include "rosidl_runtime_c/primitives_sequence.h"  // drop_goal, pick_goal
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // drop_goal, pick_goal
+#include "rosidl_runtime_c/string.h"  // message, object_goal
+#include "rosidl_runtime_c/string_functions.h"  // message, object_goal
 
 // forward declare type support functions
 
@@ -252,9 +252,9 @@ static bool _TaskAllocation_Response__cdr_serialize(
     cdr << (ros_message->success ? true : false);
   }
 
-  // Field name: object_name
+  // Field name: object_goal
   {
-    const rosidl_runtime_c__String * str = &ros_message->object_name;
+    const rosidl_runtime_c__String * str = &ros_message->object_goal;
     if (str->capacity == 0 || str->capacity <= str->size) {
       fprintf(stderr, "string capacity not greater than size\n");
       return false;
@@ -285,10 +285,18 @@ static bool _TaskAllocation_Response__cdr_serialize(
     cdr << ros_message->available_goals;
   }
 
-  // Field name: goal_points
+  // Field name: pick_goal
   {
-    size_t size = ros_message->goal_points.size;
-    auto array_ptr = ros_message->goal_points.data;
+    size_t size = ros_message->pick_goal.size;
+    auto array_ptr = ros_message->pick_goal.data;
+    cdr << static_cast<uint32_t>(size);
+    cdr.serializeArray(array_ptr, size);
+  }
+
+  // Field name: drop_goal
+  {
+    size_t size = ros_message->drop_goal.size;
+    auto array_ptr = ros_message->drop_goal.data;
     cdr << static_cast<uint32_t>(size);
     cdr.serializeArray(array_ptr, size);
   }
@@ -312,18 +320,18 @@ static bool _TaskAllocation_Response__cdr_deserialize(
     ros_message->success = tmp ? true : false;
   }
 
-  // Field name: object_name
+  // Field name: object_goal
   {
     std::string tmp;
     cdr >> tmp;
-    if (!ros_message->object_name.data) {
-      rosidl_runtime_c__String__init(&ros_message->object_name);
+    if (!ros_message->object_goal.data) {
+      rosidl_runtime_c__String__init(&ros_message->object_goal);
     }
     bool succeeded = rosidl_runtime_c__String__assign(
-      &ros_message->object_name,
+      &ros_message->object_goal,
       tmp.c_str());
     if (!succeeded) {
-      fprintf(stderr, "failed to assign string into field 'object_name'\n");
+      fprintf(stderr, "failed to assign string into field 'object_goal'\n");
       return false;
     }
   }
@@ -349,19 +357,35 @@ static bool _TaskAllocation_Response__cdr_deserialize(
     cdr >> ros_message->available_goals;
   }
 
-  // Field name: goal_points
+  // Field name: pick_goal
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
-    if (ros_message->goal_points.data) {
-      rosidl_runtime_c__double__Sequence__fini(&ros_message->goal_points);
+    if (ros_message->pick_goal.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->pick_goal);
     }
-    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->goal_points, size)) {
-      fprintf(stderr, "failed to create array for field 'goal_points'");
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->pick_goal, size)) {
+      fprintf(stderr, "failed to create array for field 'pick_goal'");
       return false;
     }
-    auto array_ptr = ros_message->goal_points.data;
+    auto array_ptr = ros_message->pick_goal.data;
+    cdr.deserializeArray(array_ptr, size);
+  }
+
+  // Field name: drop_goal
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    if (ros_message->drop_goal.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->drop_goal);
+    }
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->drop_goal, size)) {
+      fprintf(stderr, "failed to create array for field 'drop_goal'");
+      return false;
+    }
+    auto array_ptr = ros_message->drop_goal.data;
     cdr.deserializeArray(array_ptr, size);
   }
 
@@ -388,10 +412,10 @@ size_t get_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name object_name
+  // field.name object_goal
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message->object_name.size + 1);
+    (ros_message->object_goal.size + 1);
   // field.name message
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
@@ -402,10 +426,21 @@ size_t get_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name goal_points
+  // field.name pick_goal
   {
-    size_t array_size = ros_message->goal_points.size;
-    auto array_ptr = ros_message->goal_points.data;
+    size_t array_size = ros_message->pick_goal.size;
+    auto array_ptr = ros_message->pick_goal.data;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name drop_goal
+  {
+    size_t array_size = ros_message->drop_goal.size;
+    auto array_ptr = ros_message->drop_goal.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
     (void)array_ptr;
@@ -449,7 +484,7 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: object_name
+  // member: object_goal
   {
     size_t array_size = 1;
 
@@ -481,7 +516,19 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: goal_points
+  // member: pick_goal
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: drop_goal
   {
     size_t array_size = 0;
     full_bounded = false;
@@ -502,7 +549,7 @@ size_t max_serialized_size_smart_factory_services__srv__TaskAllocation_Response(
     using DataType = smart_factory_services__srv__TaskAllocation_Response;
     is_plain =
       (
-      offsetof(DataType, goal_points) +
+      offsetof(DataType, drop_goal) +
       last_member_size
       ) == ret_val;
   }

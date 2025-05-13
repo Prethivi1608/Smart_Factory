@@ -1,6 +1,7 @@
 
 bool success
-string object_name
+string object_goal
 string message
 int64 available_goals
-float64[] goal_points
+float64[] pick_goal
+float64[] drop_goal

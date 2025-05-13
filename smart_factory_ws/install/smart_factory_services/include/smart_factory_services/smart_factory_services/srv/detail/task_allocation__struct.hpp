@@ -153,21 +153,21 @@ struct TaskAllocation_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
-      this->object_name = "";
+      this->object_goal = "";
       this->message = "";
       this->available_goals = 0ll;
     }
   }
 
   explicit TaskAllocation_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : object_name(_alloc),
+  : object_goal(_alloc),
     message(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->success = false;
-      this->object_name = "";
+      this->object_goal = "";
       this->message = "";
       this->available_goals = 0ll;
     }
@@ -177,18 +177,21 @@ struct TaskAllocation_Response_
   using _success_type =
     bool;
   _success_type success;
-  using _object_name_type =
+  using _object_goal_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _object_name_type object_name;
+  _object_goal_type object_goal;
   using _message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _message_type message;
   using _available_goals_type =
     int64_t;
   _available_goals_type available_goals;
-  using _goal_points_type =
+  using _pick_goal_type =
     std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
-  _goal_points_type goal_points;
+  _pick_goal_type pick_goal;
+  using _drop_goal_type =
+    std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
+  _drop_goal_type drop_goal;
 
   // setters for named parameter idiom
   Type & set__success(
@@ -197,10 +200,10 @@ struct TaskAllocation_Response_
     this->success = _arg;
     return *this;
   }
-  Type & set__object_name(
+  Type & set__object_goal(
     const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
-    this->object_name = _arg;
+    this->object_goal = _arg;
     return *this;
   }
   Type & set__message(
@@ -215,10 +218,16 @@ struct TaskAllocation_Response_
     this->available_goals = _arg;
     return *this;
   }
-  Type & set__goal_points(
+  Type & set__pick_goal(
     const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
-    this->goal_points = _arg;
+    this->pick_goal = _arg;
+    return *this;
+  }
+  Type & set__drop_goal(
+    const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
+  {
+    this->drop_goal = _arg;
     return *this;
   }
 
@@ -267,7 +276,7 @@ struct TaskAllocation_Response_
     if (this->success != other.success) {
       return false;
     }
-    if (this->object_name != other.object_name) {
+    if (this->object_goal != other.object_goal) {
       return false;
     }
     if (this->message != other.message) {
@@ -276,7 +285,10 @@ struct TaskAllocation_Response_
     if (this->available_goals != other.available_goals) {
       return false;
     }
-    if (this->goal_points != other.goal_points) {
+    if (this->pick_goal != other.pick_goal) {
+      return false;
+    }
+    if (this->drop_goal != other.drop_goal) {
       return false;
     }
     return true;

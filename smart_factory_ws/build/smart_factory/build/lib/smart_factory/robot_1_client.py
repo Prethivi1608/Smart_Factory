@@ -31,25 +31,31 @@ class TaskAllocatorClient(Node):
                 self.send_request(robot_number)
             else:
                 
-                goal_point = self.future.result().goal_points
+                pick_goal = self.future.result().pick_goal
+                object_goal = self.future.result().object_goal
+                drop_goal = self.future.result().drop_goal
                 self.get_logger().info(f"Response: {self.future.result().message}")
-                self.get_logger().info(f"Robot_{robot_number} is now moving to {goal_point[0],goal_point[1]}....")
+                self.get_logger().info(f"Robot_{robot_number} is now moving to {pick_goal[0],pick_goal[1]} to pick up {object_goal} and dropping at {drop_goal}")
                 
-                start_time = time.time()
-                duration = 15
-                go_goal = Navigation(goal_point[0],goal_point[1])
+                # start_time = time.time()
+                # duration = 15
+                # go_goal = Navigation(pick_goal[0],pick_goal[1])
 
-                while time.time() - start_time < duration:
-                    rclpy.spin_once(go_goal,timeout_sec=0.1)
+                # while time.time() - start_time < duration:
+                #     rclpy.spin_once(go_goal,timeout_sec=0.1)
                 
-                go_goal.destroy_node()
+                # go_goal.destroy_node()
                 
-                print("Back to client node1")
-                #move_to_object.main(robot_number,object_name)
-                self.get_logger().info(f"Robot_{robot_number} reached {goal_point}")
+                # print("Back to client node1")
+                # #move_to_object.main(robot_number,object_name)
+                self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
+                time.sleep(2)
+                self.get_logger().info(f'Robot has picked {object_goal}')
+                time.sleep(2)
+                self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
                 self.send_request(robot_number)
 
-                go_goal.destroy_node()
+                # go_goal.destroy_node()
         else:
             self.get_logger().error('Service call failed.')
 def main():

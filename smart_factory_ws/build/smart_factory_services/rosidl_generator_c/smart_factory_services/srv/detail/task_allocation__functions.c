@@ -236,10 +236,11 @@ smart_factory_services__srv__TaskAllocation_Request__Sequence__copy(
 
 
 // Include directives for member types
-// Member `object_name`
+// Member `object_goal`
 // Member `message`
 #include "rosidl_runtime_c/string_functions.h"
-// Member `goal_points`
+// Member `pick_goal`
+// Member `drop_goal`
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
@@ -249,8 +250,8 @@ smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_service
     return false;
   }
   // success
-  // object_name
-  if (!rosidl_runtime_c__String__init(&msg->object_name)) {
+  // object_goal
+  if (!rosidl_runtime_c__String__init(&msg->object_goal)) {
     smart_factory_services__srv__TaskAllocation_Response__fini(msg);
     return false;
   }
@@ -260,8 +261,13 @@ smart_factory_services__srv__TaskAllocation_Response__init(smart_factory_service
     return false;
   }
   // available_goals
-  // goal_points
-  if (!rosidl_runtime_c__double__Sequence__init(&msg->goal_points, 0)) {
+  // pick_goal
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->pick_goal, 0)) {
+    smart_factory_services__srv__TaskAllocation_Response__fini(msg);
+    return false;
+  }
+  // drop_goal
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->drop_goal, 0)) {
     smart_factory_services__srv__TaskAllocation_Response__fini(msg);
     return false;
   }
@@ -275,13 +281,15 @@ smart_factory_services__srv__TaskAllocation_Response__fini(smart_factory_service
     return;
   }
   // success
-  // object_name
-  rosidl_runtime_c__String__fini(&msg->object_name);
+  // object_goal
+  rosidl_runtime_c__String__fini(&msg->object_goal);
   // message
   rosidl_runtime_c__String__fini(&msg->message);
   // available_goals
-  // goal_points
-  rosidl_runtime_c__double__Sequence__fini(&msg->goal_points);
+  // pick_goal
+  rosidl_runtime_c__double__Sequence__fini(&msg->pick_goal);
+  // drop_goal
+  rosidl_runtime_c__double__Sequence__fini(&msg->drop_goal);
 }
 
 bool
@@ -294,9 +302,9 @@ smart_factory_services__srv__TaskAllocation_Response__are_equal(const smart_fact
   if (lhs->success != rhs->success) {
     return false;
   }
-  // object_name
+  // object_goal
   if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->object_name), &(rhs->object_name)))
+      &(lhs->object_goal), &(rhs->object_goal)))
   {
     return false;
   }
@@ -310,9 +318,15 @@ smart_factory_services__srv__TaskAllocation_Response__are_equal(const smart_fact
   if (lhs->available_goals != rhs->available_goals) {
     return false;
   }
-  // goal_points
+  // pick_goal
   if (!rosidl_runtime_c__double__Sequence__are_equal(
-      &(lhs->goal_points), &(rhs->goal_points)))
+      &(lhs->pick_goal), &(rhs->pick_goal)))
+  {
+    return false;
+  }
+  // drop_goal
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->drop_goal), &(rhs->drop_goal)))
   {
     return false;
   }
@@ -329,9 +343,9 @@ smart_factory_services__srv__TaskAllocation_Response__copy(
   }
   // success
   output->success = input->success;
-  // object_name
+  // object_goal
   if (!rosidl_runtime_c__String__copy(
-      &(input->object_name), &(output->object_name)))
+      &(input->object_goal), &(output->object_goal)))
   {
     return false;
   }
@@ -343,9 +357,15 @@ smart_factory_services__srv__TaskAllocation_Response__copy(
   }
   // available_goals
   output->available_goals = input->available_goals;
-  // goal_points
+  // pick_goal
   if (!rosidl_runtime_c__double__Sequence__copy(
-      &(input->goal_points), &(output->goal_points)))
+      &(input->pick_goal), &(output->pick_goal)))
+  {
+    return false;
+  }
+  // drop_goal
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->drop_goal), &(output->drop_goal)))
   {
     return false;
   }

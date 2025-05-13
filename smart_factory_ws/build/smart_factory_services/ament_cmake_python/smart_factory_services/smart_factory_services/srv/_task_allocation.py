@@ -128,7 +128,8 @@ class TaskAllocation_Request(metaclass=Metaclass_TaskAllocation_Request):
 
 # Import statements for member types
 
-# Member 'goal_points'
+# Member 'pick_goal'
+# Member 'drop_goal'
 import array  # noqa: E402, I100
 
 # already imported above
@@ -186,18 +187,20 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
 
     __slots__ = [
         '_success',
-        '_object_name',
+        '_object_goal',
         '_message',
         '_available_goals',
-        '_goal_points',
+        '_pick_goal',
+        '_drop_goal',
     ]
 
     _fields_and_field_types = {
         'success': 'boolean',
-        'object_name': 'string',
+        'object_goal': 'string',
         'message': 'string',
         'available_goals': 'int64',
-        'goal_points': 'sequence<double>',
+        'pick_goal': 'sequence<double>',
+        'drop_goal': 'sequence<double>',
     }
 
     SLOT_TYPES = (
@@ -206,6 +209,7 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
         rosidl_parser.definition.BasicType('int64'),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -213,10 +217,11 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.success = kwargs.get('success', bool())
-        self.object_name = kwargs.get('object_name', str())
+        self.object_goal = kwargs.get('object_goal', str())
         self.message = kwargs.get('message', str())
         self.available_goals = kwargs.get('available_goals', int())
-        self.goal_points = array.array('d', kwargs.get('goal_points', []))
+        self.pick_goal = array.array('d', kwargs.get('pick_goal', []))
+        self.drop_goal = array.array('d', kwargs.get('drop_goal', []))
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -249,13 +254,15 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
             return False
         if self.success != other.success:
             return False
-        if self.object_name != other.object_name:
+        if self.object_goal != other.object_goal:
             return False
         if self.message != other.message:
             return False
         if self.available_goals != other.available_goals:
             return False
-        if self.goal_points != other.goal_points:
+        if self.pick_goal != other.pick_goal:
+            return False
+        if self.drop_goal != other.drop_goal:
             return False
         return True
 
@@ -278,17 +285,17 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         self._success = value
 
     @builtins.property
-    def object_name(self):
-        """Message field 'object_name'."""
-        return self._object_name
+    def object_goal(self):
+        """Message field 'object_goal'."""
+        return self._object_goal
 
-    @object_name.setter
-    def object_name(self, value):
+    @object_goal.setter
+    def object_goal(self, value):
         if __debug__:
             assert \
                 isinstance(value, str), \
-                "The 'object_name' field must be of type 'str'"
-        self._object_name = value
+                "The 'object_goal' field must be of type 'str'"
+        self._object_goal = value
 
     @builtins.property
     def message(self):
@@ -319,16 +326,16 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
         self._available_goals = value
 
     @builtins.property
-    def goal_points(self):
-        """Message field 'goal_points'."""
-        return self._goal_points
+    def pick_goal(self):
+        """Message field 'pick_goal'."""
+        return self._pick_goal
 
-    @goal_points.setter
-    def goal_points(self, value):
+    @pick_goal.setter
+    def pick_goal(self, value):
         if isinstance(value, array.array):
             assert value.typecode == 'd', \
-                "The 'goal_points' array.array() must have the type code of 'd'"
-            self._goal_points = value
+                "The 'pick_goal' array.array() must have the type code of 'd'"
+            self._pick_goal = value
             return
         if __debug__:
             from collections.abc import Sequence
@@ -343,8 +350,36 @@ class TaskAllocation_Response(metaclass=Metaclass_TaskAllocation_Response):
                  not isinstance(value, UserString) and
                  all(isinstance(v, float) for v in value) and
                  all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
-                "The 'goal_points' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
-        self._goal_points = array.array('d', value)
+                "The 'pick_goal' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._pick_goal = array.array('d', value)
+
+    @builtins.property
+    def drop_goal(self):
+        """Message field 'drop_goal'."""
+        return self._drop_goal
+
+    @drop_goal.setter
+    def drop_goal(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'drop_goal' array.array() must have the type code of 'd'"
+            self._drop_goal = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'drop_goal' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._drop_goal = array.array('d', value)
 
 
 class Metaclass_TaskAllocation(type):

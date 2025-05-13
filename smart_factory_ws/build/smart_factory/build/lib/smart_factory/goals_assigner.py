@@ -3,21 +3,31 @@ from rclpy.node import Node
 from smart_factory_services.srv import TaskAllocation
 from nav_msgs.msg import Odometry
 import math
+import time
 
 class TaskAllocatorService(Node):
-    def __init__(self,assign_choose,robot_goals):
+    def __init__(self,assign_choose,pick_goals,object_goals,drop_goals):
         super().__init__('task_allocator_service')
-
-        self.robot = '/' + 'robot_' + str(self.number)
-        self.pos_sub_topic = self.robot + '/odom'
         
         self.task_service = self.create_service(TaskAllocation,'allocate_task',self.allocate_callback)
-        self.goals = robot_goals
+        self.pos_sub_topic = '/odom'
+        self.pick_goals = pick_goals
+        self.object_goals = object_goals
+        self.drop_goals = drop_goals
         self.assign_choose = assign_choose
         self.robot_x = None
         self.robot_y = None
         self.pos_subscriber = self.create_subscription(Odometry,self.pos_sub_topic,self.odom_callback,10)
         self.number = None
+        self.robot = None
+        
+
+        self.robot = '/' + 'robot_' + str(self.number)
+        
+        if self.number is None:
+            self.get_logger().info('Waiting for the robot..')
+        else:
+            self.pos_sub_topic = self.robot + '/odom'
 
     def allocate_callback(self,request,response):
         self.number = request.robot_number
@@ -27,35 +37,49 @@ class TaskAllocatorService(Node):
     
             
             if self.assign_choose == 1:
-                if len(self.goals) == 0:
+                if len(self.pick_goals) == 0 or len(self.drop_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
                     self.get_logger().info('No goals to assign')
                 else:
-                    response.available_goals = len(self.goals)
-                    goal_name = self.goals[0]
-                    response.goal_points = goal_name
-                    response.message = f'{goal_name} goal is assigned to robot_{self.number}'
-                    del self.goals[0]
+                    response.available_goals = len(self.pick_goals)
+                    pick_goal = self.pick_goals[0]
+                    object_goal = self.object_goals[0]
+                    drop_goal = self.drop_goals[0]
+                    response.pick_goal = pick_goal
+                    response.object_goal = object_goal
+                    response.drop_goal = drop_goal
+                    response.message = f'Robot-{self.number} is picking {object_goal} from {pick_goal} and dropping at {drop_goal}'
+                    del self.pick_goals[0]
+                    del self.object_goals[0]
+                    del self.drop_goals[0]
                 
             else:
-                if len(self.goals) == 0:
+                if len(self.pick_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
                     self.get_logger().info('No goals to assign')
                 
                 else:
-                    response.available_goals = len(self.goals)
+                    response.available_goals = len(self.pick_goals)
                     minimum_distance = 99999999
-                    best_goal = []
-                    for goal in self.goals:
-                        distance = self.distance_between_points(goal[0],goal[1],self.robot_x,self.robot_y)
+                    best_pick_goal = []
+                    best_drop_goal = []
+                    drop_goal_index = None
+                    object_goal = self.object_goals[0]
+                    for pick_goal,i in enumerate(self.pick_goals):
+                        distance = self.distance_between_points(pick_goal[0],pick_goal[1],self.robot_x,self.robot_y)
                         if distance < minimum_distance:
                             minimum_distance = distance
-                            best_goal = goal
+                            best_pick_goal = pick_goal
+                            best_drop_goal = self.drop_goals
+                            drop_goal_index = i
                     
-                    response.goal_points = best_goal
-                    response.message = f'{best_goal} goal is assigned to robot_{self.number}'
-                    self.goals.remove(best_goal)
-                    print(len(self.goals))
+                    response.pick_goal = best_pick_goal
+                    response.object_name = object_goal
+                    response.drop_goal = drop_goal
+                    response.message = f'Robot-{self.number} is picking {object_goal} from {best_pick_goal} and dropping at {best_drop_goal}'
+                    self.pick_goals.remove(best_pick_goal)
+                    del self.drop_goals[drop_goal_index]
+                    del self.object_goals[0]
                  
         else:
             response.success = False
@@ -78,21 +102,48 @@ def main():
     
     assign_chooser = int(input("How do you want to assign the goals to robots:\n1. By Index\n2. By Distance\n"))
     number_goals = int(input("Enter the number of goals: "))
-    robot_goals = []
+    pick_goals = []
+    object_goals = []
+    drop_goals = []
     
     for i in range(1,(number_goals+1)):
-        print("Available goals:\n1. Red Pringles\n2. Green Pringles\n")
-        user_goal = input("Choose 1 or 2: ")
-        if user_goal == '1':
-            user_goal = [-0.5,1.5]
-        else: user_goal = [-2.0,-0.5]
-        robot_goals.append(user_goal)
+        print("Choose the pickup location:\n1. Shelf 1\n2. Shelf 2\n")
+        pick_goal = input("Choose 1 or 2: ")
+        if pick_goal == '1':
+            pick_goal = [-0.5,1.5]
+        else: 
+            pick_goal = [-2.0,-0.5]
+        
+        pick_goals.append(pick_goal)
+
+        print("Choose the object to pickup:\n1. Red Pringles\n2. Green Pringles\n") 
+        goal_obj = input("Choose 1 or 2: ")
+        if goal_obj == '1':
+            goal_obj ='redpringles'
+        else:
+            goal_obj = 'greenpringles'
+        
+        object_goals.append(goal_obj)
+        
+        print("Choose the drop location:\n1. Shelf 1\n2. Shelf 2\n")
+        drop_goal = input("Choose 1 or 2: ")
+        if drop_goal == '1':
+            drop_goal = [-0.5,1.5]
+        else: 
+            drop_goal = [-2.0,-0.5]
+
+        if pick_goal == drop_goal:
+            print('Pick and drop locations are same. Please choose different drop location!')
+        else:
+            drop_goals.append(drop_goal)
+        
         print(f'Goal Number {i} is registered')
+    
     print("You have reached your goal limit.")
-    print(f"Available goals: {robot_goals}.\nYou can now assign these goals to your robots.")
+    print(f"Available goals: {pick_goals}.\nYou can now assign these goals to your robots.")
     
     
-    task_allocator = TaskAllocatorService(assign_chooser,robot_goals)
+    task_allocator = TaskAllocatorService(assign_chooser,pick_goals,object_goals,drop_goals)
     rclpy.spin(task_allocator)
     task_allocator.destroy_node()
     rclpy.shutdown()

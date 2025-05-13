@@ -71,7 +71,6 @@ def generate_launch_description():
         launch_arguments={
             'x_pose': str(pose[0]),
             'y_pose': str(pose[1]),
-            'namespace': 'robot_1',
         }.items()
     )
 

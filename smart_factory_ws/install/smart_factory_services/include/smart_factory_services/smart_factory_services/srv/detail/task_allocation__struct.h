@@ -37,20 +37,22 @@ typedef struct smart_factory_services__srv__TaskAllocation_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'object_name'
+// Member 'object_goal'
 // Member 'message'
 #include "rosidl_runtime_c/string.h"
-// Member 'goal_points'
+// Member 'pick_goal'
+// Member 'drop_goal'
 #include "rosidl_runtime_c/primitives_sequence.h"
 
 /// Struct defined in srv/TaskAllocation in the package smart_factory_services.
 typedef struct smart_factory_services__srv__TaskAllocation_Response
 {
   bool success;
-  rosidl_runtime_c__String object_name;
+  rosidl_runtime_c__String object_goal;
   rosidl_runtime_c__String message;
   int64_t available_goals;
-  rosidl_runtime_c__double__Sequence goal_points;
+  rosidl_runtime_c__double__Sequence pick_goal;
+  rosidl_runtime_c__double__Sequence drop_goal;
 } smart_factory_services__srv__TaskAllocation_Response;
 
 // Struct for a sequence of smart_factory_services__srv__TaskAllocation_Response.

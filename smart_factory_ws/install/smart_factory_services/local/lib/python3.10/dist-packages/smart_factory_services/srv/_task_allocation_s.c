@@ -160,8 +160,8 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
     ros_message->success = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // object_name
-    PyObject * field = PyObject_GetAttrString(_pymsg, "object_name");
+  {  // object_goal
+    PyObject * field = PyObject_GetAttrString(_pymsg, "object_goal");
     if (!field) {
       return false;
     }
@@ -171,7 +171,7 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
       Py_DECREF(field);
       return false;
     }
-    rosidl_runtime_c__String__assign(&ros_message->object_name, PyBytes_AS_STRING(encoded_field));
+    rosidl_runtime_c__String__assign(&ros_message->object_goal, PyBytes_AS_STRING(encoded_field));
     Py_DECREF(encoded_field);
     Py_DECREF(field);
   }
@@ -199,8 +199,8 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
     ros_message->available_goals = PyLong_AsLongLong(field);
     Py_DECREF(field);
   }
-  {  // goal_points
-    PyObject * field = PyObject_GetAttrString(_pymsg, "goal_points");
+  {  // pick_goal
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pick_goal");
     if (!field) {
       return false;
     }
@@ -213,13 +213,13 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
         return false;
       }
       Py_ssize_t size = view.len / sizeof(double);
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->goal_points), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->pick_goal), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         PyBuffer_Release(&view);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->goal_points.data;
+      double * dest = ros_message->pick_goal.data;
       rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
       if (rc < 0) {
         PyBuffer_Release(&view);
@@ -228,7 +228,7 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
       }
       PyBuffer_Release(&view);
     } else {
-      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'goal_points'");
+      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'pick_goal'");
       if (!seq_field) {
         Py_DECREF(field);
         return false;
@@ -239,13 +239,75 @@ bool smart_factory_services__srv__task_allocation__response__convert_from_py(PyO
         Py_DECREF(field);
         return false;
       }
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->goal_points), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->pick_goal), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         Py_DECREF(seq_field);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->goal_points.data;
+      double * dest = ros_message->pick_goal.data;
+      for (Py_ssize_t i = 0; i < size; ++i) {
+        PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
+        if (!item) {
+          Py_DECREF(seq_field);
+          Py_DECREF(field);
+          return false;
+        }
+        assert(PyFloat_Check(item));
+        double tmp = PyFloat_AS_DOUBLE(item);
+        memcpy(&dest[i], &tmp, sizeof(double));
+      }
+      Py_DECREF(seq_field);
+    }
+    Py_DECREF(field);
+  }
+  {  // drop_goal
+    PyObject * field = PyObject_GetAttrString(_pymsg, "drop_goal");
+    if (!field) {
+      return false;
+    }
+    if (PyObject_CheckBuffer(field)) {
+      // Optimization for converting arrays of primitives
+      Py_buffer view;
+      int rc = PyObject_GetBuffer(field, &view, PyBUF_SIMPLE);
+      if (rc < 0) {
+        Py_DECREF(field);
+        return false;
+      }
+      Py_ssize_t size = view.len / sizeof(double);
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->drop_goal), size)) {
+        PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
+        PyBuffer_Release(&view);
+        Py_DECREF(field);
+        return false;
+      }
+      double * dest = ros_message->drop_goal.data;
+      rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
+      if (rc < 0) {
+        PyBuffer_Release(&view);
+        Py_DECREF(field);
+        return false;
+      }
+      PyBuffer_Release(&view);
+    } else {
+      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'drop_goal'");
+      if (!seq_field) {
+        Py_DECREF(field);
+        return false;
+      }
+      Py_ssize_t size = PySequence_Size(field);
+      if (-1 == size) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->drop_goal), size)) {
+        PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+      double * dest = ros_message->drop_goal.data;
       for (Py_ssize_t i = 0; i < size; ++i) {
         PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
         if (!item) {
@@ -294,17 +356,17 @@ PyObject * smart_factory_services__srv__task_allocation__response__convert_to_py
       }
     }
   }
-  {  // object_name
+  {  // object_goal
     PyObject * field = NULL;
     field = PyUnicode_DecodeUTF8(
-      ros_message->object_name.data,
-      strlen(ros_message->object_name.data),
+      ros_message->object_goal.data,
+      strlen(ros_message->object_goal.data),
       "replace");
     if (!field) {
       return NULL;
     }
     {
-      int rc = PyObject_SetAttrString(_pymessage, "object_name", field);
+      int rc = PyObject_SetAttrString(_pymessage, "object_goal", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -339,9 +401,9 @@ PyObject * smart_factory_services__srv__task_allocation__response__convert_to_py
       }
     }
   }
-  {  // goal_points
+  {  // pick_goal
     PyObject * field = NULL;
-    field = PyObject_GetAttrString(_pymessage, "goal_points");
+    field = PyObject_GetAttrString(_pymessage, "pick_goal");
     if (!field) {
       return NULL;
     }
@@ -378,12 +440,69 @@ PyObject * smart_factory_services__srv__task_allocation__response__convert_to_py
       }
       Py_DECREF(pop);
     }
-    if (ros_message->goal_points.size > 0) {
+    if (ros_message->pick_goal.size > 0) {
       // populating the array.array using the frombytes method
       PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
       assert(frombytes != NULL);
-      double * src = &(ros_message->goal_points.data[0]);
-      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->goal_points.size * sizeof(double));
+      double * src = &(ros_message->pick_goal.data[0]);
+      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->pick_goal.size * sizeof(double));
+      assert(data != NULL);
+      PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
+      Py_DECREF(data);
+      Py_DECREF(frombytes);
+      if (!ret) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      Py_DECREF(ret);
+    }
+    Py_DECREF(field);
+  }
+  {  // drop_goal
+    PyObject * field = NULL;
+    field = PyObject_GetAttrString(_pymessage, "drop_goal");
+    if (!field) {
+      return NULL;
+    }
+    assert(field->ob_type != NULL);
+    assert(field->ob_type->tp_name != NULL);
+    assert(strcmp(field->ob_type->tp_name, "array.array") == 0);
+    // ensure that itemsize matches the sizeof of the ROS message field
+    PyObject * itemsize_attr = PyObject_GetAttrString(field, "itemsize");
+    assert(itemsize_attr != NULL);
+    size_t itemsize = PyLong_AsSize_t(itemsize_attr);
+    Py_DECREF(itemsize_attr);
+    if (itemsize != sizeof(double)) {
+      PyErr_SetString(PyExc_RuntimeError, "itemsize doesn't match expectation");
+      Py_DECREF(field);
+      return NULL;
+    }
+    // clear the array, poor approach to remove potential default values
+    Py_ssize_t length = PyObject_Length(field);
+    if (-1 == length) {
+      Py_DECREF(field);
+      return NULL;
+    }
+    if (length > 0) {
+      PyObject * pop = PyObject_GetAttrString(field, "pop");
+      assert(pop != NULL);
+      for (Py_ssize_t i = 0; i < length; ++i) {
+        PyObject * ret = PyObject_CallFunctionObjArgs(pop, NULL);
+        if (!ret) {
+          Py_DECREF(pop);
+          Py_DECREF(field);
+          return NULL;
+        }
+        Py_DECREF(ret);
+      }
+      Py_DECREF(pop);
+    }
+    if (ros_message->drop_goal.size > 0) {
+      // populating the array.array using the frombytes method
+      PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
+      assert(frombytes != NULL);
+      double * src = &(ros_message->drop_goal.data[0]);
+      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->drop_goal.size * sizeof(double));
       assert(data != NULL);
       PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
       Py_DECREF(data);

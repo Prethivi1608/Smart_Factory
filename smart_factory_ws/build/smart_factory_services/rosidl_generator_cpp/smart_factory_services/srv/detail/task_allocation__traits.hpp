@@ -124,10 +124,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: object_name
+  // member: object_goal
   {
-    out << "object_name: ";
-    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
+    out << "object_goal: ";
+    rosidl_generator_traits::value_to_yaml(msg.object_goal, out);
     out << ", ";
   }
 
@@ -145,14 +145,32 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: goal_points
+  // member: pick_goal
   {
-    if (msg.goal_points.size() == 0) {
-      out << "goal_points: []";
+    if (msg.pick_goal.size() == 0) {
+      out << "pick_goal: []";
     } else {
-      out << "goal_points: [";
-      size_t pending_items = msg.goal_points.size();
-      for (auto item : msg.goal_points) {
+      out << "pick_goal: [";
+      size_t pending_items = msg.pick_goal.size();
+      for (auto item : msg.pick_goal) {
+        rosidl_generator_traits::value_to_yaml(item, out);
+        if (--pending_items > 0) {
+          out << ", ";
+        }
+      }
+      out << "]";
+    }
+    out << ", ";
+  }
+
+  // member: drop_goal
+  {
+    if (msg.drop_goal.size() == 0) {
+      out << "drop_goal: []";
+    } else {
+      out << "drop_goal: [";
+      size_t pending_items = msg.drop_goal.size();
+      for (auto item : msg.drop_goal) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -178,13 +196,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: object_name
+  // member: object_goal
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "object_name: ";
-    rosidl_generator_traits::value_to_yaml(msg.object_name, out);
+    out << "object_goal: ";
+    rosidl_generator_traits::value_to_yaml(msg.object_goal, out);
     out << "\n";
   }
 
@@ -208,16 +226,36 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: goal_points
+  // member: pick_goal
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.goal_points.size() == 0) {
-      out << "goal_points: []\n";
+    if (msg.pick_goal.size() == 0) {
+      out << "pick_goal: []\n";
     } else {
-      out << "goal_points:\n";
-      for (auto item : msg.goal_points) {
+      out << "pick_goal:\n";
+      for (auto item : msg.pick_goal) {
+        if (indentation > 0) {
+          out << std::string(indentation, ' ');
+        }
+        out << "- ";
+        rosidl_generator_traits::value_to_yaml(item, out);
+        out << "\n";
+      }
+    }
+  }
+
+  // member: drop_goal
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    if (msg.drop_goal.size() == 0) {
+      out << "drop_goal: []\n";
+    } else {
+      out << "drop_goal:\n";
+      for (auto item : msg.drop_goal) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }

@@ -118,7 +118,7 @@ def generate_launch_description():
                 launch_arguments={
                         'x_pose': str(pose[count][0]),
                         'y_pose': str(pose[count][1]),
-                        'robot_name': f' tb3_{count+1}',
+                        'robot_name': f' robot_{count+1}',
                         'namespace': f'{namespace}_{count+1}',
                         'sdf_path': f'{save_path}{count+1}.sdf'
                 }.items()

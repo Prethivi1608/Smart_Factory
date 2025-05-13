@@ -156,52 +156,97 @@ void TaskAllocation_Response_fini_function(void * message_memory)
   typed_message->~TaskAllocation_Response();
 }
 
-size_t size_function__TaskAllocation_Response__goal_points(const void * untyped_member)
+size_t size_function__TaskAllocation_Response__pick_goal(const void * untyped_member)
 {
   const auto * member = reinterpret_cast<const std::vector<double> *>(untyped_member);
   return member->size();
 }
 
-const void * get_const_function__TaskAllocation_Response__goal_points(const void * untyped_member, size_t index)
+const void * get_const_function__TaskAllocation_Response__pick_goal(const void * untyped_member, size_t index)
 {
   const auto & member =
     *reinterpret_cast<const std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__TaskAllocation_Response__goal_points(void * untyped_member, size_t index)
+void * get_function__TaskAllocation_Response__pick_goal(void * untyped_member, size_t index)
 {
   auto & member =
     *reinterpret_cast<std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__TaskAllocation_Response__goal_points(
+void fetch_function__TaskAllocation_Response__pick_goal(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const auto & item = *reinterpret_cast<const double *>(
-    get_const_function__TaskAllocation_Response__goal_points(untyped_member, index));
+    get_const_function__TaskAllocation_Response__pick_goal(untyped_member, index));
   auto & value = *reinterpret_cast<double *>(untyped_value);
   value = item;
 }
 
-void assign_function__TaskAllocation_Response__goal_points(
+void assign_function__TaskAllocation_Response__pick_goal(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   auto & item = *reinterpret_cast<double *>(
-    get_function__TaskAllocation_Response__goal_points(untyped_member, index));
+    get_function__TaskAllocation_Response__pick_goal(untyped_member, index));
   const auto & value = *reinterpret_cast<const double *>(untyped_value);
   item = value;
 }
 
-void resize_function__TaskAllocation_Response__goal_points(void * untyped_member, size_t size)
+void resize_function__TaskAllocation_Response__pick_goal(void * untyped_member, size_t size)
 {
   auto * member =
     reinterpret_cast<std::vector<double> *>(untyped_member);
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Response_message_member_array[5] = {
+size_t size_function__TaskAllocation_Response__drop_goal(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<double> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__TaskAllocation_Response__drop_goal(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<double> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__TaskAllocation_Response__drop_goal(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<double> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__TaskAllocation_Response__drop_goal(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const double *>(
+    get_const_function__TaskAllocation_Response__drop_goal(untyped_member, index));
+  auto & value = *reinterpret_cast<double *>(untyped_value);
+  value = item;
+}
+
+void assign_function__TaskAllocation_Response__drop_goal(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<double *>(
+    get_function__TaskAllocation_Response__drop_goal(untyped_member, index));
+  const auto & value = *reinterpret_cast<const double *>(untyped_value);
+  item = value;
+}
+
+void resize_function__TaskAllocation_Response__drop_goal(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<double> *>(untyped_member);
+  member->resize(size);
+}
+
+static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocation_Response_message_member_array[6] = {
   {
     "success",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -220,14 +265,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocatio
     nullptr  // resize(index) function pointer
   },
   {
-    "object_name",  // name
+    "object_goal",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(smart_factory_services::srv::TaskAllocation_Response, object_name),  // bytes offset in struct
+    offsetof(smart_factory_services::srv::TaskAllocation_Response, object_goal),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -271,28 +316,45 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TaskAllocatio
     nullptr  // resize(index) function pointer
   },
   {
-    "goal_points",  // name
+    "pick_goal",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(smart_factory_services::srv::TaskAllocation_Response, goal_points),  // bytes offset in struct
+    offsetof(smart_factory_services::srv::TaskAllocation_Response, pick_goal),  // bytes offset in struct
     nullptr,  // default value
-    size_function__TaskAllocation_Response__goal_points,  // size() function pointer
-    get_const_function__TaskAllocation_Response__goal_points,  // get_const(index) function pointer
-    get_function__TaskAllocation_Response__goal_points,  // get(index) function pointer
-    fetch_function__TaskAllocation_Response__goal_points,  // fetch(index, &value) function pointer
-    assign_function__TaskAllocation_Response__goal_points,  // assign(index, value) function pointer
-    resize_function__TaskAllocation_Response__goal_points  // resize(index) function pointer
+    size_function__TaskAllocation_Response__pick_goal,  // size() function pointer
+    get_const_function__TaskAllocation_Response__pick_goal,  // get_const(index) function pointer
+    get_function__TaskAllocation_Response__pick_goal,  // get(index) function pointer
+    fetch_function__TaskAllocation_Response__pick_goal,  // fetch(index, &value) function pointer
+    assign_function__TaskAllocation_Response__pick_goal,  // assign(index, value) function pointer
+    resize_function__TaskAllocation_Response__pick_goal  // resize(index) function pointer
+  },
+  {
+    "drop_goal",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(smart_factory_services::srv::TaskAllocation_Response, drop_goal),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__TaskAllocation_Response__drop_goal,  // size() function pointer
+    get_const_function__TaskAllocation_Response__drop_goal,  // get_const(index) function pointer
+    get_function__TaskAllocation_Response__drop_goal,  // get(index) function pointer
+    fetch_function__TaskAllocation_Response__drop_goal,  // fetch(index, &value) function pointer
+    assign_function__TaskAllocation_Response__drop_goal,  // assign(index, value) function pointer
+    resize_function__TaskAllocation_Response__drop_goal  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers TaskAllocation_Response_message_members = {
   "smart_factory_services::srv",  // message namespace
   "TaskAllocation_Response",  // message name
-  5,  // number of fields
+  6,  // number of fields
   sizeof(smart_factory_services::srv::TaskAllocation_Response),
   TaskAllocation_Response_message_member_array,  // message members
   TaskAllocation_Response_init_function,  // function to initialize message memory (memory has to be allocated)

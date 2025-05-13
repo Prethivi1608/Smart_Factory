@@ -11,7 +11,7 @@ class DetectObject(Node):
     def __init__(self,robot_number):
         super().__init__('detect_object')
 
-        self.robot_number = self.get_parameter('robot_number').get_parameter_value().integer_value
+        self.robot_number = robot_number
         self.robot = '/robot' + '_' + str(self.robot_number)
         self.scan_topic = self.robot + '/scan'
         self.velocity_pub_topic = self.robot + '/cmd_vel'

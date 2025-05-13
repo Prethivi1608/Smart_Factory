@@ -14,8 +14,8 @@ class Navigation(Node):
     def __init__(self,goal_x,goal_y):
         super().__init__('go_to_goal')
         
-        self.pos_topic = '/odom'
-        self.vel_topic = '/cmd_vel'
+        self.pos_topic = 'robot_1/odom'
+        self.vel_topic = 'robot_1/cmd_vel'
         self.pos_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
         self.vel_pub = self.create_publisher(Twist,self.vel_topic,10)
         # self.timer = self.create_timer(0.5, self.check_done_callback)
@@ -25,7 +25,7 @@ class Navigation(Node):
         self.robot_position_y = None
         self.robot_orientation_w = None
         self.result = None
-        self.navigator = BasicNavigator()
+        self.navigator = BasicNavigator(namespace='robot_1')
         self.navigator.waitUntilNav2Active()
         self.done = False
 
