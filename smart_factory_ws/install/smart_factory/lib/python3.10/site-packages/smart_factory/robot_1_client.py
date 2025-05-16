@@ -38,17 +38,17 @@ class TaskAllocatorClient(Node):
                 self.get_logger().info(f"Response: {self.future.result().message}")
                 self.get_logger().info(f"Robot_{robot_number} is now moving to {pick_goal[0],pick_goal[1]} to pick up {object_goal} and dropping at {drop_goal[0],drop_goal[1]}")
                 
-                # self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
-                # self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
-                # time.sleep(2)
+                self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
+                self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
 
                 self.move_to_object(robot_number,object_goal)
                 self.get_logger().info(f'Robot has picked {object_goal}')
+                time.sleep(5)
 
 
-                # self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
-                # self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
-                # self.get_logger().info(f"Robot_{robot_number} reached {drop_goal[0]},{drop_goal[1]}. Waiting for the {object_goal} to be dropped...")
+                self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
+                self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
+                self.get_logger().info(f"Robot_{robot_number} reached {drop_goal[0]},{drop_goal[1]}. Waiting for the {object_goal} to be dropped...")
 
 
                 self.send_request(robot_number)
@@ -59,7 +59,7 @@ class TaskAllocatorClient(Node):
     
     def go_to_goal(self,goal_x,goal_y,robot):
         start_time = time.time()
-        duration = 15
+        duration = 20
         go_goal = Navigation(goal_x,goal_y,robot)
 
         while time.time() - start_time < duration:
@@ -71,7 +71,7 @@ class TaskAllocatorClient(Node):
         
         start_time = time.time()
 
-        duration = 100
+        duration = 50
         move_to_object = MovetoObject(robot_number,object_name)
 
         while time.time() - start_time < duration:

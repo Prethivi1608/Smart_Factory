@@ -14,7 +14,7 @@ class Navigation(Node):
     def __init__(self,goal_x,goal_y,robot):
         super().__init__('go_to_goal')
         
-        self.pos_topic = 'robot_2/odom'
+        self.pos_topic = 'robot_1/odom'
         self.vel_topic = 'robot_1/cmd_vel'
         self.pos_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
         self.vel_pub = self.create_publisher(Twist,self.vel_topic,10)

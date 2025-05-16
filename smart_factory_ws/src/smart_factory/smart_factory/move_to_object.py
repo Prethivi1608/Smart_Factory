@@ -31,13 +31,13 @@ class MovetoObject(Node):
         self.search_velocity= 0.15
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
-        # self.robot_status = str('Idle')
+        self.robot_status = None
         self.object_name = object_name
         
         #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
         self.camera_topic = self.robot + '/camera/image_raw'
         self.model_name = 'tb3_object.pt'
-        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/'+self.model_name
+        self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/' + self.model_name
         self.camera_pub_topic = self.robot + '/camera/image_classify'
         self.vel_pub_topic = self.robot + '/cmd_vel'
         self.status_pub_topic = self.robot + '/robot_status'
@@ -45,7 +45,7 @@ class MovetoObject(Node):
         
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
-        # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_calback,10)
+        # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
         # self.status_publisher = self.create_publisher(String,self.status_pub_topic,10)
         self.bridge = CvBridge()
@@ -53,13 +53,10 @@ class MovetoObject(Node):
 
         self.left_angle = 345
         self.right_angle = 15
-
-    # def scan_callback(self,msg):
-    #     self.ranges = msg.ranges
         
     def classify_callback(self,img_msg):
         
-        image = self.bridge.imgmsg_to_cv2(img_msg)
+        image = self.bridge.imgmsg_to_cv2(img_msg,desired_encoding='bgr8')
         self.results = self.model.track(image)
         box_id = self.results[0].boxes.id
         if box_id is None:
@@ -148,14 +145,14 @@ class MovetoObject(Node):
     #     self.camera_centre_x = msg.width/2
     #     self.camera_centre_y = msg.height/2
 
-# def main():
-#     if not rclpy.ok():
-#         rclpy.init()
-#     move_to_object = MovetoObject()
-#     rclpy.spin(move_to_object)
-#     move_to_object.destroy_node()
-#     rclpy.shutdown()
+def main():
+    if not rclpy.ok():
+        rclpy.init()
+    move_to_object = MovetoObject()
+    rclpy.spin(move_to_object)
+    move_to_object.destroy_node()
+    rclpy.shutdown()
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()

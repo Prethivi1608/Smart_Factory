@@ -71,7 +71,7 @@ def generate_launch_description():
         default_value=os.path.join(package_dir, 'params', 'nav2_params.yaml'),
         description='Full path to the ROS2 parameters file to use for all launched nodes')
     
-     
+
     ld.add_action(declare_use_sim_time)
     ld.add_action(declare_enable_rviz)
     ld.add_action(declare_rviz_config_file_cmd)

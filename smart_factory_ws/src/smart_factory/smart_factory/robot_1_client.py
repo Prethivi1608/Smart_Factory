@@ -40,10 +40,10 @@ class TaskAllocatorClient(Node):
                 
                 self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
                 self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
-                time.sleep(2)
 
-                # self.move_to_object(robot_number,object_goal)
-                # self.get_logger().info(f'Robot has picked {object_goal}')
+                self.move_to_object(robot_number,object_goal)
+                self.get_logger().info(f'Robot has picked {object_goal}')
+                time.sleep(5)
 
 
                 self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
@@ -59,7 +59,7 @@ class TaskAllocatorClient(Node):
     
     def go_to_goal(self,goal_x,goal_y,robot):
         start_time = time.time()
-        duration = 15
+        duration = 20
         go_goal = Navigation(goal_x,goal_y,robot)
 
         while time.time() - start_time < duration:
@@ -71,7 +71,7 @@ class TaskAllocatorClient(Node):
         
         start_time = time.time()
 
-        duration = 100
+        duration = 50
         move_to_object = MovetoObject(robot_number,object_name)
 
         while time.time() - start_time < duration:
