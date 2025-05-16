@@ -1,7 +1,1 @@
-
-bool success
-string object_goal
-string message
-int64 available_goals
-float64[] pick_goal
-float64[] drop_goal
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/rosidl_cmake/srv/TaskAllocation_Response.msg

@@ -1,0 +1,1 @@
+Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/turtlebot3_multi_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory:/opt/ros/humble /usr/bin/cmake --build /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/turtlebot3_multi_robot -- -j16 -l16

@@ -315,17 +315,17 @@ smart_factory_services__rosidl_typesupport_cpp/fast:
 .PHONY : smart_factory_services__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_smart_factory_services
+# Target rules for targets named ament_cmake_python_symlink_smart_factory_services
 
 # Build rule for target.
-ament_cmake_python_copy_smart_factory_services: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_smart_factory_services
-.PHONY : ament_cmake_python_copy_smart_factory_services
+ament_cmake_python_symlink_smart_factory_services: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_smart_factory_services
+.PHONY : ament_cmake_python_symlink_smart_factory_services
 
 # fast build rule for target.
-ament_cmake_python_copy_smart_factory_services/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build
-.PHONY : ament_cmake_python_copy_smart_factory_services/fast
+ament_cmake_python_symlink_smart_factory_services/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build
+.PHONY : ament_cmake_python_symlink_smart_factory_services/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_smart_factory_services_egg
@@ -683,7 +683,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_smart_factory_services_egg"
-	@echo "... ament_cmake_python_copy_smart_factory_services"
+	@echo "... ament_cmake_python_symlink_smart_factory_services"
 	@echo "... smart_factory_services"
 	@echo "... smart_factory_services__cpp"
 	@echo "... smart_factory_services__py"

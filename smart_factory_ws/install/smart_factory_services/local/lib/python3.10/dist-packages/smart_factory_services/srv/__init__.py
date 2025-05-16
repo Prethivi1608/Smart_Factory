@@ -1,1 +1,1 @@
-from smart_factory_services.srv._task_allocation import TaskAllocation  # noqa: F401
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/rosidl_generator_py/smart_factory_services/srv/__init__.py

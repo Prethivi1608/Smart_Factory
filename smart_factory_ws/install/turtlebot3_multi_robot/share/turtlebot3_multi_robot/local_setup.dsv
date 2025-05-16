@@ -1,3 +1,1 @@
-source;share/turtlebot3_multi_robot/environment/ament_prefix_path.sh
-source;share/turtlebot3_multi_robot/environment/path.sh
-source;share/turtlebot3_multi_robot/environment/multi_robot.dsv
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/turtlebot3_multi_robot/ament_cmake_environment_hooks/local_setup.dsv

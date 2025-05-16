@@ -1,0 +1,9 @@
+failed to create symbolic link '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/ament_cmake_python/smart_factory_services/smart_factory_services' because existing path cannot be removed: Is a directory
+gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_smart_factory_services] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2
+[  3%] Built target smart_factory_services__cpp
+[ 12%] Built target smart_factory_services__rosidl_generator_c
+[35m[1mConsolidate compiler generated dependencies of target smart_factory_services__rosidl_typesupport_cpp[0m
+[ 22%] Built target smart_factory_services__rosidl_typesupport_cpp

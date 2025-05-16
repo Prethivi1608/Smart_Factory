@@ -21,6 +21,7 @@ class TaskAllocatorService(Node):
         self.pos_subscriber = self.create_subscription(Odometry,self.pos_sub_topic,self.odom_callback,10)
         self.number = None
         self.robot = None
+        self.robot_available = True
         
 
         self.robot = '/' + 'robot_' + str(self.number)
@@ -32,15 +33,17 @@ class TaskAllocatorService(Node):
 
     def allocate_callback(self,request,response):
         self.number = request.robot_number
+        goal_assigner = GoalAssigner()
 
         if self.number is not None:
             response.success = True
-    
+            self.robot_available = False
             
             if self.assign_choose == 1:
                 if len(self.pick_goals) == 0 or len(self.drop_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
-                    self.get_logger().info('No goals to assign')
+                    self.get_logger().info('No goals to assign..')
+                    # self.goal_assigner.get_goal()
                 else:
                     response.available_goals = len(self.pick_goals)
                     pick_goal = self.pick_goals[0]
@@ -58,6 +61,7 @@ class TaskAllocatorService(Node):
                 if len(self.pick_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
                     self.get_logger().info('No goals to assign')
+                    # self.goal_assigner.get_goal()
                 
                 else:
                     response.available_goals = len(self.pick_goals)
@@ -87,6 +91,8 @@ class TaskAllocatorService(Node):
             response.message = 'No message recieved'
         
         return response
+
+
     
     def odom_callback(self,msg):
         position = msg.pose.pose.position
@@ -96,58 +102,71 @@ class TaskAllocatorService(Node):
 
     def distance_between_points(self,x1,y1,x2,y2):
         return math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+    
+    
+    
+class GoalAssigner():
+    def __init__(self):
+    
+        self.assign_chooser = int(input("How do you want to assign the goals to robots:\n1. By Index\n2. By Distance\n"))
+        self.number_goals = int(input("Enter the number of goals: "))
+        self.pick_goals = []
+        self.object_goals = []
+        self.drop_goals = []
+
+    def get_goal(self):
+        
+        for i in range(1,(self.number_goals+1)):
+            print("Choose the pickup location:\n1. Shelf 1\n2. Shelf 2\n")
+            pick_goal = input("Choose 1 or 2: ")
+            if pick_goal == '1':
+                pick_goal = [-0.994065,0.600851]
+            else: 
+                pick_goal = [0.8218,0.0774]
+            
+            self.pick_goals.append(pick_goal)
+
+            print("Choose the object to pickup:\n1. Red Pringles\n2. Green Pringles\n") 
+            goal_obj = input("Choose 1 or 2: ")
+            if goal_obj == '1':
+                goal_obj ='redpringles'
+            else:
+                goal_obj = 'greenpringles'
+            
+            self.object_goals.append(goal_obj)
+            
+            print("Choose the drop location:\n1. Shelf 1\n2. Shelf 2\n")
+            drop_goal = input("Choose 1 or 2: ")
+            if drop_goal == '1':
+                drop_goal = [-0.994065,0.600851]
+            else: 
+                drop_goal = [0.8218,0.0774]
+
+            if pick_goal == drop_goal:
+                print('Pick and drop locations are same. Please choose different drop location!')
+            else:
+                self.drop_goals.append(drop_goal)
+            
+            print(f'Goal Number {i} is registered')
+        
+        print("You have reached your goal limit.")
+        print(f"Pickup point: {self.pick_goals},Objects: {self.object_goals} Drop points: {self.drop_goals},.\nYou can now assign these goals to your robots.")
+
+        self.call_task_service()
+
+    def call_task_service(self):
+        if not rclpy.ok():
+            rclpy.init()
+        task_allocator = TaskAllocatorService(self.assign_chooser,self.pick_goals,self.object_goals,self.drop_goals)
+        
+        rclpy.spin(task_allocator)
+        
+        task_allocator.destroy_node()
+
 
 def main():
-    rclpy.init()
-    
-    
-    assign_chooser = int(input("How do you want to assign the goals to robots:\n1. By Index\n2. By Distance\n"))
-    number_goals = int(input("Enter the number of goals: "))
-    pick_goals = []
-    object_goals = []
-    drop_goals = []
-    
-    for i in range(1,(number_goals+1)):
-        print("Choose the pickup location:\n1. Shelf 1\n2. Shelf 2\n")
-        pick_goal = input("Choose 1 or 2: ")
-        if pick_goal == '1':
-            pick_goal = [-0.994065,0.600851]
-        else: 
-            pick_goal = [0.8218,0.0774]
-        
-        pick_goals.append(pick_goal)
-
-        print("Choose the object to pickup:\n1. Red Pringles\n2. Green Pringles\n") 
-        goal_obj = input("Choose 1 or 2: ")
-        if goal_obj == '1':
-            goal_obj ='redpringles'
-        else:
-            goal_obj = 'greenpringles'
-        
-        object_goals.append(goal_obj)
-        
-        print("Choose the drop location:\n1. Shelf 1\n2. Shelf 2\n")
-        drop_goal = input("Choose 1 or 2: ")
-        if drop_goal == '1':
-            drop_goal = [-0.994065,0.600851]
-        else: 
-            drop_goal = [0.8218,0.0774]
-
-        if pick_goal == drop_goal:
-            print('Pick and drop locations are same. Please choose different drop location!')
-        else:
-            drop_goals.append(drop_goal)
-        
-        print(f'Goal Number {i} is registered')
-    
-    print("You have reached your goal limit.")
-    print(f"Pickup point: {pick_goals},Objects: {object_goals} Drop points: {drop_goals},.\nYou can now assign these goals to your robots.")
-    
-    
-    task_allocator = TaskAllocatorService(assign_chooser,pick_goals,object_goals,drop_goals)
-    rclpy.spin(task_allocator)
-    task_allocator.destroy_node()
-    rclpy.shutdown()
+    goal_assigner = GoalAssigner()
+    goal_assigner.get_goal()
 
 if __name__ == '__main__':
     main()

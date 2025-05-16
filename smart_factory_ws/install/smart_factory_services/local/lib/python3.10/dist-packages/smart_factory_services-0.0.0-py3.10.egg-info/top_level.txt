@@ -1,1 +1,1 @@
-smart_factory_services
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/ament_cmake_python/smart_factory_services/smart_factory_services.egg-info/top_level.txt

@@ -1,0 +1,25 @@
+[0.590s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory_bringup': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory_bringup build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/install.log --single-version-externally-managed install_data
+[0.767s] running egg_info
+[0.767s] writing ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/PKG-INFO
+[0.767s] writing dependency_links to ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/dependency_links.txt
+[0.768s] writing entry points to ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/entry_points.txt
+[0.768s] writing requirements to ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/requires.txt
+[0.768s] writing top-level names to ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/top_level.txt
+[0.770s] reading manifest file '../../build/smart_factory_bringup/smart_factory_bringup.egg-info/SOURCES.txt'
+[0.771s] writing manifest file '../../build/smart_factory_bringup/smart_factory_bringup.egg-info/SOURCES.txt'
+[0.771s] running build
+[0.771s] running build_py
+[0.771s] copying smart_factory_bringup/__init__.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/build/lib/smart_factory_bringup
+[0.771s] running install
+[0.771s] running install_lib
+[0.771s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/build/lib/smart_factory_bringup/__init__.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup
+[0.772s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__init__.py to __init__.cpython-310.pyc
+[0.772s] running install_data
+[0.772s] copying resource/smart_factory_bringup -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/share/ament_index/resource_index/packages
+[0.772s] copying package.xml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/share/smart_factory_bringup
+[0.772s] running install_egg_info
+[0.773s] removing '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup-0.0.0-py3.10.egg-info' (and everything under it)
+[0.774s] Copying ../../build/smart_factory_bringup/smart_factory_bringup.egg-info to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup-0.0.0-py3.10.egg-info
+[0.774s] running install_scripts
+[0.789s] writing list of installed files to '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/install.log'
+[0.811s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory_bringup' returned '0': PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory_bringup build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_bringup/install.log --single-version-externally-managed install_data

@@ -1,2 +1,1 @@
-int64 robot_number
-
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/rosidl_cmake/srv/TaskAllocation_Request.msg

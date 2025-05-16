@@ -1,1 +1,1 @@
-prepend-non-duplicate-if-exists;PATH;bin
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/ament_cmake_environment_hooks/path.dsv

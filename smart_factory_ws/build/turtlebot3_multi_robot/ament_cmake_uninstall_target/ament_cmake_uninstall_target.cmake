@@ -55,3 +55,6 @@ endforeach()
 message(STATUS "Execute custom uninstall script")
 
 # begin of custom uninstall code
+
+# uninstall files installed using the symlink install functions
+include("/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/turtlebot3_multi_robot/ament_cmake_symlink_install/ament_cmake_symlink_install_uninstall_script.cmake")

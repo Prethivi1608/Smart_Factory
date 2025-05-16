@@ -95,7 +95,7 @@ clean: CMakeFiles/smart_factory_services__rosidl_typesupport_introspection_c.dir
 clean: CMakeFiles/smart_factory_services__rosidl_typesupport_c.dir/clean
 clean: CMakeFiles/smart_factory_services__rosidl_typesupport_introspection_cpp.dir/clean
 clean: CMakeFiles/smart_factory_services__rosidl_typesupport_cpp.dir/clean
-clean: CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/clean
+clean: CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/clean
 clean: CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/clean
 clean: CMakeFiles/smart_factory_services__rosidl_generator_py.dir/clean
 clean: CMakeFiles/smart_factory_services__rosidl_typesupport_fastrtps_c__pyext.dir/clean
@@ -413,36 +413,36 @@ CMakeFiles/smart_factory_services__rosidl_typesupport_cpp.dir/clean:
 .PHONY : CMakeFiles/smart_factory_services__rosidl_typesupport_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir
+# Target rules for target CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/CMakeFiles --progress-num= "Built target ament_cmake_python_copy_smart_factory_services"
-.PHONY : CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/all
+CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/CMakeFiles --progress-num= "Built target ament_cmake_python_symlink_smart_factory_services"
+.PHONY : CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/rule: cmake_check_build_system
+CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/CMakeFiles 0
-.PHONY : CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/rule
+.PHONY : CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/rule
 
 # Convenience name for target.
-ament_cmake_python_copy_smart_factory_services: CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/rule
-.PHONY : ament_cmake_python_copy_smart_factory_services
+ament_cmake_python_symlink_smart_factory_services: CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/rule
+.PHONY : ament_cmake_python_symlink_smart_factory_services
 
 # clean rule for target.
-CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/clean
-.PHONY : CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/clean
+CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/build.make CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/clean
+.PHONY : CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/all: CMakeFiles/ament_cmake_python_copy_smart_factory_services.dir/all
+CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/all: CMakeFiles/ament_cmake_python_symlink_smart_factory_services.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/build.make CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/build.make CMakeFiles/ament_cmake_python_build_smart_factory_services_egg.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/CMakeFiles --progress-num= "Built target ament_cmake_python_build_smart_factory_services_egg"

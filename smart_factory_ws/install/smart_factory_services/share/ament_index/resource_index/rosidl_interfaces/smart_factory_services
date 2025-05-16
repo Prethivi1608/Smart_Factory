@@ -1,4 +1,1 @@
-srv/TaskAllocation.idl
-srv/TaskAllocation.srv
-srv/TaskAllocation_Request.msg
-srv/TaskAllocation_Response.msg
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/smart_factory_services

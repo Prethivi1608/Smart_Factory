@@ -1,9 +1,1 @@
-robots:
-  - name: robot_1
-    x_pose: -1.5
-    y_pose: -0.5
-    z_pose: 0.01
-  # - name: robot_2
-  #   x_pose: -1.5
-  #   y_pose: 0.5
-  #   z_pose: 0.01
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/turtlebot3_multi_robot/params/general_settings.yaml
