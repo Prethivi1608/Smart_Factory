@@ -29,6 +29,15 @@ from launch_ros.actions import Node
 def generate_launch_description():
     launch_file_dir = os.path.join(get_package_share_directory('smart_factory'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+    nav2_dir = get_package_share_directory('nav2_bringup')
+    smart_factory_dir = get_package_share_directory('smart_factory')
+
+    
+
+    map_file = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/maps/turtlebot3_housemap.yaml'
+    nav_1_params = os.path.join(smart_factory_dir,'config','robot1_nav2_params.yaml')
+    nav_2_params = os.path.join(smart_factory_dir,'config','robot2_nav2_params.yaml')
+
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     pose_1 = [-0.5,-2.0]
@@ -100,6 +109,26 @@ def generate_launch_description():
         output='screen'
     )
 
+    nav2_1 = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(nav2_dir, 'launch', 'bringup_launch.py')),
+            launch_arguments={
+                'namespace': 'robot_1',
+                'map': map_file,
+                'use_sim_time': 'true',
+                'params_file': nav_1_params
+            }.items()
+        )
+    
+    nav2_2 = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(nav2_dir, 'launch', 'bringup_launch.py')),
+            launch_arguments={
+                'namespace': 'robot_2',
+                'map': map_file,
+                'use_sim_time': 'true',
+                'params_file': nav_2_params
+            }.items()
+        )
+
     ld = LaunchDescription()
 
     # Add the commands to the launch description
@@ -109,7 +138,9 @@ def generate_launch_description():
     ld.add_action(robot_state_publisher_2_cmd)
     ld.add_action(spawn_turtlebot_1_cmd)
     ld.add_action(spawn_turtlebot_2_cmd)
-    ld.add_action(rviz_node)
+    # ld.add_action(rviz_node)
+    # ld.add_action(nav2_1)
+    # ld.add_action(nav2_2)
     #ld.add_action(slam_launch)
 
     return ld

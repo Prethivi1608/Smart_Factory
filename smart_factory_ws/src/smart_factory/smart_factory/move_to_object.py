@@ -6,17 +6,19 @@ from ultralytics import YOLO
 import time
 import math
 from sensor_msgs.msg import CameraInfo
+from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
+import random
 
 class MovetoObject(Node):
-    def __init__(self):
-        super().__init__('move_to_object')
+    def __init__(self,robot_number,object_name):
+        super().__init__(f'move_to_object_{random.randint(0,120)}')
         
         self.robot_name = 'robot'
         self.c_x = 0.0
         self.c_y = 0.0
-        self.robot_number = self.get_parameter('robot_number').get_parameter_value().integer_value
+        self.robot_number = robot_number
         self.robot = '/' + self.robot_name + '_' + str(self.robot_number)
         self.camera_centre_x= 80.0
         self.camera_centre_y= 60.0
@@ -29,9 +31,8 @@ class MovetoObject(Node):
         self.search_velocity= 0.15
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
-        self.robot_status = 'Idle'
-        self.object_name = self.get_parameter('object_name').get_parameter_value().string_value
-
+        # self.robot_status = str('Idle')
+        self.object_name = object_name
         
         #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
         self.camera_topic = self.robot + '/camera/image_raw'
@@ -40,15 +41,22 @@ class MovetoObject(Node):
         self.camera_pub_topic = self.robot + '/camera/image_classify'
         self.vel_pub_topic = self.robot + '/cmd_vel'
         self.status_pub_topic = self.robot + '/robot_status'
+        self.scan_topic = self.robot + '/scan'
         
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
+        # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_calback,10)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
-        self.status_publisher = self.create_publisher(String,self.status_pub_topic,10)
+        # self.status_publisher = self.create_publisher(String,self.status_pub_topic,10)
         self.bridge = CvBridge()
         self.model = YOLO(self.model_path)
 
-    
+        self.left_angle = 345
+        self.right_angle = 15
+
+    # def scan_callback(self,msg):
+    #     self.ranges = msg.ranges
+        
     def classify_callback(self,img_msg):
         
         image = self.bridge.imgmsg_to_cv2(img_msg)
@@ -77,29 +85,29 @@ class MovetoObject(Node):
                         self.robot_search()
     
     def velocity_callback(self,c_x,distance):
-        status_msg = String()
+        # status_msg = String()
         if distance < self.distance_threshold:
             if c_x>(self.camera_centre_x+self.angle_threshold):
                 self.robot_right()
-                self.robot_status = 'Moving'
-                status_msg.data = self.robot_status
-                self.status_publisher.publish(status_msg)
+                # self.robot_status = str('Moving')
+                # status_msg.data = self.robot_status
+                # self.status_publisher.publish(status_msg)
             elif c_x<(self.camera_centre_x-self.angle_threshold):
                 self.robot_left()
-                self.robot_status = 'Moving'
-                status_msg.data = self.robot_status
-                self.status_publisher.publish(status_msg)
+                # self.robot_status = str('Moving')
+                # status_msg.data = self.robot_status
+                # self.status_publisher.publish(status_msg)
             else:
                 self.robot_forward()
-                self.robot_status = 'Moving'
-                status_msg.data = self.robot_status
-                self.status_publisher.publish(status_msg) 
+                # self.robot_status = str('Moving')
+                # status_msg.data = self.robot_status
+                # self.status_publisher.publish(status_msg) 
         else:
             self.robot_stop()
             self.get_logger().info('Reached near the object')
-            self.robot_status = 'Idle'
-            status_msg = self.robot_status
-            self.status_publisher.publish(status_msg)
+            # self.robot_status = 'Idle'
+            # status_msg = self.robot_status
+            # self.status_publisher.publish(status_msg)
             
     def robot_stop(self):
         vel_msg = Twist()
@@ -140,14 +148,14 @@ class MovetoObject(Node):
     #     self.camera_centre_x = msg.width/2
     #     self.camera_centre_y = msg.height/2
 
-def main():
-    if not rclpy.ok():
-        rclpy.init()
-    move_to_object = MovetoObject()
-    rclpy.spin(move_to_object)
-    move_to_object.destroy_node()
-    rclpy.shutdown()
+# def main():
+#     if not rclpy.ok():
+#         rclpy.init()
+#     move_to_object = MovetoObject()
+#     rclpy.spin(move_to_object)
+#     move_to_object.destroy_node()
+#     rclpy.shutdown()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

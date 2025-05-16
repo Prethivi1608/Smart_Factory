@@ -4,10 +4,11 @@ from smart_factory_services.srv import TaskAllocation
 from nav_msgs.msg import Odometry
 import math
 import time
+import random
 
 class TaskAllocatorService(Node):
     def __init__(self,assign_choose,pick_goals,object_goals,drop_goals):
-        super().__init__('task_allocator_service')
+        super().__init__(f'task_allocator_service')
         
         self.task_service = self.create_service(TaskAllocation,'allocate_task',self.allocate_callback)
         self.pos_sub_topic = '/odom'
@@ -110,9 +111,9 @@ def main():
         print("Choose the pickup location:\n1. Shelf 1\n2. Shelf 2\n")
         pick_goal = input("Choose 1 or 2: ")
         if pick_goal == '1':
-            pick_goal = [-0.5,1.5]
+            pick_goal = [-0.994065,0.600851]
         else: 
-            pick_goal = [-2.0,-0.5]
+            pick_goal = [0.8218,0.0774]
         
         pick_goals.append(pick_goal)
 
@@ -128,9 +129,9 @@ def main():
         print("Choose the drop location:\n1. Shelf 1\n2. Shelf 2\n")
         drop_goal = input("Choose 1 or 2: ")
         if drop_goal == '1':
-            drop_goal = [-0.5,1.5]
+            drop_goal = [-0.994065,0.600851]
         else: 
-            drop_goal = [-2.0,-0.5]
+            drop_goal = [0.8218,0.0774]
 
         if pick_goal == drop_goal:
             print('Pick and drop locations are same. Please choose different drop location!')
@@ -140,7 +141,7 @@ def main():
         print(f'Goal Number {i} is registered')
     
     print("You have reached your goal limit.")
-    print(f"Available goals: {pick_goals}.\nYou can now assign these goals to your robots.")
+    print(f"Pickup point: {pick_goals},Objects: {object_goals} Drop points: {drop_goals},.\nYou can now assign these goals to your robots.")
     
     
     task_allocator = TaskAllocatorService(assign_chooser,pick_goals,object_goals,drop_goals)

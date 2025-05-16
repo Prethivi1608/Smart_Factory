@@ -16,6 +16,7 @@ setup(
         (os.path.join('share',package_name,'model'),glob('model/*')),
         (os.path.join('share',package_name,'world'),glob('world/*')),
         (os.path.join('share',package_name,'config'),glob('config/*')),
+        (os.path.join('share',package_name,'maps'),glob('maps/*')),
         (os.path.join('share',package_name,'yolo_model'),glob('yolo_model/*')),
         
     ],
@@ -40,6 +41,7 @@ setup(
             'camera_distance= smart_factory.camera_distance:main',
             'image_capture= smart_factory.image_capture:main',
             'nav_to_pose= smart_factory.nav_to_pose:main',
+            'nav_to_pose_test= smart_factory.nav_to_pose_test:main',
             'nav_thro_pose= smart_factory.nav_thro_pose:main',
             'detect_object= smart_factory.detect_object:main',
             'goals_assigner = smart_factory.goals_assigner:main',

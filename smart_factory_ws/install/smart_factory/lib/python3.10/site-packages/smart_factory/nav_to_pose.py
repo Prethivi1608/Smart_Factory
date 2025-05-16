@@ -9,7 +9,7 @@ def main(initial_x,initial_y,initial_orient,goal_x,goal_y):
     if not rclpy.ok():
         rclpy.init()
 
-    navigator = BasicNavigator()
+    navigator = BasicNavigator(namespace='robot_1')
 
     initial_pose = PoseStamped()
     initial_pose.header.frame_id = 'map'
