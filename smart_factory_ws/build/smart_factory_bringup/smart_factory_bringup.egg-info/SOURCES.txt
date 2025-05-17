@@ -10,6 +10,8 @@ setup.py
 ../../build/smart_factory_bringup/smart_factory_bringup.egg-info/zip-safe
 resource/smart_factory_bringup
 smart_factory_bringup/__init__.py
+smart_factory_bringup/robot_bringup.py
+smart_factory_bringup/test.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

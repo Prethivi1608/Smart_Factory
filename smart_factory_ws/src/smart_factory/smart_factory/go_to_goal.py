@@ -38,7 +38,7 @@ class Navigation(Node):
 
         if self.robot_position_x is not None and self.robot_position_y is not None:
             self.result = self.go_to_goal(self.robot_position_x,self.robot_position_y,self.robot_orientation_w,self.goal_x,self.goal_y)
-            print(f'result={self.result}')
+            # print(f'result={self.result}')
             # self.done = True
     
     
@@ -85,7 +85,9 @@ class Navigation(Node):
         result = self.navigator.getResult()
         if result == TaskResult.SUCCEEDED:
             print('Goal succeeded!')
+            self.done = True
             return result
+        
         elif result == TaskResult.CANCELED:
             print('Goal was canceled!')
             return result

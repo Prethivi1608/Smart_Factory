@@ -5,9 +5,9 @@ from smart_factory.move_to_object import MovetoObject
 from smart_factory.go_to_goal import Navigation
 import time
 
-class TaskAllocatorClient(Node):
+class RobotGoalClient(Node):
     def __init__(self,robot):
-        super().__init__('robot_1_client')
+        super().__init__(f'{robot}_client')
 
         self.task_client = self.create_client(TaskAllocation,'allocate_task')
         self.robot = robot
@@ -52,8 +52,6 @@ class TaskAllocatorClient(Node):
                 time.sleep(5)
                 # self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
                 self.get_logger().info(f"Robot_{robot_number} reached {drop_goal[0]},{drop_goal[1]}. Waiting for the {object_goal} to be dropped...")
-
-
                 self.send_request(robot_number)
 
         else:
@@ -86,7 +84,7 @@ def main():
     rclpy.init()
     robot_number = 1
     robot = f'robot_'+ str(robot_number)
-    task_allocator = TaskAllocatorClient(robot)
+    task_allocator = RobotGoalClient(robot)
     task_allocator.get_logger().info(f'Getting goals for robot_{robot_number}')
     task_allocator.send_request(robot_number)
     task_allocator.destroy_node()

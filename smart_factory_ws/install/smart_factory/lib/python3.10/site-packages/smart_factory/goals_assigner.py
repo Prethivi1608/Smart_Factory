@@ -21,7 +21,6 @@ class TaskAllocatorService(Node):
         self.pos_subscriber = self.create_subscription(Odometry,self.pos_sub_topic,self.odom_callback,10)
         self.number = None
         self.robot = None
-        self.robot_available = True
         
 
         self.robot = '/' + 'robot_' + str(self.number)
@@ -33,17 +32,15 @@ class TaskAllocatorService(Node):
 
     def allocate_callback(self,request,response):
         self.number = request.robot_number
-        goal_assigner = GoalAssigner()
 
         if self.number is not None:
             response.success = True
-            self.robot_available = False
             
             if self.assign_choose == 1:
                 if len(self.pick_goals) == 0 or len(self.drop_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
                     self.get_logger().info('No goals to assign..')
-                    # self.goal_assigner.get_goal()
+                    self.get_goal()
                 else:
                     response.available_goals = len(self.pick_goals)
                     pick_goal = self.pick_goals[0]
@@ -53,6 +50,7 @@ class TaskAllocatorService(Node):
                     response.object_goal = object_goal
                     response.drop_goal = drop_goal
                     response.message = f'Robot-{self.number} is picking {object_goal} from {pick_goal} and dropping at {drop_goal}'
+
                     del self.pick_goals[0]
                     del self.object_goals[0]
                     del self.drop_goals[0]
@@ -61,7 +59,7 @@ class TaskAllocatorService(Node):
                 if len(self.pick_goals) == 0:
                     response.message = f'No goals to assign for robot_{self.number}'
                     self.get_logger().info('No goals to assign')
-                    # self.goal_assigner.get_goal()
+                    self.get_goal()
                 
                 else:
                     response.available_goals = len(self.pick_goals)
@@ -91,7 +89,10 @@ class TaskAllocatorService(Node):
             response.message = 'No message recieved'
         
         return response
-
+    
+    def get_goal(self):
+        get_goal = GoalAssigner()
+        get_goal.get_goal()
 
     
     def odom_callback(self,msg):
