@@ -19,6 +19,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_publisher.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/nav_to_pose_test.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/robot_2_client.py
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/request_goal.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/get_position.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/map_publisher.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_classifier.cpython-310.pyc
@@ -40,6 +41,7 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/camera_publisher.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/nav_to_pose_test.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/robot_2_client.cpython-310.pyc
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__pycache__/request_goal.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages/smart_factory
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/package.xml
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch/multi_robot_nav.launch.py

@@ -83,6 +83,7 @@ smart_factory/nav_thro_pose.py
 smart_factory/nav_to_pose.py
 smart_factory/nav_to_pose_test.py
 smart_factory/path_planning.py
+smart_factory/request_goal.py
 smart_factory/robot_1_client.py
 smart_factory/robot_2_client.py
 smart_factory/robot_status_service.py

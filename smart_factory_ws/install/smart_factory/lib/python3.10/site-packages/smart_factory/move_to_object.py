@@ -31,23 +31,21 @@ class MovetoObject(Node):
         self.search_velocity= 0.15
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
-        self.robot_status = None
+        self.task_status = 'Running'
         self.object_name = object_name
         
-        #self.camera_info_sub = self.create_subscription(CameraInfo,'/camera/camera_info',self.camera_info_callback,10)
+
         self.camera_topic = self.robot + '/camera/image_raw'
         self.model_name = 'tb3_object.pt'
         self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/' + self.model_name
         self.camera_pub_topic = self.robot + '/camera/image_classify'
         self.vel_pub_topic = self.robot + '/cmd_vel'
-        self.status_pub_topic = self.robot + '/robot_status'
         self.scan_topic = self.robot + '/scan'
         
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
-        # self.status_publisher = self.create_publisher(String,self.status_pub_topic,10)
         self.bridge = CvBridge()
         self.model = YOLO(self.model_path)
 
@@ -62,6 +60,8 @@ class MovetoObject(Node):
         if box_id is None:
             self.robot_search()
         else:
+            self.task_status = 'Object Found'
+            self.get_logger().info('Object Found')
             self.annotated_image = self.results[0].plot()
             image_pub = self.bridge.cv2_to_imgmsg(self.annotated_image)
             self.cam_pub.publish(image_pub)
@@ -82,29 +82,20 @@ class MovetoObject(Node):
                         self.robot_search()
     
     def velocity_callback(self,c_x,distance):
-        # status_msg = String()
+
         if distance < self.distance_threshold:
             if c_x>(self.camera_centre_x+self.angle_threshold):
                 self.robot_right()
-                # self.robot_status = str('Moving')
-                # status_msg.data = self.robot_status
-                # self.status_publisher.publish(status_msg)
+
             elif c_x<(self.camera_centre_x-self.angle_threshold):
                 self.robot_left()
-                # self.robot_status = str('Moving')
-                # status_msg.data = self.robot_status
-                # self.status_publisher.publish(status_msg)
+
             else:
                 self.robot_forward()
-                # self.robot_status = str('Moving')
-                # status_msg.data = self.robot_status
-                # self.status_publisher.publish(status_msg) 
         else:
             self.robot_stop()
+            self.task_status = 'Reached near the object'
             self.get_logger().info('Reached near the object')
-            # self.robot_status = 'Idle'
-            # status_msg = self.robot_status
-            # self.status_publisher.publish(status_msg)
             
     def robot_stop(self):
         vel_msg = Twist()
@@ -140,10 +131,6 @@ class MovetoObject(Node):
     def distance_to(self,x1,x2,y1,y2):
         return (math.sqrt(((x2-x1)**2)+((y2-y1)**2)))
     
-    
-    # def camera_info_callback(self,msg):
-    #     self.camera_centre_x = msg.width/2
-    #     self.camera_centre_y = msg.height/2
 
 def main():
     if not rclpy.ok():

@@ -3,8 +3,10 @@
 
 from launch_ros.actions import Node
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
@@ -22,22 +24,28 @@ def generate_launch_description():
         description= 'Type of the camera' 
     )
     
-    robot_number = LaunchConfiguration(robot_number_arg) # Give the robot_number in the python script - smart_factory_bringup --> robot_bringup.py
+    robot_number = LaunchConfiguration('robot_number') # Give the robot_number in the python script - smart_factory_bringup --> robot_bringup.py
     
-    camera_format_type = LaunchConfiguration(camera_type_arg) # Give the robot_number in the python script - smart_factory_bringup --> robot_bringup.py
+    camera_format_type = LaunchConfiguration('camera_format') # Give the robot_number in the python script - smart_factory_bringup --> robot_bringup.py
     
     camera_topic = '/camera/image_raw'
-    robot = f'robot_{str(robot_number)}'
-    robot_camera_topic = robot+camera_topic
+    robot = PathJoinSubstitution([
+        TextSubstitution(text='/robot_'), robot_number])
+    robot_camera_topic = LaunchConfiguration('robot_camera_topic', default_value=PathJoinSubstitution([
+        TextSubstitution(text='/robot_'), robot_number, TextSubstitution(text='/camera/image_raw')
+    ]))
     
 
-    robot_bringup_node = Node(
-        package= 'multi_robot_bringup', 
-        executable= 'namespaced_robot.launch.py',
-        name= 'robot_bringup_node',
-        namespace= robot
-    ) # bringup the robot (state publisher and differential drive controller)
-
+    robot_bringup_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                FindPackageShare('multi_robot_bringup'),
+                'launch',
+                'namespaced_robot.launch.py'
+            ])
+        ),
+        launch_arguments={'namespace': robot}.items()
+    )
     camera_node = Node(
         package= 'camera_ros',
         executable= 'camera_node',
@@ -54,10 +62,10 @@ def generate_launch_description():
     ) # Bringup the camera_node
 
 
-    ld = LaunchDescription()
 
-    ld.add_action(robot_bringup_node)
-    ld.add_action(camera_node)
-
-
-    return ld
+    return LaunchDescription([
+        robot_number_arg,
+        camera_type_arg,
+        robot_bringup_node,
+        camera_node
+    ])

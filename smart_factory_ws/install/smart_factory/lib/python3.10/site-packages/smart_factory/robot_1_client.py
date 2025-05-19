@@ -5,7 +5,7 @@ from smart_factory.move_to_object import MovetoObject
 from smart_factory.go_to_goal import Navigation
 import time
 
-class TaskAllocatorClient(Node):
+class RobotGoalClient(Node):
     def __init__(self,robot):
         super().__init__(f'{robot}_client')
 
@@ -39,18 +39,18 @@ class TaskAllocatorClient(Node):
                 self.get_logger().info(f"Robot_{robot_number} is now moving to {pick_goal[0],pick_goal[1]} to pick up {object_goal} and dropping at {drop_goal[0],drop_goal[1]}")
                 
                 time.sleep(10)
-                # self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
+                self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
                 self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
                 
                 time.sleep(5)
-                # self.move_to_object(robot_number,object_goal)
+                self.move_to_object(robot_number,object_goal)
                 self.get_logger().info(f'Robot has picked {object_goal}')
                 time.sleep(5)
 
 
                 self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
                 time.sleep(5)
-                # self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
+                self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
                 self.get_logger().info(f"Robot_{robot_number} reached {drop_goal[0]},{drop_goal[1]}. Waiting for the {object_goal} to be dropped...")
                 self.send_request(robot_number)
 
@@ -84,7 +84,7 @@ def main():
     rclpy.init()
     robot_number = 1
     robot = f'robot_'+ str(robot_number)
-    task_allocator = TaskAllocatorClient(robot)
+    task_allocator = RobotGoalClient(robot)
     task_allocator.get_logger().info(f'Getting goals for robot_{robot_number}')
     task_allocator.send_request(robot_number)
     task_allocator.destroy_node()

@@ -6,9 +6,9 @@ import math
 import time
 import random
 
-class TaskAllocatorService(Node):
+class GoalAllocator(Node):
     def __init__(self,assign_choose,pick_goals,object_goals,drop_goals):
-        super().__init__(f'task_allocator_service')
+        super().__init__(f'goal_allocator')
         
         self.task_service = self.create_service(TaskAllocation,'allocate_task',self.allocate_callback)
         self.pos_sub_topic = '/odom'
@@ -89,10 +89,6 @@ class TaskAllocatorService(Node):
             response.message = 'No message recieved'
         
         return response
-    
-    def get_goal(self):
-        get_goal = GoalAssigner()
-        get_goal.get_goal()
 
     
     def odom_callback(self,msg):
@@ -104,8 +100,7 @@ class TaskAllocatorService(Node):
     def distance_between_points(self,x1,y1,x2,y2):
         return math.sqrt(((x2-x1)**2)+((y2-y1)**2))
     
-    
-    
+
 class GoalAssigner():
     def __init__(self):
     
@@ -158,7 +153,7 @@ class GoalAssigner():
     def call_task_service(self):
         if not rclpy.ok():
             rclpy.init()
-        task_allocator = TaskAllocatorService(self.assign_chooser,self.pick_goals,self.object_goals,self.drop_goals)
+        task_allocator = GoalAllocator(self.assign_chooser,self.pick_goals,self.object_goals,self.drop_goals)
         
         rclpy.spin(task_allocator)
         

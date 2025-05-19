@@ -1,0 +1,5 @@
+move_to_object:
+  ros__parameters:
+    robot_number: 1
+
+    object_name: 'redpringles'

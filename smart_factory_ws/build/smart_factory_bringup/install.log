@@ -1,8 +1,8 @@
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/robot_bringup.py
-/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/test.py
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/goal_bringup.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__init__.py
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__pycache__/robot_bringup.cpython-310.pyc
-/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__pycache__/test.cpython-310.pyc
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__pycache__/goal_bringup.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/lib/python3.10/site-packages/smart_factory_bringup/__pycache__/__init__.cpython-310.pyc
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/share/ament_index/resource_index/packages/smart_factory_bringup
 /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_bringup/share/smart_factory_bringup/package.xml

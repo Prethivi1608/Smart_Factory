@@ -1,0 +1,20 @@
+[console_scripts]
+camera_classifier = smart_factory.camera_classifier:main
+camera_distance = smart_factory.camera_distance:main
+camera_info = smart_factory.camera_info:main
+camera_object = smart_factory.camera_object:main
+camera_publisher = smart_factory.camera_publisher:main
+detect_object = smart_factory.detect_object:main
+example_client = smart_factory.map_publisher:main
+example_service = smart_factory.get_position:main
+go_to_goal = smart_factory.go_to_goal:main
+goals_assigner = smart_factory.goals_assigner:main
+image_capture = smart_factory.image_capture:main
+move_to_object = smart_factory.move_to_object:main
+nav_thro_pose = smart_factory.nav_thro_pose:main
+nav_to_pose = smart_factory.nav_to_pose:main
+nav_to_pose_test = smart_factory.nav_to_pose_test:main
+path_planning = smart_factory.path_planning:main
+robot_1_client = smart_factory.robot_1_client:main
+robot_2_client = smart_factory.robot_2_client:main
+
