@@ -13,8 +13,6 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share',package_name,'launch'),glob('launch/*')),
-        (os.path.join('share',package_name,'model'),glob('model/*')),
-        (os.path.join('share',package_name,'world'),glob('world/*')),
         (os.path.join('share',package_name,'config'),glob('config/*')),
         (os.path.join('share',package_name,'maps'),glob('maps/*')),
         (os.path.join('share',package_name,'yolo_model'),glob('yolo_model/*')),

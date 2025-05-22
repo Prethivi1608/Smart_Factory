@@ -10,5 +10,6 @@
         "/home/prethiviraj/ros2/workspaces/turtlebot3/install/turtlebot3/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_services/smart_factory_services__py"
 }

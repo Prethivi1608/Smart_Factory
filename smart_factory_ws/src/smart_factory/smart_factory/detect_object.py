@@ -24,14 +24,14 @@ class DetectObject(Node):
         for i in range(len(msg.ranges)):
             if msg.ranges[i] < 1.0:
                 if i<self.left_angle and i>self.right_angle:
-                    print("Stopping")
+                    print("Moving")
                 else:
-                    print('Moving')
+                    print('Stopping')
 
 def main():
     if not rclpy.ok():
         rclpy.init()
-    number = 2
+    number = 1
     detect_object = DetectObject(number)
     rclpy.spin(detect_object)
     detect_object.destroy_node()

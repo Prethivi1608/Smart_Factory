@@ -9,12 +9,13 @@ from smart_factory import nav_to_pose
 from geometry_msgs.msg import PoseStamped
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 from rclpy.duration import Duration
+import random
 
 class Navigation(Node):
-    def __init__(self,goal_x,goal_y,robot):
-        super().__init__('go_to_goal')
+    def __init__(self,goal_x,goal_y,robot, robot_number):
+        super().__init__(f'go_to_goal{random.randint(0,100)}')
         
-        self.pos_topic = f'robot_{robot}/odom'
+        self.pos_topic = f'/robot_{robot_number}/odom'
         self.pos_sub = self.create_subscription(Odometry,self.pos_topic,self.odom_callback,10)
         # self.timer = self.create_timer(0.5, self.check_done_callback)
         self.goal_x = goal_x

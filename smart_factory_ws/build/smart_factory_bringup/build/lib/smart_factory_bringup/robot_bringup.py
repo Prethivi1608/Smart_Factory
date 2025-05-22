@@ -6,9 +6,9 @@ from std_msgs.msg import String
 
 
 from smart_factory_services.srv import TaskAllocation
-from smart_factory.smart_factory.request_goal import RequestGoal
-from smart_factory.smart_factory.go_to_goal import Navigation
-from smart_factory.smart_factory.move_to_object import MovetoObject
+from smart_factory.request_goal import RequestGoal
+from smart_factory.go_to_goal import Navigation
+from smart_factory.move_to_object import MovetoObject
 # from smart_factory_services.srv import RobotStatus
 
 
@@ -16,29 +16,28 @@ class Robot(Node):
     def __init__(self,number,robot_id,camera_format):
         super().__init__(f'robot_{robot_id}')
 
-        self.robot_number = number # Number on the namespace
+        
+        self.robot_number = int(number) # Number on the namespace
         self.robot_id = robot_id # Id of the turtlebot. Number on the top.
+        self.robot_name = f'robot_{str(self.robot_id)}'
         self.robot = f'/robot_{str(self.robot_number)}' 
         self.camera_format = camera_format
+        
 
         self.home_position = []
         self.pick_point = []
         self.pick_object = []
         self.drop_point = []
 
-    def robot_startup(self):
-        
-        ssh_command = ('')
-
         self.ask_for_goal()
     
     def ask_for_goal(self):
 
         # Ask for the goal method -- Once the robot starts
-        
+        print(self.robot_number)
         start_time = time.time()
         duration = 10
-        request_goal = RequestGoal(self.robot) 
+        request_goal = RequestGoal(self.robot,self.robot_name) 
         status = request_goal.send_request(self.robot_number)
 
         while time.time() - start_time < duration:
@@ -96,7 +95,7 @@ class Robot(Node):
             else:
                 self.ask_for_goal() # Request for the next goal.
         
-        go_goal.destroy_node()
+        # go_goal.destroy_node()
 
     
     def navigate_to_home(self,goal_x,goal_y,robot):

@@ -6,11 +6,12 @@ from smart_factory.go_to_goal import Navigation
 import time
 
 class TaskAllocatorClient(Node):
-    def __init__(self,robot):
-        super().__init__('robot_1_client')
+    def __init__(self,robot,r_number):
+        super().__init__('robot_2_client')
 
         self.task_client = self.create_client(TaskAllocation,'allocate_task')
         self.robot = robot
+        self.robot_number = r_number
 
         while not self.task_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Waiting for service...')
@@ -60,7 +61,7 @@ class TaskAllocatorClient(Node):
     def go_to_goal(self,goal_x,goal_y,robot):
         start_time = time.time()
         duration = 20
-        go_goal = Navigation(goal_x,goal_y,robot)
+        go_goal = Navigation(goal_x,goal_y,robot,self.robot_number)
 
         while time.time() - start_time < duration:
             rclpy.spin_once(go_goal,timeout_sec=0.1)
@@ -83,7 +84,7 @@ def main():
     rclpy.init()
     robot_number = 2
     robot = f'robot_'+ str(robot_number)
-    task_allocator = TaskAllocatorClient(robot)
+    task_allocator = TaskAllocatorClient(robot,robot_number)
     task_allocator.get_logger().info(f'Getting goals for robot_{robot_number}')
     task_allocator.send_request(robot_number)
     task_allocator.destroy_node()

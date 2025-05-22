@@ -1,11 +1,18 @@
-class GoalAssigner():
+import rclpy
+from rclpy.node import Node
+
+from smart_factory_services.srv import TaskAllocation
+
+class GoalAssigner(Node):
     def __init__(self):
-    
+        super().__init__('goal_assigner')
+        self.task_service = self.create_service(TaskAllocation,'allocate_task',self.allocate_callback)
         self.assign_chooser = int(input("How do you want to assign the goals to robots:\n1. By Index\n2. By Distance\n"))
         self.number_goals = int(input("Enter the number of goals: "))
         self.pick_goals = []
         self.object_goals = []
         self.drop_goals = []
+        self.number = None
 
     def get_goal(self):
         
@@ -45,13 +52,17 @@ class GoalAssigner():
         print("You have reached your goal limit.")
         print(f"Pickup point: {self.pick_goals},Objects: {self.object_goals} Drop points: {self.drop_goals},.\nYou can now assign these goals to your robots.")
 
-        self.call_task_service()
+        self.check_request()
 
-    def call_task_service(self):
-        if not rclpy.ok():
-            rclpy.init()
-        task_allocator = TaskAllocatorService(self.assign_chooser,self.pick_goals,self.object_goals,self.drop_goals)
-        
-        rclpy.spin(task_allocator)
-        
-        task_allocator.destroy_node()
+    def allocate_callback(self,request,response):
+        self.number = request.robot_number
+
+        if self.number is not None:
+            response.success = True
+
+    def check_request(self):
+        if self.number is not None:
+            self.assign_goals()
+
+        else:
+            self.get_logger().info('Waiting for robot')

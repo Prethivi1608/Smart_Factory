@@ -91,6 +91,10 @@ class GoalAllocator(Node):
         return response
 
     
+    def get_goal(self):
+        goal_assigner = GoalAssigner()
+        goal_assigner.get_goal()
+    
     def odom_callback(self,msg):
         position = msg.pose.pose.position
         self.robot_x = position.x

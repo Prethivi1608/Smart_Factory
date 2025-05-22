@@ -5,9 +5,9 @@ from smart_factory.move_to_object import MovetoObject
 from smart_factory.go_to_goal import Navigation
 import time
 
-class RobotGoalClient(Node):
+class TaskAllocatorClient(Node):
     def __init__(self,robot):
-        super().__init__(f'{robot}_client')
+        super().__init__('robot_1_client')
 
         self.task_client = self.create_client(TaskAllocation,'allocate_task')
         self.robot = robot
@@ -38,30 +38,31 @@ class RobotGoalClient(Node):
                 self.get_logger().info(f"Response: {self.future.result().message}")
                 self.get_logger().info(f"Robot_{robot_number} is now moving to {pick_goal[0],pick_goal[1]} to pick up {object_goal} and dropping at {drop_goal[0],drop_goal[1]}")
                 
-                time.sleep(10)
-                self.go_to_goal(pick_goal[0],pick_goal[1],self.robot)
+                #self.go_to_goal(pick_goal[0],pick_goal[1],self.robot,robot_number)
                 self.get_logger().info(f"Robot_{robot_number} reached {pick_goal[0]},{pick_goal[1]}")
-                
-                time.sleep(5)
-                self.move_to_object(robot_number,object_goal)
+
+                #self.move_to_object(robot_number,object_goal)
                 self.get_logger().info(f'Robot has picked {object_goal}')
                 time.sleep(5)
 
 
                 self.get_logger().info(f'Robot moving to drop location: {drop_goal[0]},{drop_goal[1]}')
-                time.sleep(5)
-                self.go_to_goal(drop_goal[0],drop_goal[1],self.robot)
+                #self.go_to_goal(drop_goal[0],drop_goal[1],self.robot,robot_number)
                 self.get_logger().info(f"Robot_{robot_number} reached {drop_goal[0]},{drop_goal[1]}. Waiting for the {object_goal} to be dropped...")
+                
+
+
                 self.send_request(robot_number)
 
         else:
             self.get_logger().error('Service call failed.')
 
+
     
-    def go_to_goal(self,goal_x,goal_y,robot):
+    def go_to_goal(self,goal_x,goal_y,robot,robot_number):
         start_time = time.time()
         duration = 20
-        go_goal = Navigation(goal_x,goal_y,robot)
+        go_goal = Navigation(goal_x,goal_y,robot,robot_number)
 
         while time.time() - start_time < duration:
             rclpy.spin_once(go_goal,timeout_sec=0.1)
@@ -80,11 +81,15 @@ class RobotGoalClient(Node):
         
         move_to_object.destroy_node()
 
+
+
+
+
 def main():
     rclpy.init()
     robot_number = 1
     robot = f'robot_'+ str(robot_number)
-    task_allocator = RobotGoalClient(robot)
+    task_allocator = TaskAllocatorClient(robot)
     task_allocator.get_logger().info(f'Getting goals for robot_{robot_number}')
     task_allocator.send_request(robot_number)
     task_allocator.destroy_node()
