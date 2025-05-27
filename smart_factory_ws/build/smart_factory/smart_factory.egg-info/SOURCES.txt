@@ -74,9 +74,13 @@ smart_factory/robot_1_client.py
 smart_factory/robot_2_client.py
 smart_factory/robot_status_service.py
 smart_factory/yolomodel.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
+smart_factory.egg-info/PKG-INFO
+smart_factory.egg-info/SOURCES.txt
+smart_factory.egg-info/dependency_links.txt
+smart_factory.egg-info/entry_points.txt
+smart_factory.egg-info/requires.txt
+smart_factory.egg-info/top_level.txt
+smart_factory.egg-info/zip-safe
 yolo_model/rs2_hardware.pt
 yolo_model/smart_fact.pt
 yolo_model/tb3_object.pt

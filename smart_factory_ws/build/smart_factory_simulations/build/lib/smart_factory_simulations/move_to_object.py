@@ -22,21 +22,20 @@ class MovetoObject(Node):
         self.robot = '/' + self.robot_name + '_' + str(self.robot_number)
         self.camera_centre_x= None
         self.camera_centre_y= None
-        self.c_x= 0.0
-        self.c_y= 0.0
-        self.distance_threshold= 180
+        self.distance_threshold= 100000
         self.angle_threshold= 20.0
         self.linear_velocity= 0.25
-        self.angular_velocity= 0.15
-        self.search_velocity= 0.15
+        self.angular_velocity= 0.10
+        self.search_velocity= 0.10
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
         self.task_status = 'Running'
         self.object_name = object_name
+        self.obstacle = False
         
 
         self.camera_topic = self.robot + '/camera/image_raw'
-        self.model_name = 'smart_fact.pt'
+        self.model_name = 'tb3_object.pt'
         self.model_path = '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory/yolo_model/' + self.model_name
         self.camera_pub_topic = self.robot + '/camera/image_classify'
         self.vel_pub_topic = self.robot + '/cmd_vel'
@@ -47,13 +46,22 @@ class MovetoObject(Node):
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
         self.cam_info_sub = self.create_subscription(CameraInfo,self.camera_info_topic,self.camera_info_callback,10)
-        # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
+        self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
         self.bridge = CvBridge()
         self.model = YOLO(self.model_path)
 
-        self.left_angle = 345
-        self.right_angle = 15
+        self.left_angle = 358
+        self.right_angle = 2
+
+    def scan_callback(self,msg):
+        self.ranges = msg.ranges
+        for i in range(len(self.ranges)):
+            if i>self.left_angle or i<self.right_angle:
+                if self.ranges[i]<0.5:
+                    self.obstacle = True
+                else:
+                    self.obstacle = False
         
     def classify_callback(self,img_msg):
         
@@ -72,19 +80,25 @@ class MovetoObject(Node):
             for box in bounding_box.boxes:
                 class_id = int(box.cls[0].item())
                 class_name = self.model.names[class_id]
-                print(f'Detected Object:{class_name}')
-                x1,y1,x2,y2 = box.xyxy.tolist()[0]
-                distance = self.distance_to(x1,x2,y1,y2)
-                self.c_x,self.c_y,w,h= box.xywh.tolist()[0]
-                if self.c_x == None:
-                    self.get_logger().info('No value')
-                else:  
-                    if class_name == self.object_name:
-                        self.velocity_callback(self.c_x,distance)
-                    else:
-                        self.robot_search()
+                if class_name == self.object_name:
+                    print(f'Detected Object:{class_name}')
+                    x1,y1,x2,y2 = box.xyxy.tolist()[0]
+                    distance = self.distance_to(x1,x2,y1,y2)
+                    self.c_x,self.c_y,w,h= box.xywh.tolist()[0]
+                    if self.c_x == None:
+                        self.get_logger().info('No value')
+                    else:  
+                        if class_name == self.object_name:
+                            self.velocity_callback(self.c_x,distance)
+                        else:
+                            self.robot_search()
     
     def velocity_callback(self,c_x,distance):
+    
+        while self.obstacle:
+            self.robot_stop()
+            self.robot_info()
+            self.get_logger().info('Obstacle')
 
         if distance < self.distance_threshold:
             if c_x>(self.camera_centre_x+self.angle_threshold):
@@ -130,6 +144,9 @@ class MovetoObject(Node):
         vel_msg.angular.z = self.search_velocity
         self.velocity_publisher.publish(vel_msg)
 
+    def robot_info(self):
+        print('Reached the obstacle..')
+
 
     def distance_to(self,x1,x2,y1,y2):
         return (math.sqrt(((x2-x1)**2)+((y2-y1)**2)))
@@ -145,7 +162,7 @@ class MovetoObject(Node):
 def main():
     if not rclpy.ok():
         rclpy.init()
-    move_to_object = MovetoObject()
+    move_to_object = MovetoObject(1,'redpringles')
     rclpy.spin(move_to_object)
     move_to_object.destroy_node()
     rclpy.shutdown()

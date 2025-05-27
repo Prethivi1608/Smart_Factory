@@ -32,6 +32,7 @@ smart_factory_simulations/__init__.py
 smart_factory_simulations/goals_assigner.py
 smart_factory_simulations/move_to_object.py
 smart_factory_simulations/robot_bringup.py
+smart_factory_simulations/stop_robot.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

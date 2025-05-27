@@ -1,0 +1,1 @@
+/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory_simulations/launch/spawn_turtlebot3_1.launch.py

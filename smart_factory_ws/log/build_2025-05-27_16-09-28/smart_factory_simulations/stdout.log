@@ -1,0 +1,44 @@
+running develop
+running egg_info
+writing smart_factory_simulations.egg-info/PKG-INFO
+writing dependency_links to smart_factory_simulations.egg-info/dependency_links.txt
+writing entry points to smart_factory_simulations.egg-info/entry_points.txt
+writing requirements to smart_factory_simulations.egg-info/requires.txt
+writing top-level names to smart_factory_simulations.egg-info/top_level.txt
+reading manifest file 'smart_factory_simulations.egg-info/SOURCES.txt'
+writing manifest file 'smart_factory_simulations.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/lib/python3.10/site-packages/smart-factory-simulations.egg-link (link to .)
+Installing goals_assigner script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/lib/smart_factory_simulations
+Installing move_to_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/lib/smart_factory_simulations
+Installing robot_bringup script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/lib/smart_factory_simulations
+Installing stop_robot script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/lib/smart_factory_simulations
+
+Installed /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations
+running symlink_data
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/resource/smart_factory_simulations -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/ament_index/resource_index/packages
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/package.xml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/multi_robot.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/robot_state_publisher_2.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/warehouse_world.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/multi_robot_bringup.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/multi_robot_nav2.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/multi_spawn_turtlebot3.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/spawn_turtlebot3_1.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/simple_world.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/robot_state_publisher_1.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/launch/spawn_turtlebot3_2.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/model/model_2.sdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/model
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/model/model_1.sdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/model
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/model/tb3_waffle.urdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/model
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/world/simpleworld.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/world
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/world/warehouse.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/world
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/world/turtlebot3_house.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/world
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/world/french_cafe.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/world
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/world/smart_factoryworld.world -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/world
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/maps/turtlebot3_housemap.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/maps/turtlebot3_housemap.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/maps/turtlebot3_housemap.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/maps/turtlebot3_housemap.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/config/robot2_nav2_params.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory_simulations/config/robot1_nav2_params.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_simulations/share/smart_factory_simulations/config

@@ -30,6 +30,7 @@ setup(
             'goals_assigner = smart_factory_simulations.goals_assigner:main',
             'move_to_object = smart_factory_simulations.move_to_object:main',
             'robot_bringup = smart_factory_simulations.robot_bringup:main',
+            'stop_robot = smart_factory_simulations.stop_robot:main',
         ],
     },
 )

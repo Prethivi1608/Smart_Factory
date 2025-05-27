@@ -1,0 +1,80 @@
+running develop
+running egg_info
+writing smart_factory.egg-info/PKG-INFO
+writing dependency_links to smart_factory.egg-info/dependency_links.txt
+writing entry points to smart_factory.egg-info/entry_points.txt
+writing requirements to smart_factory.egg-info/requires.txt
+writing top-level names to smart_factory.egg-info/top_level.txt
+reading manifest file 'smart_factory.egg-info/SOURCES.txt'
+writing manifest file 'smart_factory.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart-factory.egg-link (link to .)
+Installing camera_classifier script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing camera_distance script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing camera_info script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing camera_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing camera_publisher script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing detect_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing example_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing example_service script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing go_to_goal script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing goals_assigner script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing image_capture script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing move_to_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing nav_thro_pose script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing nav_to_pose script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing nav_to_pose_test script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing path_planning script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing robot_1_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+Installing robot_2_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+
+Installed /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory
+running symlink_data
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/resource/smart_factory -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/package.xml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/localization_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/perception_moverobot.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/multirobot.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/bringup_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/perception.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/robot_bringup.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/smart_factory.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/multi_nav.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/slam_mapping.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/multi_robot_navigation.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/online_async_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/launch/multi_localisation.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/move_to_object.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/nav2_params.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/mapper_params_online_async.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/slam_config.rviz -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/nav2_default_view.rviz -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/waffle.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/frames_2025-05-10_17.17.06.gv -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/turtlebot3_housemap.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/frames_2025-05-10_17.17.06.pdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/map_1744355432.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/Env2.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/sample_map.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/samplemap_1.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/samplemap_!.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/final_map_1.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/Env2.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/TMP_RECORDING.mp4 -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/sample_map.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/Env2.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/sample_map.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/turtlebot3_housemap.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/Env2.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/map_1744355432.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/turtlebot3_housemap.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/final_map_1.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/final_map_1.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/turtlebot3_housemap.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/sample_map.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/samplemap_1.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/samplemap_!.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/maps/final_map_1.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/yolo_model/tb3_object.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/yolo_model/smart_fact.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+symbolically linking /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/yolo_model/rs2_hardware.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model

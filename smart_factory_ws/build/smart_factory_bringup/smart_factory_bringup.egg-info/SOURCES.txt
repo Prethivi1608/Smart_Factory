@@ -12,6 +12,10 @@ resource/smart_factory_bringup
 smart_factory_bringup/__init__.py
 smart_factory_bringup/goal_bringup.py
 smart_factory_bringup/robot_bringup.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
+smart_factory_bringup.egg-info/PKG-INFO
+smart_factory_bringup.egg-info/SOURCES.txt
+smart_factory_bringup.egg-info/dependency_links.txt
+smart_factory_bringup.egg-info/entry_points.txt
+smart_factory_bringup.egg-info/requires.txt
+smart_factory_bringup.egg-info/top_level.txt
+smart_factory_bringup.egg-info/zip-safe
