@@ -10,11 +10,14 @@ from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 import random
+import cv2
+from rclpy.qos import QoSProfile, ReliabilityPolicy
 
 class MovetoObject(Node):
     def __init__(self,robot_number,object_name):
         super().__init__(f'move_to_object_{random.randint(0,120)}')
         
+        qos = QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT)
         self.robot_name = 'robot'
         self.c_x = 0.0
         self.c_y = 0.0
@@ -22,17 +25,16 @@ class MovetoObject(Node):
         self.robot = '/' + self.robot_name + '_' + str(self.robot_number)
         self.camera_centre_x= 80.0
         self.camera_centre_y= 60.0
-        self.c_x= 0.0
-        self.c_y= 0.0
         self.distance_threshold= 180
-        self.angle_threshold= 20.0
-        self.linear_velocity= 0.25
+        self.angle_threshold= 40.0
+        self.linear_velocity= -0.25
         self.angular_velocity= 0.15
         self.search_velocity= 0.15
         self.linear_velocity_stop= 0.0
         self.angular_velocity_stop= 0.0
         self.task_status = 'Running'
         self.object_name = object_name
+        self.obstacle = False
         
 
         self.camera_topic = self.robot + '/camera/image_raw'
@@ -44,17 +46,27 @@ class MovetoObject(Node):
         
         self.cam_pub = self.create_publisher(Image,self.camera_pub_topic,10)
         self.cam_sub = self.create_subscription(Image,self.camera_topic,self.classify_callback,10)
-        # self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,10)
+        self.laser_sub = self.create_subscription(LaserScan,self.scan_topic,self.scan_callback,qos)
         self.velocity_publisher = self.create_publisher(Twist,self.vel_pub_topic,10)
         self.bridge = CvBridge()
         self.model = YOLO(self.model_path)
 
-        self.left_angle = 345
-        self.right_angle = 15
+        self.left_angle = 190
+        self.right_angle = 170
+    
+    def scan_callback(self,msg):
+        self.ranges = msg.ranges
+        for i in range(len(self.ranges)):
+            if i<self.left_angle or i>self.right_angle:
+                if self.ranges[i]<0.5:
+                    self.obstacle = False
+                else:
+                    self.obstacle = True
         
     def classify_callback(self,img_msg):
         
-        image = self.bridge.imgmsg_to_cv2(img_msg,desired_encoding='bgr8')
+        image = self.bridge.imgmsg_to_cv2(img_msg,desired_encoding='bgr8') 
+        # image = cv2.flip(flipped_image, 0)
         self.results = self.model.track(image)
         box_id = self.results[0].boxes.id
         if box_id is None:
@@ -82,7 +94,7 @@ class MovetoObject(Node):
                         self.robot_search()
     
     def velocity_callback(self,c_x,distance):
-
+        
         if distance < self.distance_threshold:
             if c_x>(self.camera_centre_x+self.angle_threshold):
                 self.robot_right()
@@ -91,7 +103,11 @@ class MovetoObject(Node):
                 self.robot_left()
 
             else:
-                self.robot_forward()
+                if self.obstacle:
+                    self.robot_stop()
+                    print('Robot obstacle')
+                else:
+                    self.robot_forward()
         else:
             self.robot_stop()
             self.task_status = 'Reached near the object'

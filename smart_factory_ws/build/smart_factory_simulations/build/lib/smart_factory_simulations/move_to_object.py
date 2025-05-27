@@ -162,7 +162,7 @@ class MovetoObject(Node):
 def main():
     if not rclpy.ok():
         rclpy.init()
-    move_to_object = MovetoObject(1,'redpringles')
+    move_to_object = MovetoObject('1','redpringles')
     rclpy.spin(move_to_object)
     move_to_object.destroy_node()
     rclpy.shutdown()

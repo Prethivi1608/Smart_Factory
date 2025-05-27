@@ -1,1 +1,0 @@
-/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory_bringup/setup.py

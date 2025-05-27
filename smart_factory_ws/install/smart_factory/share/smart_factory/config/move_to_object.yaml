@@ -1,1 +1,5 @@
-/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/config/move_to_object.yaml
+move_to_object:
+  ros__parameters:
+    robot_number: 1
+
+    object_name: 'redpringles'

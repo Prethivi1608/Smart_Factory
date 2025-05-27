@@ -1,0 +1,134 @@
+[0.583s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory': CMAKE_PREFIX_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/turtlebot3_multi_robot LD_LIBRARY_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build
+[0.811s] running develop
+[0.977s] Removing /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart-factory.egg-link (link to .)
+[1.014s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory' returned '0': CMAKE_PREFIX_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/turtlebot3_multi_robot LD_LIBRARY_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build
+[1.015s] Invoking command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory': CMAKE_PREFIX_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/turtlebot3_multi_robot LD_LIBRARY_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data --force
+[1.234s] running egg_info
+[1.235s] writing ../../build/smart_factory/smart_factory.egg-info/PKG-INFO
+[1.235s] writing dependency_links to ../../build/smart_factory/smart_factory.egg-info/dependency_links.txt
+[1.235s] writing entry points to ../../build/smart_factory/smart_factory.egg-info/entry_points.txt
+[1.236s] writing requirements to ../../build/smart_factory/smart_factory.egg-info/requires.txt
+[1.236s] writing top-level names to ../../build/smart_factory/smart_factory.egg-info/top_level.txt
+[1.240s] reading manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[1.242s] writing manifest file '../../build/smart_factory/smart_factory.egg-info/SOURCES.txt'
+[1.242s] running build
+[1.242s] running build_py
+[1.242s] copying smart_factory/move_to_object.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory
+[1.243s] running install
+[1.244s] running install_lib
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/get_position.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/map_publisher.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_classifier.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/go_to_goal.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/robot_status_service.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/image_capture.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.245s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/nav_thro_pose.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/move_to_object.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/robot_1_client.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_object.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/goals_assigner.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/path_planning.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/nav_to_pose.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/detect_object.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/__init__.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.246s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/yolomodel.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_info.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_distance.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/camera_publisher.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/nav_to_pose_test.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/robot_2_client.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.247s] copying /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build/lib/smart_factory/request_goal.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory
+[1.248s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/get_position.py to get_position.cpython-310.pyc
+[1.248s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/map_publisher.py to map_publisher.cpython-310.pyc
+[1.248s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_classifier.py to camera_classifier.cpython-310.pyc
+[1.249s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/go_to_goal.py to go_to_goal.cpython-310.pyc
+[1.250s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/robot_status_service.py to robot_status_service.cpython-310.pyc
+[1.250s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/image_capture.py to image_capture.cpython-310.pyc
+[1.250s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/nav_thro_pose.py to nav_thro_pose.cpython-310.pyc
+[1.251s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/move_to_object.py to move_to_object.cpython-310.pyc
+[1.252s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/robot_1_client.py to robot_1_client.cpython-310.pyc
+[1.253s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_object.py to camera_object.cpython-310.pyc
+[1.253s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/goals_assigner.py to goals_assigner.cpython-310.pyc
+[1.255s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/path_planning.py to path_planning.cpython-310.pyc
+[1.258s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/nav_to_pose.py to nav_to_pose.cpython-310.pyc
+[1.258s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/detect_object.py to detect_object.cpython-310.pyc
+[1.259s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/__init__.py to __init__.cpython-310.pyc
+[1.259s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/yolomodel.py to yolomodel.cpython-310.pyc
+[1.259s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_info.py to camera_info.cpython-310.pyc
+[1.260s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_distance.py to camera_distance.cpython-310.pyc
+[1.260s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/camera_publisher.py to camera_publisher.cpython-310.pyc
+[1.260s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/nav_to_pose_test.py to nav_to_pose_test.cpython-310.pyc
+[1.261s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/robot_2_client.py to robot_2_client.cpython-310.pyc
+[1.261s] byte-compiling /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory/request_goal.py to request_goal.cpython-310.pyc
+[1.262s] running install_data
+[1.262s] copying resource/smart_factory -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/ament_index/resource_index/packages
+[1.262s] copying package.xml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory
+[1.262s] copying launch/localization_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.262s] copying launch/perception_moverobot.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.262s] copying launch/multirobot.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.262s] copying launch/bringup_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.262s] copying launch/perception.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/robot_bringup.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/smart_factory.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/multi_nav.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/slam_mapping.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/multi_robot_navigation.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/online_async_launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying launch/multi_localisation.launch.py -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/launch
+[1.263s] copying config/move_to_object.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.264s] copying config/nav2_params.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.264s] copying config/mapper_params_online_async.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.264s] copying config/slam_config.rviz -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.265s] copying config/nav2_default_view.rviz -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.265s] copying config/waffle.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/config
+[1.265s] copying maps/frames_2025-05-10_17.17.06.gv -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.266s] copying maps/turtlebot3_housemap.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.266s] copying maps/frames_2025-05-10_17.17.06.pdf -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.266s] copying maps/map_1744355432.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.267s] copying maps/Env2.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.268s] copying maps/sample_map.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.269s] copying maps/samplemap_1.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.270s] copying maps/samplemap_!.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.271s] copying maps/final_map_1.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.271s] copying maps/Env2.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.272s] copying maps/TMP_RECORDING.mp4 -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.278s] copying maps/sample_map.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.278s] copying maps/Env2.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.281s] copying maps/sample_map.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.284s] copying maps/turtlebot3_housemap.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.286s] copying maps/Env2.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.286s] copying maps/map_1744355432.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.287s] copying maps/turtlebot3_housemap.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.287s] copying maps/final_map_1.pgm -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.287s] copying maps/final_map_1.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.288s] copying maps/turtlebot3_housemap.data -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.289s] copying maps/sample_map.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.290s] copying maps/samplemap_1.yaml -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.290s] copying maps/samplemap_!.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.300s] copying maps/final_map_1.posegraph -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/maps
+[1.302s] copying yolo_model/tb3_object.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+[1.311s] copying yolo_model/smart_fact.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+[1.320s] copying yolo_model/rs2_hardware.pt -> /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/share/smart_factory/yolo_model
+[1.329s] running install_egg_info
+[1.332s] Copying ../../build/smart_factory/smart_factory.egg-info to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages/smart_factory-0.0.0-py3.10.egg-info
+[1.333s] running install_scripts
+[1.351s] Installing camera_classifier script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing camera_distance script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing camera_info script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing camera_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing camera_publisher script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing detect_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing example_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing example_service script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.351s] Installing go_to_goal script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing goals_assigner script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing image_capture script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing move_to_object script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing nav_thro_pose script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing nav_to_pose script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing nav_to_pose_test script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing path_planning script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing robot_1_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.352s] Installing robot_2_client script to /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/smart_factory
+[1.353s] writing list of installed files to '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log'
+[1.385s] Invoked command in '/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/src/smart_factory' returned '0': CMAKE_PREFIX_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/turtlebot3_multi_robot LD_LIBRARY_PATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory_services/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/install/smart_factory/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/smart_factory build --build-base /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/build install --record /home/prethivi/ros2_ws/Smart_Factory/smart_factory_ws/build/smart_factory/install.log --single-version-externally-managed install_data --force

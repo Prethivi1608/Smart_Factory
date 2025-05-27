@@ -19,8 +19,8 @@ class DetectObject(Node):
         self.object_distance = {}
         self.velocity_publisher = self.create_publisher(Twist,self.vel_topic,10)
         
-        self.left_angle = 358
-        self.right_angle = 2
+        self.left_angle = 330
+        self.right_angle = 30
         self.ranges = []
         self.obstacle = False
 
@@ -28,12 +28,13 @@ class DetectObject(Node):
         self.ranges = msg.ranges
         for i in range(len(self.ranges)):
             if i>self.left_angle or i<self.right_angle:
-                if self.ranges[i]<0.5:
-                    self.obstacle = True
-                    self.operate_robot()
-                else:
-                    self.obstacle = False
-                    self.operate_robot()
+                print(f'{i}:{self.ranges[i]}')
+                # if self.ranges[i]<0.5:
+                #     self.obstacle = True
+                #     self.operate_robot()
+                # else:
+                #     self.obstacle = False
+                #     self.operate_robot()
         
     
     def operate_robot(self):
