@@ -5,7 +5,7 @@ This project aims to develop a coordinated multi-robot warehouse system to strea
 Each robot in the system is responsible for executing a defined sequence of actions:
 
 1. Navigate to a designated pickup location.
-2. Identify and pick the assigned object using vision and manipulation systems.
+2. Identify and pick the assigned object using vision systems.
 3. Transport and drop the object at a specified drop-off location.
 
 The system is designed to scale for n robots, ensuring that all robots can operate simultaneously with seamless coordination and robust collision avoidance strategies. The project involves both simulation and real-world implementation to validate the system’s performance under varying conditions.
